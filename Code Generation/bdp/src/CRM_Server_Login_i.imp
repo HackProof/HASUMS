@@ -1,0 +1,33 @@
+﻿/* CRM_Server_Login_i
+ * Author: SANE
+ * Creation date: 2023-04-25
+ */
+
+IMPLEMENTATION CRM_Server_Login_i
+REFINES AccessControl
+
+INITIALISATION
+    Input_ID := Empty_ID ;
+    Input_Password := Empty_Password ;
+    Input_Agent := Empty_Agent ;
+    Login_Try := 0 ;
+    Permission := None ;
+    Agent := Access_Fail
+
+OPERATIONS
+    access_grant =
+    BEGIN
+        IF Input_ID = Vehicle_ID &
+           Input_Agent = Vehicle &
+           Login_Try <= 5
+        THEN
+           Agent := Access_Success ;
+           Permission := Download ;
+           Login_Try := 0
+        ELSE
+           Agent := Access_Fail ;
+           Permission := None ;
+           Login_Try := Login_Try + 1
+        END
+    END
+END

@@ -1,0 +1,44 @@
+﻿/* CRM_Server_Patchfile_Version_Check_i
+ * Author: SANE
+ * Creation date: 2023-04-25
+ */
+
+IMPLEMENTATION CRM_Server_Patchfile_Version_Check_i
+REFINES Storage
+
+INITIALISATION
+    Storage_Capacity := 100 ;
+    Storage_Capacity_Criteria := 85 ;
+    Version := 0 ;
+    File_Type := Empty_Data ;
+    Save_Result := Not_Save ;
+    Tag := Normal_State ;
+    Stored_Capacity := 0 ;
+    Data_Status := Empty_File ;
+    Data_Operation := None ;
+    Send_Target := Empty_Target ;
+    Update_Request_Result := Update_Unrequired ;
+    Subject_Entity := Noone
+
+OPERATIONS
+    capacity_check ( File_Size ) = skip ;
+
+    version_check ( Vehicle_Patchfile_Version , Patchfile_Version ) =
+    BEGIN
+        IF Vehicle_Patchfile_Version < Patchfile_Version
+
+        THEN
+           Update_Request_Result := Update_Required
+        ELSE
+           Update_Request_Result := Update_Unrequired
+        END
+    END ;
+
+    patchfile_installation = skip ;
+
+    patchfile_backup = skip ;
+
+    patchfile_recovery = skip ;
+
+    configuration_management ( Current_Item_Version , Latest_Item_Version ) = skip
+END
