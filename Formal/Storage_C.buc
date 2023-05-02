@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.carrierSet name="'" org.eventb.core.identifier="Update_Response"/>
+    <org.eventb.core.constant name="(" org.eventb.core.identifier="Update_Required"/>
+    <org.eventb.core.constant name=")" org.eventb.core.identifier="Update_Unrequired"/>
+    <org.eventb.core.axiom name="*" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(Update_Response, {Update_Required}, {Update_Unrequired})"/>
+    <org.eventb.core.carrierSet name="+" org.eventb.core.identifier="Store_Result"/>
+    <org.eventb.core.constant name="," org.eventb.core.identifier="Save"/>
+    <org.eventb.core.constant name="-" org.eventb.core.identifier="Not_Save"/>
+    <org.eventb.core.axiom name="." org.eventb.core.label="axm2" org.eventb.core.predicate="partition(Store_Result, {Save}, {Not_Save})"/>
+    <org.eventb.core.constant name="/" org.eventb.core.identifier="Storage_Capacity_Criteria"/>
+    <org.eventb.core.carrierSet name="3" org.eventb.core.identifier="File_Tag"/>
+    <org.eventb.core.constant name="4" org.eventb.core.identifier="Latest_File"/>
+    <org.eventb.core.constant name="5" org.eventb.core.identifier="Current_File"/>
+    <org.eventb.core.axiom name="6" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(File_Tag, {Latest_File}, {Current_File})"/>
+    <org.eventb.core.carrierSet name="7" org.eventb.core.identifier="Data_Format"/>
+    <org.eventb.core.constant name="8" org.eventb.core.identifier="Vehicle_Data"/>
+    <org.eventb.core.axiom name="9" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(Data_Format, {Vehicle_Data}, {Encrypted_Patchfile}, {Patchfile})"/>
+    <org.eventb.core.constant name=":" org.eventb.core.identifier="Storage_Capacity"/>
+    <org.eventb.core.axiom name=";" org.eventb.core.comment="저장소 용량은 100%로 둠" org.eventb.core.label="axm5" org.eventb.core.predicate="Storage_Capacity = 100"/>
+    <org.eventb.core.axiom name="=" org.eventb.core.comment="저장소 용량 기준은 남는 공간이 85% 이상 차면 알람 전송" org.eventb.core.label="axm6" org.eventb.core.predicate="Storage_Capacity_Criteria = 85"/>
+    <org.eventb.core.constant name="&gt;" org.eventb.core.identifier="Encrypted_Patchfile"/>
+    <org.eventb.core.constant name="?" org.eventb.core.identifier="Alarm"/>
+    <org.eventb.core.carrierSet name="@" org.eventb.core.identifier="Storage_Response_Tag"/>
+    <org.eventb.core.constant name="A" org.eventb.core.identifier="Overwrite"/>
+    <org.eventb.core.axiom name="B" org.eventb.core.label="axm7" org.eventb.core.predicate="partition(Storage_Response_Tag, {Normal_State}, {Alarm}, {Overwrite})"/>
+    <org.eventb.core.constant name="C" org.eventb.core.identifier="Normal_State"/>
+    <org.eventb.core.constant name="D" org.eventb.core.identifier="Patchfile"/>
+    <org.eventb.core.constant name="E" org.eventb.core.identifier="Data"/>
+    <org.eventb.core.constant name="F" org.eventb.core.identifier="Config_Item"/>
+    <org.eventb.core.constant name="G" org.eventb.core.identifier="Version"/>
+    <org.eventb.core.extendsContext name="H" org.eventb.core.target="PatchFile_Format_C"/>
+    <org.eventb.core.axiom name="I" org.eventb.core.label="axm8" org.eventb.core.predicate="Version ∈ ℕ"/>
+    <org.eventb.core.axiom name="J" org.eventb.core.label="axm9" org.eventb.core.predicate="Data ∈ Patchfile_Format∖{Encrypted_Binary}"/>
+    <org.eventb.core.axiom name="K" org.eventb.core.label="axm10" org.eventb.core.predicate="Config_Item = {Data}⇸{Version}"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.axiom name="axm1" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(Role, {Engineer}, {Automotive}, {OEM_TeamLeader}, {OEM_TeamMember})"/>
+    <org.eventb.core.constant name="axm2" org.eventb.core.identifier="Engineer"/>
+    <org.eventb.core.constant name="axm3" org.eventb.core.identifier="Automotive"/>
+    <org.eventb.core.constant name="axm4" org.eventb.core.identifier="OEM_TeamLeader"/>
+    <org.eventb.core.axiom name="axm5" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(Operation, {Upload}, {Fix}, {Transfer}, {Download}, {Approve}, {Install}, {Backup}, {Recovery})"/>
+    <org.eventb.core.carrierSet name="axm7" org.eventb.core.identifier="Role"/>
+    <org.eventb.core.constant name="axm?" org.eventb.core.identifier="OEM_TeamMember"/>
+    <org.eventb.core.constant name="axm9" org.eventb.core.identifier="Upload"/>
+    <org.eventb.core.constant name="axm:" org.eventb.core.identifier="Fix"/>
+    <org.eventb.core.constant name="axm;" org.eventb.core.identifier="Transfer"/>
+    <org.eventb.core.carrierSet name="axm&gt;" org.eventb.core.identifier="Operation"/>
+    <org.eventb.core.constant name="axmG" org.eventb.core.identifier="Download"/>
+    <org.eventb.core.axiom name="axmL" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(Agent, {ECU}, {Secondary_ECU}, {Auto_Repair_Shop}, {Vehicle}, {Development_Server}, {Diagnostic_Server}, {Update_Server}, {CRM_Server}, {Developer_PC}, {DiagnosticTester_PC}, {Engineer_PC})"/>
+    <org.eventb.core.carrierSet name="axmM" org.eventb.core.identifier="Agent"/>
+    <org.eventb.core.constant name="axmN" org.eventb.core.identifier="Auto_Repair_Shop"/>
+    <org.eventb.core.constant name="axmO" org.eventb.core.identifier="Vehicle"/>
+    <org.eventb.core.constant name="axmP" org.eventb.core.identifier="Development_Server"/>
+    <org.eventb.core.constant name="axmQ" org.eventb.core.identifier="Diagnostic_Server"/>
+    <org.eventb.core.constant name="axmR" org.eventb.core.identifier="Update_Server"/>
+    <org.eventb.core.constant name="axmS" org.eventb.core.identifier="CRM_Server"/>
+    <org.eventb.core.constant name="axmT" org.eventb.core.identifier="Developer_PC"/>
+    <org.eventb.core.constant name="axmU" org.eventb.core.identifier="DiagnosticTester_PC"/>
+    <org.eventb.core.constant name="axmV" org.eventb.core.identifier="Approve"/>
+    <org.eventb.core.constant name="axmW" org.eventb.core.identifier="Engineer_PC"/>
+    <org.eventb.core.constant name="axmX" org.eventb.core.identifier="Secondary_ECU"/>
+    <org.eventb.core.constant name="axmY" org.eventb.core.identifier="Install"/>
+    <org.eventb.core.constant name="axmZ" org.eventb.core.identifier="ECU"/>
+    <org.eventb.core.constant name="axm[" org.eventb.core.identifier="Backup"/>
+    <org.eventb.core.constant name="axm\" org.eventb.core.identifier="Recovery"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.carrierSet name="'" org.eventb.core.identifier="QualityTest"/>
+    <org.eventb.core.constant name="*" org.eventb.core.identifier="Patchfile_error"/>
+    <org.eventb.core.axiom name="-" org.eventb.core.label="axm1" org.eventb.core.predicate="QualityTest ∈ {Patchfile_error}"/>
+    <org.eventb.core.carrierSet name="." org.eventb.core.identifier="CompatibilityTest"/>
+    <org.eventb.core.constant name="/" org.eventb.core.identifier="Valid"/>
+    <org.eventb.core.constant name="0" org.eventb.core.identifier="Invalid"/>
+    <org.eventb.core.axiom name="1" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(Test_Result, {Valid}, {Invalid})"/>
+    <org.eventb.core.carrierSet name="2" org.eventb.core.identifier="Test_Result"/>
+    <org.eventb.core.axiom name="3" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(CompatibilityTest, {Hardware_Compatibility}, {Software_Compatibility}, {Network_Compatibility})"/>
+    <org.eventb.core.constant name="4" org.eventb.core.identifier="Hardware_Compatibility"/>
+    <org.eventb.core.constant name="5" org.eventb.core.identifier="Software_Compatibility"/>
+    <org.eventb.core.constant name="6" org.eventb.core.identifier="Network_Compatibility"/>
+    <org.eventb.core.carrierSet name="7" org.eventb.core.identifier="Hardware_Test"/>
+    <org.eventb.core.carrierSet name="8" org.eventb.core.identifier="Software_Test"/>
+    <org.eventb.core.carrierSet name="9" org.eventb.core.identifier="Network_Test"/>
+    <org.eventb.core.constant name=":" org.eventb.core.identifier="Memory_Type"/>
+    <org.eventb.core.constant name=";" org.eventb.core.identifier="Memory_Size"/>
+    <org.eventb.core.constant name="=" org.eventb.core.identifier="Memory_Speed"/>
+    <org.eventb.core.constant name="&gt;" org.eventb.core.identifier="Input_Device"/>
+    <org.eventb.core.constant name="?" org.eventb.core.identifier="Output_Device"/>
+    <org.eventb.core.constant name="@" org.eventb.core.identifier="Windows"/>
+    <org.eventb.core.constant name="A" org.eventb.core.identifier="Linux"/>
+    <org.eventb.core.constant name="B" org.eventb.core.identifier="Mac"/>
+    <org.eventb.core.axiom name="C" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(Hardware_Test, {Memory_Type}, {Memory_Size}, {Memory_Speed}, {Input_Device}, {Output_Device})"/>
+    <org.eventb.core.axiom name="D" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(Software_Test, {Windows}, {Linux}, {Mac}, {Current_Version_Software}, {Other_Version_Software})"/>
+    <org.eventb.core.axiom name="E" org.eventb.core.label="axm6" org.eventb.core.predicate="partition(Network_Test, {Wifi}, {Data_Network}, {Bluetooth})"/>
+    <org.eventb.core.constant name="F" org.eventb.core.identifier="Current_Version_Software"/>
+    <org.eventb.core.constant name="G" org.eventb.core.identifier="Other_Version_Software"/>
+    <org.eventb.core.constant name="H" org.eventb.core.identifier="Wifi"/>
+    <org.eventb.core.constant name="I" org.eventb.core.identifier="Data_Network"/>
+    <org.eventb.core.constant name="J" org.eventb.core.identifier="Bluetooth"/>
+</org.eventb.core.contextFile>

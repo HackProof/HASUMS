@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.carrierSet name="'" org.eventb.core.identifier="Patchfile_Format"/>
+    <org.eventb.core.constant name="(" org.eventb.core.identifier="Sourcecode"/>
+    <org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(Patchfile_Format, {Sourcecode}, {Binary}, {Encrypted_Binary})"/>
+    <org.eventb.core.constant name="*" org.eventb.core.identifier="Binary"/>
+    <org.eventb.core.carrierSet name="+" org.eventb.core.identifier="Develop_Language"/>
+    <org.eventb.core.carrierSet name="," org.eventb.core.identifier="Coding_Standard"/>
+    <org.eventb.core.constant name="-" org.eventb.core.identifier="C_language"/>
+    <org.eventb.core.constant name="." org.eventb.core.identifier="C_plus_language"/>
+    <org.eventb.core.constant name="/" org.eventb.core.identifier="Misra_C"/>
+    <org.eventb.core.constant name="0" org.eventb.core.identifier="Misra_C_plus"/>
+    <org.eventb.core.constant name="1" org.eventb.core.identifier="AUTOSAR_C_plus"/>
+    <org.eventb.core.axiom name="2" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(Develop_Language, {C_language}, {C_plus_language})"/>
+    <org.eventb.core.axiom name="3" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(Coding_Standard, {Misra_C}, {Misra_C_plus}, {AUTOSAR_C_plus})"/>
+    <org.eventb.core.carrierSet name="4" org.eventb.core.identifier="Sourcecode_Format"/>
+    <org.eventb.core.constant name="5" org.eventb.core.identifier="Written_Sourcecode"/>
+    <org.eventb.core.constant name="6" org.eventb.core.identifier="Writing_Sourcecode"/>
+    <org.eventb.core.axiom name="7" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(Sourcecode_Format, {Written_Sourcecode}, {Writing_Sourcecode})"/>
+    <org.eventb.core.constant name="8" org.eventb.core.identifier="Encrypted_Binary"/>
+</org.eventb.core.contextFile>
