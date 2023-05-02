@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Proof_Obligations version="1.0" xmlns="https://www.atelierb.eu/Formats/pog" author="pmi2Pos">
+<Proof_Obligation>
+<Tag>Initialisation</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; Rapide)" methodList="?"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; Rapide)" methodList="?"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; Rapide)" methodList="?"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessInvariant</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is well defined</Tag>
+<Proof_State proofState="Proved(Rapide)" passList="Force(Rapide),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is well defined</Tag>
+<Proof_State proofState="Proved(Rapide)" passList="Force(Rapide),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is well defined</Tag>
+<Proof_State proofState="Proved(Rapide)" passList="Force(Rapide),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+</Proof_Obligations>

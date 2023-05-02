@@ -1,0 +1,75 @@
+THEORY BalanceX IS
+CRM_Server_Patchfile_Version_Check_i,17,0,3,2,0,0,0;
+Initialisation,11,0,3,0,0,0,0;
+Operation_capacity_check,1,0,0,0,0,0,0;
+Operation_configuration_management,1,0,0,0,0,0,0;
+Operation_version_check,4,0,0,2,0,0,0
+END
+&
+THEORY ProofState IS
+Unproved;
+Unproved;
+Unproved;
+Proved(0);
+Proved(0);
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Proved(Rapide);
+Proved(Rapide);
+Proved(Rapide)
+END
+&
+THEORY MethodList IS
+?;
+?;
+?;
+pr;
+pr;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+pr;
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(0),(?; Rapide; 0; 1; 2; 3);
+Force(Rapide),?;
+Force(Rapide),?;
+Force(Rapide),?
+END
+&
+THEORY Status IS
+CRM_Server_Patchfile_Version_Check_i,17,0,5,0,0,0;
+Initialisation,11,0,3,0,0,0;
+Operation_capacity_check,1,0,0,0,0,0;
+Operation_configuration_management,1,0,0,0,0,0;
+Operation_version_check,4,0,2,0,0,0
+END

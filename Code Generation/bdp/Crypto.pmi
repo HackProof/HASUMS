@@ -1,0 +1,38 @@
+THEORY BalanceX IS
+Crypto,6,0,3,0,0,0,0;
+Initialisation,3,0,0,0,0,0,0;
+WellDefinednessInvariant,3,0,3,0,0,0,0
+END
+&
+THEORY ProofState IS
+Proved(Rapide);
+Proved(Rapide);
+Proved(Rapide);
+Unproved;
+Unproved;
+Unproved
+END
+&
+THEORY MethodList IS
+pr;
+pr;
+pr;
+?;
+?;
+?
+END
+&
+THEORY PassList IS
+Force(Rapide),?;
+Force(Rapide),?;
+Force(Rapide),?;
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide)
+END
+&
+THEORY Status IS
+Crypto,6,0,3,0,0,0;
+Initialisation,3,0,0,0,0,0;
+WellDefinednessInvariant,3,0,3,0,0,0
+END

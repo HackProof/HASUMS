@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="4145786887">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0"/>
+    <Define name="seext" hash="0"/>
+    <Define name="lprp" hash="3319773535">
+        <Set>
+            <Id value="Subject_Agent" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Agent" typref="1"/>
+                <Id value="Secondary_ECU" typref="1"/>
+                <Id value="Auto_Repair_Shop" typref="1"/>
+                <Id value="Vehicle" typref="1"/>
+                <Id value="Development_Server" typref="1"/>
+                <Id value="Diagnostic_Server" typref="1"/>
+                <Id value="Update_Server" typref="1"/>
+                <Id value="CRM_Server" typref="1"/>
+                <Id value="Developer_PC" typref="1"/>
+                <Id value="DiagnosticTester_PC" typref="1"/>
+                <Id value="Engineer_PC" typref="1"/>
+                <Id value="OEM_TeamLeader" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Encrypt_Method" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Encrypt_Method" typref="1"/>
+                <Id value="AES" typref="1"/>
+                <Id value="Camelia" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Encrypt_Mode" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Mode" typref="1"/>
+                <Id value="ECB" typref="1"/>
+                <Id value="OFB" typref="1"/>
+                <Id value="CFB" typref="1"/>
+                <Id value="CTR" typref="1"/>
+                <Id value="CBC" typref="1"/>
+                <Id value="GCM" typref="1"/>
+                <Id value="CCM" typref="1"/>
+                <Id value="Poly1303" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Crypto_Test_Result" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Crypto_Test_Pass" typref="1"/>
+                <Id value="Crypto_Test_Fail" typref="1"/>
+                <Id value="Signature_Verify_Pass" typref="1"/>
+                <Id value="Signature_Verify_Fail" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Sign_Method" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Sign_Method" typref="1"/>
+                <Id value="RSA" typref="1"/>
+                <Id value="Curve25519_Ed25519" typref="1"/>
+                <Id value="NIST_Curve_P256_P384_P521" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Hash_Method" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Hash_Method" typref="1"/>
+                <Id value="SHA_1" typref="1"/>
+                <Id value="SHA_2" typref="1"/>
+                <Id value="SHA_3" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Operation" typref="0"/>
+            <Enumerated_Values>
+                <Id value="None" typref="1"/>
+                <Id value="Download" typref="1"/>
+                <Id value="Upload" typref="1"/>
+                <Id value="Fix" typref="1"/>
+                <Id value="Transfer" typref="1"/>
+                <Id value="Approve" typref="1"/>
+                <Id value="Decrypt" typref="1"/>
+                <Id value="Encrypt" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Message_Status" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Message" typref="1"/>
+                <Id value="Encrypted_Message" typref="1"/>
+                <Id value="Signed_Message" typref="1"/>
+                <Id value="Decrypted_Message" typref="1"/>
+                <Id value="Binary" typref="1"/>
+                <Id value="Encrypted_Binary" typref="1"/>
+                <Id value="Decrypted_Binary" typref="1"/>
+                <Id value="Signed_Binary" typref="1"/>
+                <Id value="Decrypted_Signed_Binary" typref="1"/>
+                <Id value="Vehicle_Data" typref="1"/>
+                <Id value="Encrypted_Vehicle_Data" typref="1"/>
+                <Id value="Signed_Vehicle_Data" typref="1"/>
+                <Id value="Decrypted_Vehicle_Data" typref="1"/>
+                <Id value="Encrypted_Update_Response" typref="1"/>
+                <Id value="Signed_Update_Response" typref="1"/>
+                <Id value="Encrypted_Written_Sourcecode" typref="1"/>
+                <Id value="Signed_Written_Sourcecode" typref="1"/>
+                <Id value="Decrypted_Signed_Sourcecode" typref="1"/>
+                <Id value="Encrypted_Sourcecode" typref="1"/>
+                <Id value="Signed_Sourcecode" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+    </Define>
+    <Define name="inprp" hash="0"/>
+    <Define name="inext" hash="0"/>
+    <Define name="inv" hash="3403180632">
+        <Exp_Comparison op=":">
+            <Id value="Subject" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:1:1"/>
+            <Id value="Subject_Agent" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:1:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Object" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:2:1"/>
+            <Id value="Encrypt_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Option" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:3:1"/>
+            <Id value="Encrypt_Mode" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:3:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Receive_Encrypt_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:4:1"/>
+            <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:4:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Receive_Sign_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:5:1"/>
+            <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:5:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Send_Encrypt_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:6:1"/>
+            <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:6:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Send_Sign_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:7:1"/>
+            <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:7:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Permission" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:8:1"/>
+            <Id value="Operation" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:8:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Encryption_Key_length" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:9:1"/>
+            <Id value="INT" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:9:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Test_Result" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:10:1"/>
+            <Id value="Crypto_Test_Result" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:10:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Unary_Exp op="card" typref="1">
+                <Id value="Encrypt_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:1:1"/>
+            </Unary_Exp>
+            <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Unary_Exp op="card" typref="1">
+                <Id value="Sign_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:1:1"/>
+            </Unary_Exp>
+            <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Unary_Exp op="card" typref="1">
+                <Id value="Hash_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:13:1:1"/>
+            </Unary_Exp>
+            <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:13:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Send_Target" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:14:1"/>
+            <Id value="Subject_Agent" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:14:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Data_Status" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:15:1"/>
+            <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:15:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ass" hash="0"/>
+    <Define name="cst" hash="0"/>
+    <Define name="sets" hash="3319773535">
+        <Set>
+            <Id value="Subject_Agent" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Agent" typref="1"/>
+                <Id value="Secondary_ECU" typref="1"/>
+                <Id value="Auto_Repair_Shop" typref="1"/>
+                <Id value="Vehicle" typref="1"/>
+                <Id value="Development_Server" typref="1"/>
+                <Id value="Diagnostic_Server" typref="1"/>
+                <Id value="Update_Server" typref="1"/>
+                <Id value="CRM_Server" typref="1"/>
+                <Id value="Developer_PC" typref="1"/>
+                <Id value="DiagnosticTester_PC" typref="1"/>
+                <Id value="Engineer_PC" typref="1"/>
+                <Id value="OEM_TeamLeader" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Encrypt_Method" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Encrypt_Method" typref="1"/>
+                <Id value="AES" typref="1"/>
+                <Id value="Camelia" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Encrypt_Mode" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Mode" typref="1"/>
+                <Id value="ECB" typref="1"/>
+                <Id value="OFB" typref="1"/>
+                <Id value="CFB" typref="1"/>
+                <Id value="CTR" typref="1"/>
+                <Id value="CBC" typref="1"/>
+                <Id value="GCM" typref="1"/>
+                <Id value="CCM" typref="1"/>
+                <Id value="Poly1303" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Crypto_Test_Result" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Crypto_Test_Pass" typref="1"/>
+                <Id value="Crypto_Test_Fail" typref="1"/>
+                <Id value="Signature_Verify_Pass" typref="1"/>
+                <Id value="Signature_Verify_Fail" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Sign_Method" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Sign_Method" typref="1"/>
+                <Id value="RSA" typref="1"/>
+                <Id value="Curve25519_Ed25519" typref="1"/>
+                <Id value="NIST_Curve_P256_P384_P521" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Hash_Method" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Hash_Method" typref="1"/>
+                <Id value="SHA_1" typref="1"/>
+                <Id value="SHA_2" typref="1"/>
+                <Id value="SHA_3" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Operation" typref="0"/>
+            <Enumerated_Values>
+                <Id value="None" typref="1"/>
+                <Id value="Download" typref="1"/>
+                <Id value="Upload" typref="1"/>
+                <Id value="Fix" typref="1"/>
+                <Id value="Transfer" typref="1"/>
+                <Id value="Approve" typref="1"/>
+                <Id value="Decrypt" typref="1"/>
+                <Id value="Encrypt" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Message_Status" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Message" typref="1"/>
+                <Id value="Encrypted_Message" typref="1"/>
+                <Id value="Signed_Message" typref="1"/>
+                <Id value="Decrypted_Message" typref="1"/>
+                <Id value="Binary" typref="1"/>
+                <Id value="Encrypted_Binary" typref="1"/>
+                <Id value="Decrypted_Binary" typref="1"/>
+                <Id value="Signed_Binary" typref="1"/>
+                <Id value="Decrypted_Signed_Binary" typref="1"/>
+                <Id value="Vehicle_Data" typref="1"/>
+                <Id value="Encrypted_Vehicle_Data" typref="1"/>
+                <Id value="Signed_Vehicle_Data" typref="1"/>
+                <Id value="Decrypted_Vehicle_Data" typref="1"/>
+                <Id value="Encrypted_Update_Response" typref="1"/>
+                <Id value="Signed_Update_Response" typref="1"/>
+                <Id value="Encrypted_Written_Sourcecode" typref="1"/>
+                <Id value="Signed_Written_Sourcecode" typref="1"/>
+                <Id value="Decrypted_Signed_Sourcecode" typref="1"/>
+                <Id value="Encrypted_Sourcecode" typref="1"/>
+                <Id value="Signed_Sourcecode" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+    </Define>
+    <Proof_Obligation goalHash="3694628124">
+        <Tag>Initialisation</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="Subject" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:1:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:1:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="Object" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:2:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:2:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="Option" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:3:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:3:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="Receive_Encrypt_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:4:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:4:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Exp_Comparison op=":">
+                <Id value="Receive_Sign_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:5:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:5:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="6">
+            <Exp_Comparison op=":">
+                <Id value="Send_Encrypt_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:6:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:6:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="7">
+            <Exp_Comparison op=":">
+                <Id value="Send_Sign_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:7:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:7:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="8">
+            <Exp_Comparison op=":">
+                <Id value="Permission" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:8:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:8:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="9">
+            <Exp_Comparison op=":">
+                <Id value="Encryption_Key_length" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:9:1:1"/>
+                <Id value="INT" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:9:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="10">
+            <Exp_Comparison op=":">
+                <Id value="Test_Result" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:10:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:10:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="11">
+            <Exp_Comparison op=":">
+                <Id value="Send_Target" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:11:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:11:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="12">
+            <Exp_Comparison op=":">
+                <Id value="Data_Status" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:12:1:1"/>
+                <EmptySet typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:4:1:12:2:1"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Invariant is preserved</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
+            <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
+            <Ref_Hyp num="9"/>
+            <Ref_Hyp num="10"/>
+            <Ref_Hyp num="11"/>
+            <Ref_Hyp num="12"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="card" typref="1">
+                        <Id value="Encrypt_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:1:1"/>
+                    </Unary_Exp>
+                    <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Invariant is preserved</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
+            <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
+            <Ref_Hyp num="9"/>
+            <Ref_Hyp num="10"/>
+            <Ref_Hyp num="11"/>
+            <Ref_Hyp num="12"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="card" typref="1">
+                        <Id value="Sign_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:1:1"/>
+                    </Unary_Exp>
+                    <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Invariant is preserved</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
+            <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
+            <Ref_Hyp num="9"/>
+            <Ref_Hyp num="10"/>
+            <Ref_Hyp num="11"/>
+            <Ref_Hyp num="12"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="card" typref="1">
+                        <Id value="Hash_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:13:1:1"/>
+                    </Unary_Exp>
+                    <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:13:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3403180632">
+        <Tag>WellDefinednessInvariant</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="Subject" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:1:1"/>
+                <Id value="Subject_Agent" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="Object" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:2:1"/>
+                <Id value="Encrypt_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:2:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="Option" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:3:1"/>
+                <Id value="Encrypt_Mode" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:3:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="Receive_Encrypt_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:4:1"/>
+                <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:4:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Exp_Comparison op=":">
+                <Id value="Receive_Sign_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:5:1"/>
+                <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:5:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="6">
+            <Exp_Comparison op=":">
+                <Id value="Send_Encrypt_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:6:1"/>
+                <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:6:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="7">
+            <Exp_Comparison op=":">
+                <Id value="Send_Sign_Message" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:7:1"/>
+                <Id value="Message_Status" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:7:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="8">
+            <Exp_Comparison op=":">
+                <Id value="Permission" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:8:1"/>
+                <Id value="Operation" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:8:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="9">
+            <Exp_Comparison op=":">
+                <Id value="Encryption_Key_length" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:9:1"/>
+                <Id value="INT" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:9:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="10">
+            <Exp_Comparison op=":">
+                <Id value="Test_Result" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:10:1"/>
+                <Id value="Crypto_Test_Result" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:10:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="11">
+            <Exp_Comparison op="=">
+                <Unary_Exp op="card" typref="1">
+                    <Id value="Encrypt_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:1:1"/>
+                </Unary_Exp>
+                <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="12">
+            <Exp_Comparison op="=">
+                <Unary_Exp op="card" typref="1">
+                    <Id value="Sign_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:1:1"/>
+                </Unary_Exp>
+                <Integer_Literal value="1" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Invariant is well defined</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
+            <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
+            <Ref_Hyp num="9"/>
+            <Ref_Hyp num="10"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Encrypt_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:1:1"/>
+                    <Unary_Exp op="FIN" typref="2">
+                        <Id value="Encrypt_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:11:1:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Invariant is well defined</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
+            <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
+            <Ref_Hyp num="9"/>
+            <Ref_Hyp num="10"/>
+            <Ref_Hyp num="11"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Sign_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:1:1"/>
+                    <Unary_Exp op="FIN" typref="2">
+                        <Id value="Sign_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:12:1:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Invariant is well defined</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
+            <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
+            <Ref_Hyp num="9"/>
+            <Ref_Hyp num="10"/>
+            <Ref_Hyp num="11"/>
+            <Ref_Hyp num="12"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Hash_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:13:1:1"/>
+                    <Unary_Exp op="FIN" typref="2">
+                        <Id value="Hash_Method" typref="0" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Crypto.bxml:1:3:1:13:1:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER"/>
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER"/>
+        </Type>
+        <Type id="2">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Id value="INTEGER"/>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

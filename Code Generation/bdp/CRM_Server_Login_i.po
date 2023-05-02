@@ -1,0 +1,46 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(10) & _f(11) & Operation_access_grant.6,(_f(15) & _f(3) => _f(21));
+_f(1) & _f(2) & _f(10) & _f(11) & Operation_access_grant.5,(_f(15) & _f(3) => _f(20));
+_f(1) & _f(2) & _f(10) & _f(11) & Operation_access_grant.4,(_f(15) & _f(3) => _f(19));
+_f(1) & _f(2) & _f(10) & _f(11) & Operation_access_grant.3,(_f(12) & _f(13) & _f(14) & _f(3) => _f(18));
+_f(1) & _f(2) & _f(10) & _f(11) & Operation_access_grant.2,(_f(12) & _f(13) & _f(14) & _f(3) => _f(17));
+_f(1) & _f(2) & _f(10) & _f(11) & Operation_access_grant.1,(_f(12) & _f(13) & _f(14) & _f(3) => _f(16));
+_f(1) & _f(2) & Initialisation.6,(_f(3) => _f(9));
+_f(1) & _f(2) & Initialisation.5,(_f(3) => _f(8));
+_f(1) & _f(2) & Initialisation.4,(_f(3) => _f(7));
+_f(1) & _f(2) & Initialisation.3,(_f(3) => _f(6));
+_f(1) & _f(2) & Initialisation.2,(_f(3) => _f(5));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((1..6)*{Access_ID}): FIN(NATURAL*{Access_ID})& not(((1..6)*{Access_ID}) = {}) & ((1..4)*{Access_Password}): FIN(NATURAL*{Access_Password})& not(((1..4)*{Access_Password}) = {}) & ((1..11)*{Access_Agent}): FIN(NATURAL*{Access_Agent})& not(((1..11)*{Access_Agent}) = {}) & ((1..9)*{Operation}): FIN(NATURAL*{Operation})& not(((1..9)*{Operation}) = {}) & ((1..2)*{Access_grant}): FIN(NATURAL*{Access_grant})& not(((1..2)*{Access_grant}) = {});
+"Refinement is correct";
+(((1|->Access_ID)) : ({}));
+(((1|->Access_Password)) : ({}));
+(((1|->Access_Agent)) : ({}));
+((0) : (INT));
+(((1|->Operation)) : ({}));
+(((2|->Access_grant)) : ({}));
+((Input_ID) : (((1..6)*{Access_ID}))) & ((Input_Password) : (((1..4)*{Access_Password}))) & ((Input_Agent) : (((1..11)*{Access_Agent}))) & ((Login_Try) : (INT)) & ((Permission) : (((1..9)*{Operation}))) & ((Agent) : (((1..2)*{Access_grant})));
+((Input_ID) = (Input_ID$1)) & ((Input_Password) = (Input_Password$1)) & ((Input_Agent) = (Input_Agent$1)) & ((Login_Try) = (Login_Try$1)) & ((Permission) = (Permission$1)) & ((Agent) = (Agent$1));
+((Input_ID$1) = ((4|->Access_ID)));
+((Input_Agent$1) = ((4|->Access_Agent)));
+(Login_Try$1 <= 5);
+not(((Input_ID$1) = ((4|->Access_ID))) & ((Input_Agent$1) = ((4|->Access_Agent))) & (Login_Try$1 <= 5));
+((Login_Try$1) = (0));
+((Permission$1) = ((6|->Operation)));
+((Agent$1) = ((1|->Access_grant)));
+((Login_Try$1) = ((Login_Try$1 + 1)));
+((Permission$1) = ((1|->Operation)));
+((Agent$1) = ((2|->Access_grant)))
+END
+&
+THEORY EnumerateX IS
+Access_Agent == {Empty_Agent,Secondary_ECU,Auto_Repair_Shop,Vehicle,Development_Server,Diagnostic_Server,Update_Server,CRM_Server,Developer_PC,DiagnosticTester_PC,Engineer_PC};
+Access_ID == {Empty_ID,OEM_TeamLeader_ID,OEM_TeamMember_ID,Vehicle_ID,Update_Server_ID,Engineer_ID};
+Access_Password == {Empty_Password,Engineer_Password,OEM_TeamLeader_Password,OEM_TeamMember_Password};
+Access_grant == {Access_Success,Access_Fail};
+Operation == {None,All,Upload,Fix,Transfer,Download,Approve,Upload_Fix_Transfer,Upload_Fix_Transfer_Download_Approve}
+END
