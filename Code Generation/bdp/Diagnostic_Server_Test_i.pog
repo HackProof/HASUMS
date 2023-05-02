@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="4145786887">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0"/>
+    <Define name="seext" hash="0"/>
+    <Define name="mchcst" hash="0"/>
+    <Define name="aprp" hash="3854263028">
+        <Set>
+            <Id value="Result" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Valid" typref="1"/>
+                <Id value="Invalid" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Quality_Test" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Patchfile_error" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Compatibility_Test" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Hardware_Compatibility" typref="1"/>
+                <Id value="Software_Compatibility" typref="1"/>
+                <Id value="Network_Compatibility" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Hardware_Test" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Hardware" typref="1"/>
+                <Id value="Memory_Type" typref="1"/>
+                <Id value="Memory_Size" typref="1"/>
+                <Id value="Memory_Speed" typref="1"/>
+                <Id value="Input_Device" typref="1"/>
+                <Id value="Output_Device" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Software_Test" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Software" typref="1"/>
+                <Id value="Windows" typref="1"/>
+                <Id value="Linux" typref="1"/>
+                <Id value="Mac" typref="1"/>
+                <Id value="Current_Version_Software" typref="1"/>
+                <Id value="Other_Version_Software" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Network_Test" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Network" typref="1"/>
+                <Id value="Wifi" typref="1"/>
+                <Id value="Data_Network" typref="1"/>
+                <Id value="Bluetooth" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Deveop_Language" typref="0"/>
+            <Enumerated_Values>
+                <Id value="C_Language" typref="1"/>
+                <Id value="C_Plus_Language" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Patchfile_Format" typref="0"/>
+            <Enumerated_Values>
+                <Id value="None" typref="1"/>
+                <Id value="Sourcecode" typref="1"/>
+                <Id value="Binary" typref="1"/>
+                <Id value="Encrypted_Binary" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Coding_Standard" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Misra_C" typref="1"/>
+                <Id value="Misra_C_Plus" typref="1"/>
+                <Id value="AUTOSAR_C_Plus" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Sourcecode_Format" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Written_Sourcecode" typref="1"/>
+                <Id value="Writing_Sourcecode" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+    </Define>
+    <Define name="abs" hash="1043056">
+        <Exp_Comparison op=":">
+            <Id value="Language" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:1:1"/>
+            <Id value="Deveop_Language" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:1:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Standard" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:2:1"/>
+            <Id value="Coding_Standard" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Sourcecode_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:3:1"/>
+            <Id value="Result" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:3:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Patchfile_Status" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:4:1"/>
+            <Id value="Patchfile_Format" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:4:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Patchfile_Execution_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:5:1"/>
+            <Id value="Quality_Test" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:5:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Qulity_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:6:1"/>
+            <Id value="Result" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:6:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Hardware_Compatibility_Test" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:7:1"/>
+            <Id value="Hardware_Test" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:7:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Software_Compatibility_Test" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:8:1"/>
+            <Id value="Software_Test" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:8:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Network_Compatibility_Test" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:9:1"/>
+            <Id value="Network_Test" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:9:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Hardware_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:10:1"/>
+            <Id value="Result" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:10:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Software_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:11:1"/>
+            <Id value="Result" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:11:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Network_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:12:1"/>
+            <Id value="Result" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:12:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Compatibility_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:13:1"/>
+            <Id value="Result" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:3:1:13:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="inv" hash="3355144649">
+        <Exp_Comparison op="=">
+            <Id value="Language" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:1"/>
+            <Id value="Language" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:1"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Standard" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2"/>
+            <Id value="Standard" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Sourcecode_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3"/>
+            <Id value="Sourcecode_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Patchfile_Status" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4"/>
+            <Id value="Patchfile_Status" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Patchfile_Execution_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:5"/>
+            <Id value="Patchfile_Execution_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:5"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Qulity_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6"/>
+            <Id value="Qulity_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Hardware_Compatibility_Test" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7"/>
+            <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Software_Compatibility_Test" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8"/>
+            <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Network_Compatibility_Test" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9"/>
+            <Id value="Network_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Hardware_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:10"/>
+            <Id value="Hardware_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:10"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Software_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:11"/>
+            <Id value="Software_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:11"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Network_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:12"/>
+            <Id value="Network_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:12"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Compatibility_Test_Result" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13"/>
+            <Id value="Compatibility_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ass" hash="0"/>
+    <Define name="sets" hash="0"/>
+    <Define name="imlprp" hash="0"/>
+    <Define name="imprp" hash="0"/>
+    <Define name="imext" hash="0"/>
+    <Proof_Obligation goalHash="4120560502">
+        <Tag>Initialisation</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="imlprp"/>
+        <Definition name="imprp"/>
+        <Definition name="imext"/>
+        <Definition name="seext"/>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="C_Language" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:1:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:1:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Misra_C" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:2:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:2:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:2:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Invalid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:3:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:3:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:3:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="None" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:4:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:4:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:4:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Patchfile_error" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:5:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:5,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:5:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:5:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Empty_Hardware" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:7:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:7:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:7:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Empty_Software" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:8:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:8:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:8:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Empty_Network" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:9:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:2:1:9:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:4:1:9:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3568227977">
+        <Tag>Operation_sourcecode_test</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="imlprp"/>
+        <Definition name="imprp"/>
+        <Definition name="imext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Local_Hyp num="1">
+            <Exp_Comparison op="=">
+                <Id value="Language" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:1:1,"/>
+                <Id value="C_Language" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op="=">
+                <Id value="Standard" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:2:1,"/>
+                <Id value="Misra_C" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:2:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Unary_Pred op="not">
+                <Nary_Pred op="&amp;">
+                    <Exp_Comparison op="=">
+                        <Id value="Language" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:1:1,"/>
+                        <Id value="C_Language" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:1:2"/>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Id value="Standard" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:2:1,"/>
+                        <Id value="Misra_C" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:1:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Nary_Pred op="or">
+                <Nary_Pred op="&amp;">
+                    <Exp_Comparison op="=">
+                        <Id value="Language" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:1:1,"/>
+                        <Id value="C_Plus_Language" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:1:2"/>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Id value="Standard" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:2:1,"/>
+                        <Id value="Misra_C_Plus" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+                <Exp_Comparison op="=">
+                    <Id value="Standard" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:2:1,"/>
+                    <Id value="AUTOSAR_C_Plus" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:2:2"/>
+                </Exp_Comparison>
+            </Nary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Unary_Pred op="not">
+                <Nary_Pred op="or">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op="=">
+                            <Id value="Language" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:1:1,"/>
+                            <Id value="C_Plus_Language" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:1:2"/>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="Standard" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:2:1,"/>
+                            <Id value="Misra_C_Plus" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:1:2:2"/>
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Exp_Comparison op="=">
+                        <Id value="Standard" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:2:1,"/>
+                        <Id value="AUTOSAR_C_Plus" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:1:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Sourcecode_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3"/>
+                    <Id value="Valid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:2:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Sourcecode_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3"/>
+                    <Id value="Valid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:2:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="5"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Sourcecode_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3"/>
+                    <Id value="Invalid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:1:1:1:3:1:3:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2804627408">
+        <Tag>Operation_sourcecode_compile</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="imlprp"/>
+        <Definition name="imprp"/>
+        <Definition name="imext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Local_Hyp num="1">
+            <Exp_Comparison op="=">
+                <Id value="Sourcecode_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:2:1:1:1:1:1,"/>
+                <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:2:1:1:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Patchfile_Status" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4"/>
+                    <Id value="Binary" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:2:1:1:2:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1089385868">
+        <Tag>Operation_patchfile_quality_test</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="imlprp"/>
+        <Definition name="imprp"/>
+        <Definition name="imext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Local_Hyp num="1">
+            <Exp_Comparison op="=">
+                <Id value="Patchfile_Status" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:1:1,"/>
+                <Id value="Binary" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="Patchfile_Execution_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:5,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:2:1,"/>
+                    <Id value="Patchfile_error" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:2:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Unary_Pred op="not">
+                <Nary_Pred op="&amp;">
+                    <Exp_Comparison op="=">
+                        <Id value="Patchfile_Status" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:4,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:1:1,"/>
+                        <Id value="Binary" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:1:2"/>
+                    </Exp_Comparison>
+                    <Unary_Pred op="not">
+                        <Exp_Comparison op="=">
+                            <Id value="Patchfile_Execution_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:5,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:2:1,"/>
+                            <Id value="Patchfile_error" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:1:1:2:2"/>
+                        </Exp_Comparison>
+                    </Unary_Pred>
+                </Nary_Pred>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Qulity_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6"/>
+                    <Id value="Valid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:2:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Qulity_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6"/>
+                    <Id value="Invalid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:3:1:1:3:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1996950880">
+        <Tag>Operation_patchfile_compatibility_test</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="imlprp"/>
+        <Definition name="imprp"/>
+        <Definition name="imext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Local_Hyp num="1">
+            <Nary_Pred op="or">
+                <Nary_Pred op="&amp;">
+                    <Nary_Pred op="or">
+                        <Nary_Pred op="&amp;">
+                            <Nary_Pred op="or">
+                                <Nary_Pred op="&amp;">
+                                    <Exp_Comparison op="=">
+                                        <Id value="Qulity_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:1:1,"/>
+                                        <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:1:2"/>
+                                    </Exp_Comparison>
+                                    <Exp_Comparison op="=">
+                                        <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:2:1,"/>
+                                        <Id value="Memory_Type" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:2:2"/>
+                                    </Exp_Comparison>
+                                </Nary_Pred>
+                                <Exp_Comparison op="=">
+                                    <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:2:1,"/>
+                                    <Id value="Memory_Size" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:2:2"/>
+                                </Exp_Comparison>
+                                <Exp_Comparison op="=">
+                                    <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:3:1,"/>
+                                    <Id value="Memory_Speed" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:3:2"/>
+                                </Exp_Comparison>
+                                <Exp_Comparison op="=">
+                                    <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:4:1,"/>
+                                    <Id value="Input_Device" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:4:2"/>
+                                </Exp_Comparison>
+                                <Exp_Comparison op="=">
+                                    <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:5:1,"/>
+                                    <Id value="Output_Device" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:5:2"/>
+                                </Exp_Comparison>
+                            </Nary_Pred>
+                            <Exp_Comparison op="=">
+                                <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:2:1,"/>
+                                <Id value="Windows" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:2:2"/>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op="=">
+                            <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:2:1,"/>
+                            <Id value="Linux" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:2:2"/>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:3:1,"/>
+                            <Id value="Mac" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:3:2"/>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:4:1,"/>
+                            <Id value="Current_Version_Software" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:4:2"/>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:5:1,"/>
+                            <Id value="Other_Version_Software" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:5:2"/>
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Exp_Comparison op="=">
+                        <Id value="Network_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:2:1,"/>
+                        <Id value="Wifi" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+                <Exp_Comparison op="=">
+                    <Id value="Network_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:2:1,"/>
+                    <Id value="Data_Network" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:2:2"/>
+                </Exp_Comparison>
+                <Exp_Comparison op="=">
+                    <Id value="Network_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:3:1,"/>
+                    <Id value="Bluetooth" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:3:2"/>
+                </Exp_Comparison>
+            </Nary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op="=">
+                <Id value="Hardware_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:10,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:2:1,"/>
+                <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:2:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op="=">
+                <Id value="Software_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:11,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:3:1,"/>
+                <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:3:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op="=">
+                <Id value="Network_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:12,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:4:1,"/>
+                <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:4:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Unary_Pred op="not">
+                <Nary_Pred op="&amp;">
+                    <Nary_Pred op="or">
+                        <Nary_Pred op="&amp;">
+                            <Nary_Pred op="or">
+                                <Nary_Pred op="&amp;">
+                                    <Nary_Pred op="or">
+                                        <Nary_Pred op="&amp;">
+                                            <Exp_Comparison op="=">
+                                                <Id value="Qulity_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:6,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:1:1,"/>
+                                                <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:1:2"/>
+                                            </Exp_Comparison>
+                                            <Exp_Comparison op="=">
+                                                <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:2:1,"/>
+                                                <Id value="Memory_Type" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:1:2:2"/>
+                                            </Exp_Comparison>
+                                        </Nary_Pred>
+                                        <Exp_Comparison op="=">
+                                            <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:2:1,"/>
+                                            <Id value="Memory_Size" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:2:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:3:1,"/>
+                                            <Id value="Memory_Speed" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:3:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:4:1,"/>
+                                            <Id value="Input_Device" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:4:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Id value="Hardware_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:7,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:5:1,"/>
+                                            <Id value="Output_Device" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:1:5:2"/>
+                                        </Exp_Comparison>
+                                    </Nary_Pred>
+                                    <Exp_Comparison op="=">
+                                        <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:2:1,"/>
+                                        <Id value="Windows" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:1:2:2"/>
+                                    </Exp_Comparison>
+                                </Nary_Pred>
+                                <Exp_Comparison op="=">
+                                    <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:2:1,"/>
+                                    <Id value="Linux" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:2:2"/>
+                                </Exp_Comparison>
+                                <Exp_Comparison op="=">
+                                    <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:3:1,"/>
+                                    <Id value="Mac" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:3:2"/>
+                                </Exp_Comparison>
+                                <Exp_Comparison op="=">
+                                    <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:4:1,"/>
+                                    <Id value="Current_Version_Software" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:4:2"/>
+                                </Exp_Comparison>
+                                <Exp_Comparison op="=">
+                                    <Id value="Software_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:8,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:5:1,"/>
+                                    <Id value="Other_Version_Software" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:1:5:2"/>
+                                </Exp_Comparison>
+                            </Nary_Pred>
+                            <Exp_Comparison op="=">
+                                <Id value="Network_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:2:1,"/>
+                                <Id value="Wifi" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:1:2:2"/>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op="=">
+                            <Id value="Network_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:2:1,"/>
+                            <Id value="Data_Network" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:2:2"/>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="Network_Compatibility_Test" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:9,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:3:1,"/>
+                            <Id value="Bluetooth" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:1:3:2"/>
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Exp_Comparison op="=">
+                        <Id value="Hardware_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:10,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:2:1,"/>
+                        <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:2:2"/>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Id value="Software_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:11,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:3:1,"/>
+                        <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:3:2"/>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Id value="Network_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:12,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:4:1,"/>
+                        <Id value="Valid" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:1:1:4:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Compatibility_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13"/>
+                    <Id value="Valid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:2:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="5"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Compatibility_Test_Result" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13"/>
+                    <Id value="Invalid" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/PatchFile_Test.bxml:1:2:13,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Test_i.bxml:1:3:4:1:1:3:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER"/>
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER"/>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

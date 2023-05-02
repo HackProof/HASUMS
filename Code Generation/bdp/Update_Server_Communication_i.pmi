@@ -1,0 +1,79 @@
+THEORY BalanceX IS
+Update_Server_Communication_i,17,0,1,0,0,0,0;
+Initialisation,7,0,1,0,0,0,0;
+Operation_patchfile_encryption,1,0,0,0,0,0,0;
+Operation_receive_message,3,0,0,0,0,0,0;
+Operation_send_message,3,0,0,0,0,0,0;
+Operation_signature,2,0,0,0,0,0,0;
+Operation_signature_verify,1,0,0,0,0,0,0
+END
+&
+THEORY ProofState IS
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Proved(Rapide);
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved
+END
+&
+THEORY MethodList IS
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+pr;
+?;
+?;
+?;
+?;
+?
+END
+&
+THEORY PassList IS
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(Rapide),?;
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide);
+Force(0),(?; Rapide)
+END
+&
+THEORY Status IS
+Update_Server_Communication_i,17,0,1,0,0,0;
+Initialisation,7,0,1,0,0,0;
+Operation_patchfile_encryption,1,0,0,0,0,0;
+Operation_receive_message,3,0,0,0,0,0;
+Operation_send_message,3,0,0,0,0,0;
+Operation_signature,2,0,0,0,0,0;
+Operation_signature_verify,1,0,0,0,0,0
+END

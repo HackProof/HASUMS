@@ -1,0 +1,18 @@
+THEORY ProofList
+END
+&
+THEORY Formulas
+END
+&
+THEORY EnumerateX IS
+Coding_Standard == {Misra_C,Misra_C_Plus,AUTOSAR_C_Plus};
+Compatibility_Test == {Hardware_Compatibility,Software_Compatibility,Network_Compatibility};
+Deveop_Language == {C_Language,C_Plus_Language};
+Hardware_Test == {Empty_Hardware,Memory_Type,Memory_Size,Memory_Speed,Input_Device,Output_Device};
+Network_Test == {Empty_Network,Wifi,Data_Network,Bluetooth};
+Patchfile_Format == {None,Sourcecode,Binary,Encrypted_Binary};
+Quality_Test == {Patchfile_error};
+Result == {Valid,Invalid};
+Software_Test == {Empty_Software,Windows,Linux,Mac,Current_Version_Software,Other_Version_Software};
+Sourcecode_Format == {Written_Sourcecode,Writing_Sourcecode}
+END

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="4145786887">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0"/>
+    <Define name="seext" hash="0"/>
+    <Define name="mchcst" hash="0"/>
+    <Define name="aprp" hash="1853274731">
+        <Set>
+            <Id value="Access_Agent" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_Agent" typref="1"/>
+                <Id value="Secondary_ECU" typref="1"/>
+                <Id value="Auto_Repair_Shop" typref="1"/>
+                <Id value="Vehicle" typref="1"/>
+                <Id value="Development_Server" typref="1"/>
+                <Id value="Diagnostic_Server" typref="1"/>
+                <Id value="Update_Server" typref="1"/>
+                <Id value="CRM_Server" typref="1"/>
+                <Id value="Developer_PC" typref="1"/>
+                <Id value="DiagnosticTester_PC" typref="1"/>
+                <Id value="Engineer_PC" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Access_IP" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Empty_IP" typref="1"/>
+                <Id value="Development_Server_IP" typref="1"/>
+                <Id value="Diagnostic_Server_IP" typref="1"/>
+                <Id value="Update_Server_IP" typref="1"/>
+                <Id value="CRM_Server_IP" typref="1"/>
+                <Id value="Vehicle_IP" typref="1"/>
+                <Id value="Engineer_PC_IP" typref="1"/>
+                <Id value="Developer_PC_IP" typref="1"/>
+                <Id value="DiagnosticTester_PC_IP" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Access_IP_List" typref="0"/>
+            <Enumerated_Values>
+                <Id value="IP_Unknown" typref="1"/>
+                <Id value="IP_Whitelist" typref="1"/>
+                <Id value="IP_Blacklist" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="Access_grant" typref="0"/>
+            <Enumerated_Values>
+                <Id value="Access_Success" typref="1"/>
+                <Id value="Access_Fail" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+    </Define>
+    <Define name="abs" hash="221661811">
+        <Exp_Comparison op=":">
+            <Id value="Input_Agent" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:1:1"/>
+            <Id value="Access_Agent" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:1:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Input_IP" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:2:1"/>
+            <Id value="Access_IP" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Input_IP_List" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:3:1"/>
+            <Id value="Access_IP_List" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:3:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Input_Port" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:4:1"/>
+            <Id value="INT" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:4:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Available_Port" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:5:1"/>
+            <Id value="INT" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:5:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="Agent" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:6:1"/>
+            <Id value="Access_grant" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:3:1:6:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="inv" hash="1855702769">
+        <Exp_Comparison op="=">
+            <Id value="Input_Agent" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:1"/>
+            <Id value="Input_Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:1"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Input_IP" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:2"/>
+            <Id value="Input_IP" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Input_IP_List" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:3"/>
+            <Id value="Input_IP_List" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:3"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Available_Port" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:4"/>
+            <Id value="Available_Port" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:4"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Input_Port" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:5"/>
+            <Id value="Input_Port" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:5"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="Agent" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6"/>
+            <Id value="Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ass" hash="0"/>
+    <Define name="sets" hash="0"/>
+    <Define name="imlprp" hash="0"/>
+    <Define name="imprp" hash="0"/>
+    <Define name="imext" hash="0"/>
+    <Proof_Obligation goalHash="2463346595">
+        <Tag>Initialisation</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="imlprp"/>
+        <Definition name="imprp"/>
+        <Definition name="imext"/>
+        <Definition name="seext"/>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Empty_Agent" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:1:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:2:1:1:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Empty_IP" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:2:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:2:1:2:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:2:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="IP_Unknown" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:3:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:2:1:3:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:3:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="0" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:4:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:5,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:2:1:5:2:1"/>
+                    <Id value="INT" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:4:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="443" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:5:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:4,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:2:1:4:2:1"/>
+                    <Id value="INT" typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:5:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="Access_Fail" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:6:1:1,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:2:1:6:2:1"/>
+                    <EmptySet typref="0" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:4:1:6:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3455956650">
+        <Tag>Operation_access_control</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="imlprp"/>
+        <Definition name="imprp"/>
+        <Definition name="imext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Local_Hyp num="1">
+            <Nary_Pred op="or">
+                <Nary_Pred op="&amp;">
+                    <Nary_Pred op="or">
+                        <Exp_Comparison op="=">
+                            <Id value="Input_Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:1:1,"/>
+                            <Id value="Development_Server" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:1:2"/>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="Input_Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:2:1,"/>
+                            <Id value="DiagnosticTester_PC" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:2:2"/>
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Exp_Comparison op="=">
+                        <Id value="Input_IP" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:2:1,"/>
+                        <Id value="Development_Server_IP" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+                <Exp_Comparison op="=">
+                    <Id value="Input_IP" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:2:1,"/>
+                    <Id value="DiagnosticTester_PC_IP" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:2:2"/>
+                </Exp_Comparison>
+            </Nary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op="=">
+                <Id value="Input_Port" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:5,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:2:1,"/>
+                <Id value="Available_Port" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:4,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:2:2,"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="Input_IP_List" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:3:1,"/>
+                    <Id value="IP_Blacklist" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:3:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Unary_Pred op="not">
+                <Nary_Pred op="&amp;">
+                    <Nary_Pred op="or">
+                        <Nary_Pred op="&amp;">
+                            <Nary_Pred op="or">
+                                <Exp_Comparison op="=">
+                                    <Id value="Input_Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:1:1,"/>
+                                    <Id value="Development_Server" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:1:2"/>
+                                </Exp_Comparison>
+                                <Exp_Comparison op="=">
+                                    <Id value="Input_Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:1,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:2:1,"/>
+                                    <Id value="DiagnosticTester_PC" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:1:2:2"/>
+                                </Exp_Comparison>
+                            </Nary_Pred>
+                            <Exp_Comparison op="=">
+                                <Id value="Input_IP" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:2:1,"/>
+                                <Id value="Development_Server_IP" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:1:2:2"/>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op="=">
+                            <Id value="Input_IP" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:2,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:2:1,"/>
+                            <Id value="DiagnosticTester_PC_IP" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:1:2:2"/>
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Exp_Comparison op="=">
+                        <Id value="Input_Port" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:5,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:2:1,"/>
+                        <Id value="Available_Port" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:4,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:2:2,"/>
+                    </Exp_Comparison>
+                    <Unary_Pred op="not">
+                        <Exp_Comparison op="=">
+                            <Id value="Input_IP_List" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:3,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:3:1,"/>
+                            <Id value="IP_Blacklist" typref="1" tag="C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:1:1:3:2"/>
+                        </Exp_Comparison>
+                    </Unary_Pred>
+                </Nary_Pred>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6"/>
+                    <Id value="Access_Success" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:2:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Id value="Agent" suffix="1" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6,C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6"/>
+                    <Id value="Access_Fail" typref="1" tag="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS/bdp\/Network.bxml:1:2:6,C:\Users\SANE\Desktop\AtelierB\Secure_SUMS\bdp\Diagnostic_Server_Firewall_i.bxml:1:3:1:1:1:3:1:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER"/>
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER"/>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Proof_Obligations author="pmi2Pos" version="1.0" xmlns="https://www.atelierb.eu/Formats/pog">
+<Proof_Obligation>
+<Tag>Initialisation</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(Rapide)" methodList="pr" passList="Force(Rapide),?"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_receive_message</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_signature_verify</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_patchfile_encryption</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_signature</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_send_message</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" methodList="?" passList="Force(0),(?; Rapide)"/>
+</Simple_Goal>
+</Proof_Obligation>
+</Proof_Obligations>

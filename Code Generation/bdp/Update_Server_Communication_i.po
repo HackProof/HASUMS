@@ -1,0 +1,76 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_send_message.3,(_f(38) & _f(40) & _f(3) => _f(43));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_send_message.2,(_f(38) & _f(39) & _f(36) & _f(37) & _f(3) => _f(42));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_send_message.1,(_f(35) & _f(36) & _f(37) & _f(3) => _f(41));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_signature.2,(_f(33) & _f(3) => _f(19));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_signature.1,(_f(29) & _f(30) & _f(31) & _f(32) & _f(3) => _f(34));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_patchfile_encryption.1,(_f(27) & _f(28) & _f(3) => _f(29));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_signature_verify.1,(_f(20) & _f(21) & _f(22) & _f(23) & _f(24) & _f(25) & _f(3) => _f(26));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_receive_message.3,(_f(16) & _f(3) => _f(19));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_receive_message.2,(_f(13) & _f(14) & _f(15) & _f(3) => _f(18));
+_f(1) & _f(2) & _f(11) & _f(12) & Operation_receive_message.1,(_f(13) & _f(14) & _f(15) & _f(3) => _f(17));
+_f(1) & _f(2) & Initialisation.7,(_f(3) => _f(10));
+_f(1) & _f(2) & Initialisation.6,(_f(3) => _f(9));
+_f(1) & _f(2) & Initialisation.5,(_f(3) => _f(8));
+_f(1) & _f(2) & Initialisation.4,(_f(3) => _f(7));
+_f(1) & _f(2) & Initialisation.3,(_f(3) => _f(6));
+_f(1) & _f(2) & Initialisation.2,(_f(3) => _f(5));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((1..12)*{Subject_Agent}): FIN(NATURAL*{Subject_Agent})& not(((1..12)*{Subject_Agent}) = {}) & ((1..3)*{Encrypt_Method}): FIN(NATURAL*{Encrypt_Method})& not(((1..3)*{Encrypt_Method}) = {}) & ((1..9)*{Encrypt_Mode}): FIN(NATURAL*{Encrypt_Mode})& not(((1..9)*{Encrypt_Mode}) = {}) & ((1..4)*{Crypto_Test_Result}): FIN(NATURAL*{Crypto_Test_Result})& not(((1..4)*{Crypto_Test_Result}) = {}) & ((1..4)*{Sign_Method}): FIN(NATURAL*{Sign_Method})& not(((1..4)*{Sign_Method}) = {}) & ((1..4)*{Hash_Method}): FIN(NATURAL*{Hash_Method})& not(((1..4)*{Hash_Method}) = {}) & ((1..8)*{Operation}): FIN(NATURAL*{Operation})& not(((1..8)*{Operation}) = {}) & ((1..20)*{Message_Status}): FIN(NATURAL*{Message_Status})& not(((1..20)*{Message_Status}) = {});
+"Refinement is correct";
+(((1|->Subject_Agent)) : ({}));
+(((1|->Encrypt_Method)) : ({}));
+(((1|->Encrypt_Mode)) : ({}));
+(((1|->Message_Status)) : ({}));
+(((1|->Operation)) : ({}));
+((0) : (INT));
+(((2|->Crypto_Test_Result)) : ({}));
+((Subject) : (((1..12)*{Subject_Agent}))) & ((Object) : (((1..3)*{Encrypt_Method}))) & ((Option) : (((1..9)*{Encrypt_Mode}))) & ((Receive_Encrypt_Message) : (((1..20)*{Message_Status}))) & ((Receive_Sign_Message) : (((1..20)*{Message_Status}))) & ((Send_Encrypt_Message) : (((1..20)*{Message_Status}))) & ((Send_Sign_Message) : (((1..20)*{Message_Status}))) & ((Permission) : (((1..8)*{Operation}))) & ((Encryption_Key_length) : (INT)) & ((Test_Result) : (((1..4)*{Crypto_Test_Result}))) & ((card(((1..3)*{Encrypt_Method}))) = (1)) & ((card(((1..4)*{Sign_Method}))) = (1)) & ((card(((1..4)*{Hash_Method}))) = (1)) & ((Send_Target) : (((1..12)*{Subject_Agent}))) & ((Data_Status) : (((1..20)*{Message_Status})));
+((Subject) = (Subject$1)) & ((Object) = (Object$1)) & ((Option) = (Option$1)) & ((Receive_Encrypt_Message) = (Receive_Encrypt_Message$1)) & ((Receive_Sign_Message) = (Receive_Sign_Message$1)) & ((Send_Encrypt_Message) = (Send_Encrypt_Message$1)) & ((Send_Sign_Message) = (Send_Sign_Message$1)) & ((Permission) = (Permission$1)) & ((Encryption_Key_length) = (Encryption_Key_length$1)) & ((Test_Result) = (Test_Result$1)) & ((Send_Target) = (Send_Target$1)) & ((Data_Status) = (Data_Status$1));
+((((((((Subject$1) = ((6|->Subject_Agent)))) or (((Subject$1) = ((7|->Subject_Agent))))) & ((Object$1) = ((2|->Encrypt_Method))) & ((Encryption_Key_length$1) = (512))) or (((Encryption_Key_length$1) = (1024))) or (((Encryption_Key_length$1) = (2048)))) & ((Option$1) = ((2|->Encrypt_Mode)))) or (((Option$1) = ((3|->Encrypt_Mode)))) or (((Option$1) = ((4|->Encrypt_Mode)))) or (((Option$1) = ((5|->Encrypt_Mode)))) or (((Option$1) = ((6|->Encrypt_Mode)))) or (((Option$1) = ((7|->Encrypt_Mode)))) or (((Option$1) = ((8|->Encrypt_Mode)))));
+((Receive_Encrypt_Message$1) = ((6|->Message_Status)));
+((Receive_Sign_Message$1) = ((8|->Message_Status)));
+not(((((((((Subject$1) = ((6|->Subject_Agent)))) or (((Subject$1) = ((7|->Subject_Agent))))) & ((Object$1) = ((2|->Encrypt_Method))) & ((Encryption_Key_length$1) = (512))) or (((Encryption_Key_length$1) = (1024))) or (((Encryption_Key_length$1) = (2048)))) & ((Option$1) = ((2|->Encrypt_Mode)))) or (((Option$1) = ((3|->Encrypt_Mode)))) or (((Option$1) = ((4|->Encrypt_Mode)))) or (((Option$1) = ((5|->Encrypt_Mode)))) or (((Option$1) = ((6|->Encrypt_Mode)))) or (((Option$1) = ((7|->Encrypt_Mode)))) or (((Option$1) = ((8|->Encrypt_Mode))))) & ((Receive_Encrypt_Message$1) = ((6|->Message_Status))) & ((Receive_Sign_Message$1) = ((8|->Message_Status))));
+((Subject$1) = ((7|->Subject_Agent)));
+((Permission$1) = ((2|->Operation)));
+((Permission$1) = ((1|->Operation)));
+((Timestamp) : (NAT));
+((Current_Timestamp) : (NAT));
+((Timestamp_Subtraction) : (NAT));
+((Data_Status$1) = ((9|->Message_Status)));
+(Timestamp +1 <= Current_Timestamp);
+(Timestamp_Subtraction +1 <= 100);
+(((4|->Crypto_Test_Result)) = ((3|->Crypto_Test_Result)));
+((Data_Status$1) = ((5|->Message_Status)));
+((Permission$1) = ((8|->Operation)));
+((Data_Status$1) = ((6|->Message_Status)));
+((Data_Status$1) = ((8|->Message_Status)));
+((Subject$1) = ((12|->Subject_Agent)));
+((Permission$1) = ((6|->Operation)));
+not(((Data_Status$1) = ((6|->Message_Status))) & ((Data_Status$1) = ((8|->Message_Status))) & ((Subject$1) = ((12|->Subject_Agent))) & ((Permission$1) = ((6|->Operation))));
+((Permission$1) = ((5|->Operation)));
+((((((((Subject$1) = ((7|->Subject_Agent)))) or (((Subject$1) = ((4|->Subject_Agent))))) & ((Object$1) = ((2|->Encrypt_Method))) & ((Encryption_Key_length$1) = (512))) or (((Encryption_Key_length$1) = (1024))) or (((Encryption_Key_length$1) = (2048)))) & ((Option$1) = ((2|->Encrypt_Mode)))) or (((Option$1) = ((3|->Encrypt_Mode)))) or (((Option$1) = ((4|->Encrypt_Mode)))) or (((Option$1) = ((5|->Encrypt_Mode)))) or (((Option$1) = ((6|->Encrypt_Mode)))) or (((Option$1) = ((7|->Encrypt_Mode)))) or (((Option$1) = ((8|->Encrypt_Mode)))));
+((Send_Encrypt_Message$1) = ((6|->Message_Status)));
+((Send_Sign_Message$1) = ((8|->Message_Status)));
+not(((((((((Subject$1) = ((7|->Subject_Agent)))) or (((Subject$1) = ((4|->Subject_Agent))))) & ((Object$1) = ((2|->Encrypt_Method))) & ((Encryption_Key_length$1) = (512))) or (((Encryption_Key_length$1) = (1024))) or (((Encryption_Key_length$1) = (2048)))) & ((Option$1) = ((2|->Encrypt_Mode)))) or (((Option$1) = ((3|->Encrypt_Mode)))) or (((Option$1) = ((4|->Encrypt_Mode)))) or (((Option$1) = ((5|->Encrypt_Mode)))) or (((Option$1) = ((6|->Encrypt_Mode)))) or (((Option$1) = ((7|->Encrypt_Mode)))) or (((Option$1) = ((8|->Encrypt_Mode))))) & ((Send_Encrypt_Message$1) = ((6|->Message_Status))) & ((Send_Sign_Message$1) = ((8|->Message_Status))));
+((((((((Subject$1) = ((7|->Subject_Agent)))) or (((Subject$1) = ((3|->Subject_Agent))))) & ((Object$1) = ((2|->Encrypt_Method))) & ((Encryption_Key_length$1) = (512))) or (((Encryption_Key_length$1) = (1024))) or (((Encryption_Key_length$1) = (2048)))) & ((Option$1) = ((2|->Encrypt_Mode)))) or (((Option$1) = ((3|->Encrypt_Mode)))) or (((Option$1) = ((4|->Encrypt_Mode)))) or (((Option$1) = ((5|->Encrypt_Mode)))) or (((Option$1) = ((6|->Encrypt_Mode)))) or (((Option$1) = ((7|->Encrypt_Mode)))) or (((Option$1) = ((8|->Encrypt_Mode)))));
+not(((((((((Subject$1) = ((7|->Subject_Agent)))) or (((Subject$1) = ((3|->Subject_Agent))))) & ((Object$1) = ((2|->Encrypt_Method))) & ((Encryption_Key_length$1) = (512))) or (((Encryption_Key_length$1) = (1024))) or (((Encryption_Key_length$1) = (2048)))) & ((Option$1) = ((2|->Encrypt_Mode)))) or (((Option$1) = ((3|->Encrypt_Mode)))) or (((Option$1) = ((4|->Encrypt_Mode)))) or (((Option$1) = ((5|->Encrypt_Mode)))) or (((Option$1) = ((6|->Encrypt_Mode)))) or (((Option$1) = ((7|->Encrypt_Mode)))) or (((Option$1) = ((8|->Encrypt_Mode))))) & ((Send_Encrypt_Message$1) = ((6|->Message_Status))) & ((Send_Sign_Message$1) = ((8|->Message_Status))));
+((Send_Target$1) = ((4|->Subject_Agent)));
+((Send_Target$1) = ((3|->Subject_Agent)));
+((Send_Target$1) = ((1|->Subject_Agent)))
+END
+&
+THEORY EnumerateX IS
+Crypto_Test_Result == {Crypto_Test_Pass,Crypto_Test_Fail,Signature_Verify_Pass,Signature_Verify_Fail};
+Encrypt_Method == {Empty_Encrypt_Method,AES,Camelia};
+Encrypt_Mode == {Empty_Mode,ECB,OFB,CFB,CTR,CBC,GCM,CCM,Poly1303};
+Hash_Method == {Empty_Hash_Method,SHA_1,SHA_2,SHA_3};
+Message_Status == {Empty_Message,Encrypted_Message,Signed_Message,Decrypted_Message,Binary,Encrypted_Binary,Decrypted_Binary,Signed_Binary,Decrypted_Signed_Binary,Vehicle_Data,Encrypted_Vehicle_Data,Signed_Vehicle_Data,Decrypted_Vehicle_Data,Encrypted_Update_Response,Signed_Update_Response,Encrypted_Written_Sourcecode,Signed_Written_Sourcecode,Decrypted_Signed_Sourcecode,Encrypted_Sourcecode,Signed_Sourcecode};
+Operation == {None,Download,Upload,Fix,Transfer,Approve,Decrypt,Encrypt};
+Sign_Method == {Empty_Sign_Method,RSA,Curve25519_Ed25519,NIST_Curve_P256_P384_P521};
+Subject_Agent == {Empty_Agent,Secondary_ECU,Auto_Repair_Shop,Vehicle,Development_Server,Diagnostic_Server,Update_Server,CRM_Server,Developer_PC,DiagnosticTester_PC,Engineer_PC,OEM_TeamLeader}
+END

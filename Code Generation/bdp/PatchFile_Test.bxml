@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='PatchFile_Test' type='abstraction' position='true' semantic='true' b0check='false'>
+<Sets>
+<Attr>
+<Pos l='8' c='1' s='4'/>
+</Attr>
+<Set>
+<Id value='Result' typref='4'>
+<Attr>
+<Pos l='9' c='5' s='6'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Valid' typref='5'>
+<Attr>
+<Pos l='9' c='15' s='5'/>
+</Attr>
+</Id>
+<Id value='Invalid' typref='5'>
+<Attr>
+<Pos l='9' c='22' s='7'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Quality_Test' typref='6'>
+<Attr>
+<Pos l='10' c='5' s='12'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Patchfile_error' typref='7'>
+<Attr>
+<Pos l='10' c='21' s='15'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Compatibility_Test' typref='8'>
+<Attr>
+<Pos l='11' c='5' s='18'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Hardware_Compatibility' typref='9'>
+<Attr>
+<Pos l='11' c='27' s='22'/>
+</Attr>
+</Id>
+<Id value='Software_Compatibility' typref='9'>
+<Attr>
+<Pos l='11' c='51' s='22'/>
+</Attr>
+</Id>
+<Id value='Network_Compatibility' typref='9'>
+<Attr>
+<Pos l='11' c='75' s='21'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Hardware_Test' typref='10'>
+<Attr>
+<Pos l='12' c='5' s='13'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Empty_Hardware' typref='11'>
+<Attr>
+<Pos l='12' c='22' s='14'/>
+</Attr>
+</Id>
+<Id value='Memory_Type' typref='11'>
+<Attr>
+<Pos l='12' c='38' s='11'/>
+</Attr>
+</Id>
+<Id value='Memory_Size' typref='11'>
+<Attr>
+<Pos l='12' c='51' s='11'/>
+</Attr>
+</Id>
+<Id value='Memory_Speed' typref='11'>
+<Attr>
+<Pos l='12' c='64' s='12'/>
+</Attr>
+</Id>
+<Id value='Input_Device' typref='11'>
+<Attr>
+<Pos l='12' c='78' s='12'/>
+</Attr>
+</Id>
+<Id value='Output_Device' typref='11'>
+<Attr>
+<Pos l='12' c='92' s='13'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Software_Test' typref='12'>
+<Attr>
+<Pos l='13' c='5' s='13'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Empty_Software' typref='13'>
+<Attr>
+<Pos l='13' c='22' s='14'/>
+</Attr>
+</Id>
+<Id value='Windows' typref='13'>
+<Attr>
+<Pos l='13' c='38' s='7'/>
+</Attr>
+</Id>
+<Id value='Linux' typref='13'>
+<Attr>
+<Pos l='13' c='47' s='5'/>
+</Attr>
+</Id>
+<Id value='Mac' typref='13'>
+<Attr>
+<Pos l='13' c='54' s='3'/>
+</Attr>
+</Id>
+<Id value='Current_Version_Software' typref='13'>
+<Attr>
+<Pos l='13' c='59' s='24'/>
+</Attr>
+</Id>
+<Id value='Other_Version_Software' typref='13'>
+<Attr>
+<Pos l='13' c='85' s='22'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Network_Test' typref='14'>
+<Attr>
+<Pos l='14' c='5' s='12'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Empty_Network' typref='15'>
+<Attr>
+<Pos l='14' c='21' s='13'/>
+</Attr>
+</Id>
+<Id value='Wifi' typref='15'>
+<Attr>
+<Pos l='14' c='36' s='4'/>
+</Attr>
+</Id>
+<Id value='Data_Network' typref='15'>
+<Attr>
+<Pos l='14' c='42' s='12'/>
+</Attr>
+</Id>
+<Id value='Bluetooth' typref='15'>
+<Attr>
+<Pos l='14' c='56' s='9'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Deveop_Language' typref='16'>
+<Attr>
+<Pos l='15' c='5' s='15'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='C_Language' typref='17'>
+<Attr>
+<Pos l='15' c='24' s='10'/>
+</Attr>
+</Id>
+<Id value='C_Plus_Language' typref='17'>
+<Attr>
+<Pos l='15' c='36' s='15'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Patchfile_Format' typref='18'>
+<Attr>
+<Pos l='16' c='5' s='16'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='None' typref='19'>
+<Attr>
+<Pos l='16' c='25' s='4'/>
+</Attr>
+</Id>
+<Id value='Sourcecode' typref='19'>
+<Attr>
+<Pos l='16' c='31' s='10'/>
+</Attr>
+</Id>
+<Id value='Binary' typref='19'>
+<Attr>
+<Pos l='16' c='43' s='6'/>
+</Attr>
+</Id>
+<Id value='Encrypted_Binary' typref='19'>
+<Attr>
+<Pos l='16' c='51' s='16'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Coding_Standard' typref='20'>
+<Attr>
+<Pos l='17' c='5' s='15'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Misra_C' typref='21'>
+<Attr>
+<Pos l='17' c='24' s='7'/>
+</Attr>
+</Id>
+<Id value='Misra_C_Plus' typref='21'>
+<Attr>
+<Pos l='17' c='33' s='12'/>
+</Attr>
+</Id>
+<Id value='AUTOSAR_C_Plus' typref='21'>
+<Attr>
+<Pos l='17' c='47' s='14'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='Sourcecode_Format' typref='22'>
+<Attr>
+<Pos l='18' c='5' s='17'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Written_Sourcecode' typref='23'>
+<Attr>
+<Pos l='18' c='26' s='18'/>
+</Attr>
+</Id>
+<Id value='Writing_Sourcecode' typref='23'>
+<Attr>
+<Pos l='18' c='46' s='18'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+</Sets>
+<Concrete_Variables>
+<Attr>
+<Pos l='20' c='1' s='18'/>
+</Attr>
+<Id value='Language' typref='17'>
+<Attr>
+<Pos l='21' c='5' s='8'/>
+</Attr>
+</Id>
+<Id value='Standard' typref='21'>
+<Attr>
+<Pos l='22' c='5' s='8'/>
+</Attr>
+</Id>
+<Id value='Sourcecode_Test_Result' typref='5'>
+<Attr>
+<Pos l='23' c='5' s='22'/>
+</Attr>
+</Id>
+<Id value='Patchfile_Status' typref='19'>
+<Attr>
+<Pos l='24' c='5' s='16'/>
+</Attr>
+</Id>
+<Id value='Patchfile_Execution_Result' typref='7'>
+<Attr>
+<Pos l='25' c='5' s='26'/>
+</Attr>
+</Id>
+<Id value='Qulity_Test_Result' typref='5'>
+<Attr>
+<Pos l='26' c='5' s='18'/>
+</Attr>
+</Id>
+<Id value='Hardware_Compatibility_Test' typref='11'>
+<Attr>
+<Pos l='27' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='Software_Compatibility_Test' typref='13'>
+<Attr>
+<Pos l='28' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='Network_Compatibility_Test' typref='15'>
+<Attr>
+<Pos l='29' c='5' s='26'/>
+</Attr>
+</Id>
+<Id value='Hardware_Test_Result' typref='5'>
+<Attr>
+<Pos l='30' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='Software_Test_Result' typref='5'>
+<Attr>
+<Pos l='31' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='Network_Test_Result' typref='5'>
+<Attr>
+<Pos l='32' c='5' s='19'/>
+</Attr>
+</Id>
+<Id value='Compatibility_Test_Result' typref='5'>
+<Attr>
+<Pos l='33' c='5' s='25'/>
+</Attr>
+</Id>
+</Concrete_Variables>
+<Invariant>
+<Attr>
+<Pos l='35' c='1' s='9'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='36' c='14' s='1'/>
+</Attr>
+<Id value='Language' typref='17'>
+<Attr>
+<Pos l='36' c='5' s='8'/>
+</Attr>
+</Id>
+<Id value='Deveop_Language' typref='16'>
+<Attr>
+<Pos l='36' c='16' s='15'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='37' c='14' s='1'/>
+</Attr>
+<Id value='Standard' typref='21'>
+<Attr>
+<Pos l='37' c='5' s='8'/>
+</Attr>
+</Id>
+<Id value='Coding_Standard' typref='20'>
+<Attr>
+<Pos l='37' c='16' s='15'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='38' c='28' s='1'/>
+</Attr>
+<Id value='Sourcecode_Test_Result' typref='5'>
+<Attr>
+<Pos l='38' c='5' s='22'/>
+</Attr>
+</Id>
+<Id value='Result' typref='4'>
+<Attr>
+<Pos l='38' c='30' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='39' c='22' s='1'/>
+</Attr>
+<Id value='Patchfile_Status' typref='19'>
+<Attr>
+<Pos l='39' c='5' s='16'/>
+</Attr>
+</Id>
+<Id value='Patchfile_Format' typref='18'>
+<Attr>
+<Pos l='39' c='24' s='16'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='40' c='32' s='1'/>
+</Attr>
+<Id value='Patchfile_Execution_Result' typref='7'>
+<Attr>
+<Pos l='40' c='5' s='26'/>
+</Attr>
+</Id>
+<Id value='Quality_Test' typref='6'>
+<Attr>
+<Pos l='40' c='34' s='12'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='41' c='24' s='1'/>
+</Attr>
+<Id value='Qulity_Test_Result' typref='5'>
+<Attr>
+<Pos l='41' c='5' s='18'/>
+</Attr>
+</Id>
+<Id value='Result' typref='4'>
+<Attr>
+<Pos l='41' c='26' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='42' c='33' s='1'/>
+</Attr>
+<Id value='Hardware_Compatibility_Test' typref='11'>
+<Attr>
+<Pos l='42' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='Hardware_Test' typref='10'>
+<Attr>
+<Pos l='42' c='35' s='13'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='43' c='33' s='1'/>
+</Attr>
+<Id value='Software_Compatibility_Test' typref='13'>
+<Attr>
+<Pos l='43' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='Software_Test' typref='12'>
+<Attr>
+<Pos l='43' c='35' s='13'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='44' c='32' s='1'/>
+</Attr>
+<Id value='Network_Compatibility_Test' typref='15'>
+<Attr>
+<Pos l='44' c='5' s='26'/>
+</Attr>
+</Id>
+<Id value='Network_Test' typref='14'>
+<Attr>
+<Pos l='44' c='34' s='12'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='45' c='26' s='1'/>
+</Attr>
+<Id value='Hardware_Test_Result' typref='5'>
+<Attr>
+<Pos l='45' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='Result' typref='4'>
+<Attr>
+<Pos l='45' c='28' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='46' c='26' s='1'/>
+</Attr>
+<Id value='Software_Test_Result' typref='5'>
+<Attr>
+<Pos l='46' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='Result' typref='4'>
+<Attr>
+<Pos l='46' c='28' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='47' c='25' s='1'/>
+</Attr>
+<Id value='Network_Test_Result' typref='5'>
+<Attr>
+<Pos l='47' c='5' s='19'/>
+</Attr>
+</Id>
+<Id value='Result' typref='4'>
+<Attr>
+<Pos l='47' c='27' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='48' c='31' s='1'/>
+</Attr>
+<Id value='Compatibility_Test_Result' typref='5'>
+<Attr>
+<Pos l='48' c='5' s='25'/>
+</Attr>
+</Id>
+<Id value='Result' typref='4'>
+<Attr>
+<Pos l='48' c='33' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='51' c='1' s='14'/>
+</Attr>
+<Nary_Sub op='||'>
+<Becomes_In>
+<Attr>
+<Pos l='52' c='14' s='2'/>
+</Attr>
+<Variables>
+<Id value='Language' typref='17'>
+<Attr>
+<Pos l='52' c='5' s='8'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='16'>
+<Attr>
+<Pos l='52' c='17' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='53' c='14' s='2'/>
+</Attr>
+<Variables>
+<Id value='Standard' typref='21'>
+<Attr>
+<Pos l='53' c='5' s='8'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='20'>
+<Attr>
+<Pos l='53' c='17' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='54' c='28' s='2'/>
+</Attr>
+<Variables>
+<Id value='Sourcecode_Test_Result' typref='5'>
+<Attr>
+<Pos l='54' c='5' s='22'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='4'>
+<Attr>
+<Pos l='54' c='31' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='55' c='22' s='2'/>
+</Attr>
+<Variables>
+<Id value='Patchfile_Status' typref='19'>
+<Attr>
+<Pos l='55' c='5' s='16'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='18'>
+<Attr>
+<Pos l='55' c='25' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='56' c='32' s='2'/>
+</Attr>
+<Variables>
+<Id value='Patchfile_Execution_Result' typref='7'>
+<Attr>
+<Pos l='56' c='5' s='26'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='6'>
+<Attr>
+<Pos l='56' c='35' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='57' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='Qulity_Test_Result' typref='5'>
+<Attr>
+<Pos l='57' c='5' s='18'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='4'>
+<Attr>
+<Pos l='57' c='27' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='58' c='33' s='2'/>
+</Attr>
+<Variables>
+<Id value='Hardware_Compatibility_Test' typref='11'>
+<Attr>
+<Pos l='58' c='5' s='27'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='10'>
+<Attr>
+<Pos l='58' c='36' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='59' c='33' s='2'/>
+</Attr>
+<Variables>
+<Id value='Software_Compatibility_Test' typref='13'>
+<Attr>
+<Pos l='59' c='5' s='27'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='12'>
+<Attr>
+<Pos l='59' c='36' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='60' c='32' s='2'/>
+</Attr>
+<Variables>
+<Id value='Network_Compatibility_Test' typref='15'>
+<Attr>
+<Pos l='60' c='5' s='26'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='14'>
+<Attr>
+<Pos l='60' c='35' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='61' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='Hardware_Test_Result' typref='5'>
+<Attr>
+<Pos l='61' c='5' s='20'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='4'>
+<Attr>
+<Pos l='61' c='29' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='62' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='Software_Test_Result' typref='5'>
+<Attr>
+<Pos l='62' c='5' s='20'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='4'>
+<Attr>
+<Pos l='62' c='29' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='63' c='25' s='2'/>
+</Attr>
+<Variables>
+<Id value='Network_Test_Result' typref='5'>
+<Attr>
+<Pos l='63' c='5' s='19'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='4'>
+<Attr>
+<Pos l='63' c='28' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='64' c='31' s='2'/>
+</Attr>
+<Variables>
+<Id value='Compatibility_Test_Result' typref='5'>
+<Attr>
+<Pos l='64' c='5' s='25'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='4'>
+<Attr>
+<Pos l='64' c='34' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+</Nary_Sub>
+</Initialisation>
+<Operations>
+<Operation name='sourcecode_test'>
+<Attr>
+<Pos l='68' c='5' s='15'/>
+</Attr>
+<Body>
+<Skip>
+<Attr>
+<Pos l='68' c='23' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+<Operation name='sourcecode_compile'>
+<Attr>
+<Pos l='69' c='5' s='18'/>
+</Attr>
+<Body>
+<Skip>
+<Attr>
+<Pos l='69' c='26' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+<Operation name='patchfile_quality_test'>
+<Attr>
+<Pos l='70' c='5' s='22'/>
+</Attr>
+<Body>
+<Skip>
+<Attr>
+<Pos l='70' c='30' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+<Operation name='patchfile_compatibility_test'>
+<Attr>
+<Pos l='71' c='5' s='28'/>
+</Attr>
+<Body>
+<Skip>
+<Attr>
+<Pos l='71' c='36' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Unary_Exp op='POW'>
+<Id value='Result'/>
+</Unary_Exp>
+</Type>
+<Type id='5'>
+<Id value='Result'/>
+</Type>
+<Type id='6'>
+<Unary_Exp op='POW'>
+<Id value='Quality_Test'/>
+</Unary_Exp>
+</Type>
+<Type id='7'>
+<Id value='Quality_Test'/>
+</Type>
+<Type id='8'>
+<Unary_Exp op='POW'>
+<Id value='Compatibility_Test'/>
+</Unary_Exp>
+</Type>
+<Type id='9'>
+<Id value='Compatibility_Test'/>
+</Type>
+<Type id='10'>
+<Unary_Exp op='POW'>
+<Id value='Hardware_Test'/>
+</Unary_Exp>
+</Type>
+<Type id='11'>
+<Id value='Hardware_Test'/>
+</Type>
+<Type id='12'>
+<Unary_Exp op='POW'>
+<Id value='Software_Test'/>
+</Unary_Exp>
+</Type>
+<Type id='13'>
+<Id value='Software_Test'/>
+</Type>
+<Type id='14'>
+<Unary_Exp op='POW'>
+<Id value='Network_Test'/>
+</Unary_Exp>
+</Type>
+<Type id='15'>
+<Id value='Network_Test'/>
+</Type>
+<Type id='16'>
+<Unary_Exp op='POW'>
+<Id value='Deveop_Language'/>
+</Unary_Exp>
+</Type>
+<Type id='17'>
+<Id value='Deveop_Language'/>
+</Type>
+<Type id='18'>
+<Unary_Exp op='POW'>
+<Id value='Patchfile_Format'/>
+</Unary_Exp>
+</Type>
+<Type id='19'>
+<Id value='Patchfile_Format'/>
+</Type>
+<Type id='20'>
+<Unary_Exp op='POW'>
+<Id value='Coding_Standard'/>
+</Unary_Exp>
+</Type>
+<Type id='21'>
+<Id value='Coding_Standard'/>
+</Type>
+<Type id='22'>
+<Unary_Exp op='POW'>
+<Id value='Sourcecode_Format'/>
+</Unary_Exp>
+</Type>
+<Type id='23'>
+<Id value='Sourcecode_Format'/>
+</Type>
+</TypeInfos>
+
+</Machine>

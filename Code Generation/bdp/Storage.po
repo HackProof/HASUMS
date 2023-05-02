@@ -1,0 +1,17 @@
+THEORY ProofList
+END
+&
+THEORY Formulas
+END
+&
+THEORY EnumerateX IS
+Data_Format == {Empty_Data,Encrypted_Binary,Binary};
+File_Status == {Empty_File,Encrypted_Patchfile,Patchfile,Sourcecode};
+File_Tag == {Latest_File,Current_File};
+Operation == {None,Send,Install,Backup,Recovery,Transfer};
+Storage_Response_Tag == {Normal_State,Alarm,Overwrite};
+Store_Result == {Save,Not_Save};
+Subject == {Noone,OEM_TeamLeader};
+Target == {Empty_Target,ECU,Secondary_ECU};
+Update_Response == {Update_Required,Update_Unrequired}
+END

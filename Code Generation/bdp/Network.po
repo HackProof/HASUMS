@@ -1,0 +1,12 @@
+THEORY ProofList
+END
+&
+THEORY Formulas
+END
+&
+THEORY EnumerateX IS
+Access_Agent == {Empty_Agent,Secondary_ECU,Auto_Repair_Shop,Vehicle,Development_Server,Diagnostic_Server,Update_Server,CRM_Server,Developer_PC,DiagnosticTester_PC,Engineer_PC};
+Access_IP == {Empty_IP,Development_Server_IP,Diagnostic_Server_IP,Update_Server_IP,CRM_Server_IP,Vehicle_IP,Engineer_PC_IP,Developer_PC_IP,DiagnosticTester_PC_IP};
+Access_IP_List == {IP_Unknown,IP_Whitelist,IP_Blacklist};
+Access_grant == {Access_Success,Access_Fail}
+END
