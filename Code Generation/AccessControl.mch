@@ -19,14 +19,14 @@ CONCRETE_VARIABLES
     Login_Try,
     Permission,
     Agent
-
+    
 INVARIANT
     Input_ID : Access_ID &
     Input_Password : Access_Password &
     Input_Agent : Access_Agent &
     Login_Try : INT &
     Permission : Operation &
-    Agent : Access_grant
+    Agent : Access_grant 
 
 INITIALISATION
     Input_ID :: {} ||
@@ -34,7 +34,7 @@ INITIALISATION
     Input_Agent :: {} ||
     Login_Try :: INT ||
     Permission :: {} ||
-    Agent :: {}
+    Agent :: {} 
     
 OPERATIONS
     access_grant = skip

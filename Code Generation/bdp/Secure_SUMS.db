@@ -29,6 +29,9 @@
         <component_file path="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS" name="Automotive_Login_i" suffix="imp" user="SANE">
             <component name="Automotive_Login_i" type="implementation" />
         </component_file>
+        <component_file path="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS" name="BASIC_IO" suffix="mch" user="SANE">
+            <component name="BASIC_IO" type="specification" />
+        </component_file>
         <component_file path="C:/Users/SANE/Desktop/AtelierB/Secure_SUMS" name="CRM_Server_Communication_i" suffix="imp" user="SANE">
             <component name="CRM_Server_Communication_i" type="implementation" />
         </component_file>

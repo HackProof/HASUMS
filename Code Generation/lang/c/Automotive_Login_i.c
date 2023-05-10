@@ -2,6 +2,9 @@
 
 #include "AccessControl.h"
 
+/* Clause SEES */
+#include "BASIC_IO.h"
+
 /* Clause CONCRETE_CONSTANTS */
 /* Basic constants */
 
@@ -37,12 +40,17 @@ void AccessControl__access_grant(void)
         AccessControl__Agent = AccessControl__Access_Success;
         AccessControl__Permission = AccessControl__Download;
         AccessControl__Login_Try = 0;
+        BASIC_IO__STRING_WRITE("Login Success!\n");
+        BASIC_IO__STRING_WRITE("Login Entity: Update_Server\n");
+        BASIC_IO__STRING_WRITE("============================\n");
     }
     else
     {
         AccessControl__Agent = AccessControl__Access_Fail;
         AccessControl__Permission = AccessControl__None;
         AccessControl__Login_Try = AccessControl__Login_Try+1;
+        BASIC_IO__STRING_WRITE("Login Fail!\n");
+        BASIC_IO__STRING_WRITE("============================\n");
     }
 }
 

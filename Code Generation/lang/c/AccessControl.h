@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+/* Clause SEES */
+#include "BASIC_IO.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */

@@ -6,6 +6,8 @@
 IMPLEMENTATION Development_Server_Login_i
 REFINES AccessControl
 
+SEES BASIC_IO
+    
 INITIALISATION
     Input_ID := Empty_ID;
     Input_Password := Empty_Password;
@@ -24,20 +26,30 @@ OPERATIONS
         THEN
            Agent := Access_Success;
            Permission := Upload_Fix_Transfer_Download_Approve; 
-           Login_Try := 0
+           Login_Try := 0;
+           STRING_WRITE("Login Success!\n");
+           STRING_WRITE("Login Entity: OEM_TeamLeader\n");
+           STRING_WRITE("============================\n")
+           
            ELSE IF
                Input_ID = OEM_TeamMember_ID & 
                Input_Password = OEM_TeamMember_Password & 
-               Input_Agent = Developer_PC &
+               Input_Agent = Developer_PC & 
                Login_Try <= 5 
            THEN 
                Agent := Access_Success;
                Permission := Upload_Fix_Transfer;
-               Login_Try := 0
+               Login_Try := 0;
+               STRING_WRITE("Login Success!\n");
+               STRING_WRITE("Login Entity: OEM_TeamMember\n");
+               STRING_WRITE("============================\n")
+               
            ELSE
                Agent := Access_Fail;
                Permission := None;
-               Login_Try := Login_Try + 1
+               Login_Try := Login_Try + 1;
+               STRING_WRITE("Login Fail!\n");
+               STRING_WRITE("============================\n")
            END
         END
     END

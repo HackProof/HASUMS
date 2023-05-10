@@ -14,7 +14,7 @@ THEORY LoadedStructureX IS
 END
 &
 THEORY ListSeesX IS
-  List_Sees(Implementation(Automotive_Login_i))==(?)
+  List_Sees(Implementation(Automotive_Login_i))==(BASIC_IO)
 END
 &
 THEORY ListIncludesX IS
@@ -81,7 +81,9 @@ THEORY ListParametersX IS
   List_Parameters(Implementation(Automotive_Login_i))==(?)
 END
 &
-THEORY ListInstanciatedParametersX END
+THEORY ListInstanciatedParametersX IS
+  List_Instanciated_Parameters(Implementation(Automotive_Login_i),Machine(BASIC_IO))==(?)
+END
 &
 THEORY ListConstraintsX IS
   List_Constraints(Implementation(Automotive_Login_i))==(btrue);
@@ -111,8 +113,8 @@ THEORY ListPreconditionX IS
 END
 &
 THEORY ListSubstitutionX IS
-  Expanded_List_Substitution(Implementation(Automotive_Login_i),access_grant)==(btrue | Input_ID = Update_Server_ID & Input_Agent = Update_Server & Login_Try<=5 ==> (Agent:=Access_Success;Permission:=Download;(0: INT | Login_Try:=0)) [] not(Input_ID = Update_Server_ID & Input_Agent = Update_Server & Login_Try<=5) ==> (Agent:=Access_Fail;Permission:=None;(Login_Try+1: INT & Login_Try: INT & 1: INT | Login_Try:=Login_Try+1)));
-  List_Substitution(Implementation(Automotive_Login_i),access_grant)==(IF Input_ID = Update_Server_ID & Input_Agent = Update_Server & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Download;Login_Try:=0 ELSE Agent:=Access_Fail;Permission:=None;Login_Try:=Login_Try+1 END)
+  Expanded_List_Substitution(Implementation(Automotive_Login_i),access_grant)==(btrue | Input_ID = Update_Server_ID & Input_Agent = Update_Server & Login_Try<=5 ==> (Agent:=Access_Success;Permission:=Download;(0: INT | Login_Try:=0);("Login Success!\n": STRING | skip);("Login Entity: Update_Server\n": STRING | skip);("============================\n": STRING | skip)) [] not(Input_ID = Update_Server_ID & Input_Agent = Update_Server & Login_Try<=5) ==> (Agent:=Access_Fail;Permission:=None;(Login_Try+1: INT & Login_Try: INT & 1: INT | Login_Try:=Login_Try+1);("Login Fail!\n": STRING | skip);("============================\n": STRING | skip)));
+  List_Substitution(Implementation(Automotive_Login_i),access_grant)==(IF Input_ID = Update_Server_ID & Input_Agent = Update_Server & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Download;Login_Try:=0;STRING_WRITE("Login Success!\n");STRING_WRITE("Login Entity: Update_Server\n");STRING_WRITE("============================\n") ELSE Agent:=Access_Fail;Permission:=None;Login_Try:=Login_Try+1;STRING_WRITE("Login Fail!\n");STRING_WRITE("============================\n") END)
 END
 &
 THEORY ListConstantsX IS
@@ -159,9 +161,26 @@ THEORY ListValuesX IS
   List_Values(Implementation(Automotive_Login_i))==(?)
 END
 &
-THEORY ListSeenInfoX END
+THEORY ListSeenInfoX IS
+  Seen_Internal_List_Operations(Implementation(Automotive_Login_i),Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE);
+  Seen_Context_List_Enumerated(Implementation(Automotive_Login_i))==(?);
+  Seen_Context_List_Invariant(Implementation(Automotive_Login_i))==(btrue);
+  Seen_Context_List_Assertions(Implementation(Automotive_Login_i))==(btrue);
+  Seen_Context_List_Properties(Implementation(Automotive_Login_i))==(btrue);
+  Seen_List_Constraints(Implementation(Automotive_Login_i))==(btrue);
+  Seen_List_Precondition(Implementation(Automotive_Login_i),STRING_WRITE)==(ss: STRING);
+  Seen_Expanded_List_Substitution(Implementation(Automotive_Login_i),STRING_WRITE)==(skip);
+  Seen_List_Precondition(Implementation(Automotive_Login_i),INT_WRITE)==(vv: NAT);
+  Seen_Expanded_List_Substitution(Implementation(Automotive_Login_i),INT_WRITE)==(skip);
+  Seen_List_Precondition(Implementation(Automotive_Login_i),INTERVAL_READ)==(nn: NAT & mm: NAT & mm<=nn);
+  Seen_Expanded_List_Substitution(Implementation(Automotive_Login_i),INTERVAL_READ)==(@(bb$0).(bb$0: mm..nn ==> bb:=bb$0));
+  Seen_List_Operations(Implementation(Automotive_Login_i),Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE);
+  Seen_Expanded_List_Invariant(Implementation(Automotive_Login_i),Machine(BASIC_IO))==(btrue)
+END
 &
-THEORY ListIncludedOperationsX END
+THEORY ListIncludedOperationsX IS
+  List_Included_Operations(Implementation(Automotive_Login_i),Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE)
+END
 &
 THEORY InheritedEnvX IS
   Operations(Implementation(Automotive_Login_i))==(Type(access_grant) == Cst(No_type,No_type));
@@ -172,11 +191,16 @@ END
 THEORY ListVisibleStaticX END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Implementation(Automotive_Login_i)) == (? | ? | ? | ? | access_grant | ? | ? | ? | Automotive_Login_i);
+  List_Of_Ids(Implementation(Automotive_Login_i)) == (? | ? | ? | ? | access_grant | ? | seen(Machine(BASIC_IO)) | ? | Automotive_Login_i);
   List_Of_HiddenCst_Ids(Implementation(Automotive_Login_i)) == (? | ?);
   List_Of_VisibleCst_Ids(Implementation(Automotive_Login_i)) == (?);
   List_Of_VisibleVar_Ids(Implementation(Automotive_Login_i)) == (? | ?);
-  List_Of_Ids_SeenBNU(Implementation(Automotive_Login_i)) == (?: ?)
+  List_Of_Ids_SeenBNU(Implementation(Automotive_Login_i)) == (?: ?);
+  List_Of_Ids(Machine(BASIC_IO)) == (? | ? | ? | ? | INTERVAL_READ,INT_WRITE,STRING_WRITE | ? | ? | ? | BASIC_IO);
+  List_Of_HiddenCst_Ids(Machine(BASIC_IO)) == (? | ?);
+  List_Of_VisibleCst_Ids(Machine(BASIC_IO)) == (?);
+  List_Of_VisibleVar_Ids(Machine(BASIC_IO)) == (? | ?);
+  List_Of_Ids_SeenBNU(Machine(BASIC_IO)) == (?: ?)
 END
 &
 THEORY SetsEnvX IS

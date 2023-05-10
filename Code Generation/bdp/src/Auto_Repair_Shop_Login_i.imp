@@ -6,6 +6,8 @@
 IMPLEMENTATION Auto_Repair_Shop_Login_i
 REFINES AccessControl
 
+SEES BASIC_IO
+
 INITIALISATION
     Input_ID := Empty_ID ;
     Input_Password := Empty_Password ;
@@ -24,11 +26,16 @@ OPERATIONS
         THEN
            Agent := Access_Success ;
            Permission := Download ;
-           Login_Try := 0
+           Login_Try := 0 ;
+           STRING_WRITE ( "Login Success!\n" ) ;
+           STRING_WRITE ( "Login Entity: Engineer\n" ) ;
+           STRING_WRITE ( "============================\n" )
         ELSE
            Agent := Access_Fail ;
            Permission := None ;
-           Login_Try := Login_Try + 1
+           Login_Try := Login_Try + 1 ;
+           STRING_WRITE ( "Login Fail!\n" ) ;
+           STRING_WRITE ( "============================\n" )
         END
     END
 END
