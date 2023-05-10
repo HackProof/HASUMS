@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="QualityTest" org.eventb.core.type="ℙ(QualityTest)"/>
+        <org.eventb.core.poIdentifier name="Network_Test" org.eventb.core.type="ℙ(Network_Test)"/>
+        <org.eventb.core.poIdentifier name="CompatibilityTest" org.eventb.core.type="ℙ(CompatibilityTest)"/>
+        <org.eventb.core.poIdentifier name="Hardware_Test" org.eventb.core.type="ℙ(Hardware_Test)"/>
+        <org.eventb.core.poIdentifier name="Software_Test" org.eventb.core.type="ℙ(Software_Test)"/>
+        <org.eventb.core.poIdentifier name="Test_Result" org.eventb.core.type="ℙ(Test_Result)"/>
+        <org.eventb.core.poIdentifier name="Data_Network" org.eventb.core.type="Network_Test"/>
+        <org.eventb.core.poIdentifier name="Input_Device" org.eventb.core.type="Hardware_Test"/>
+        <org.eventb.core.poIdentifier name="Memory_Type" org.eventb.core.type="Hardware_Test"/>
+        <org.eventb.core.poIdentifier name="Patchfile_error" org.eventb.core.type="ℙ(QualityTest)"/>
+        <org.eventb.core.poIdentifier name="Windows" org.eventb.core.type="Software_Test"/>
+        <org.eventb.core.poIdentifier name="Invalid" org.eventb.core.type="Test_Result"/>
+        <org.eventb.core.poIdentifier name="Software_Compatibility" org.eventb.core.type="CompatibilityTest"/>
+        <org.eventb.core.poIdentifier name="Memory_Speed" org.eventb.core.type="Hardware_Test"/>
+        <org.eventb.core.poIdentifier name="Wifi" org.eventb.core.type="Network_Test"/>
+        <org.eventb.core.poIdentifier name="Valid" org.eventb.core.type="Test_Result"/>
+        <org.eventb.core.poIdentifier name="Other_Version_Software" org.eventb.core.type="Software_Test"/>
+        <org.eventb.core.poIdentifier name="Linux" org.eventb.core.type="Software_Test"/>
+        <org.eventb.core.poIdentifier name="Hardware_Compatibility" org.eventb.core.type="CompatibilityTest"/>
+        <org.eventb.core.poIdentifier name="Current_Version_Software" org.eventb.core.type="Software_Test"/>
+        <org.eventb.core.poIdentifier name="Mac" org.eventb.core.type="Software_Test"/>
+        <org.eventb.core.poIdentifier name="Output_Device" org.eventb.core.type="Hardware_Test"/>
+        <org.eventb.core.poIdentifier name="Bluetooth" org.eventb.core.type="Network_Test"/>
+        <org.eventb.core.poIdentifier name="Network_Compatibility" org.eventb.core.type="CompatibilityTest"/>
+        <org.eventb.core.poIdentifier name="Memory_Size" org.eventb.core.type="Hardware_Test"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SUMS/PatchFile_Test_C.bpo|org.eventb.core.poFile#PatchFile_Test_C|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="QualityTest∈{Patchfile_error}" org.eventb.core.source="/SUMS/PatchFile_Test_C.buc|org.eventb.core.contextFile#PatchFile_Test_C|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(Test_Result,{Valid},{Invalid})" org.eventb.core.source="/SUMS/PatchFile_Test_C.buc|org.eventb.core.contextFile#PatchFile_Test_C|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(CompatibilityTest,{Hardware_Compatibility},{Software_Compatibility},{Network_Compatibility})" org.eventb.core.source="/SUMS/PatchFile_Test_C.buc|org.eventb.core.contextFile#PatchFile_Test_C|org.eventb.core.axiom#3"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(Hardware_Test,{Memory_Type},{Memory_Size},{Memory_Speed},{Input_Device},{Output_Device})" org.eventb.core.source="/SUMS/PatchFile_Test_C.buc|org.eventb.core.contextFile#PatchFile_Test_C|org.eventb.core.axiom#C"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="partition(Software_Test,{Windows},{Linux},{Mac},{Current_Version_Software},{Other_Version_Software})" org.eventb.core.source="/SUMS/PatchFile_Test_C.buc|org.eventb.core.contextFile#PatchFile_Test_C|org.eventb.core.axiom#D"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="partition(Network_Test,{Wifi},{Data_Network},{Bluetooth})" org.eventb.core.source="/SUMS/PatchFile_Test_C.buc|org.eventb.core.contextFile#PatchFile_Test_C|org.eventb.core.axiom#E"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
