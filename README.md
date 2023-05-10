@@ -16,4 +16,4 @@ The details of the research flow are shown in the picture below.
 - [Threat Modeling](https://github.com/HackProof/HASUMS/tree/main/Threat%20Modeling)
 - [Secure SUMS Architecture](https://github.com/HackProof/HASUMS/tree/main/UML)
 - [Formal Model](https://github.com/HackProof/HASUMS/tree/main/Formal%20Model)
-- [Automatic Generated Source code](https://github.com/HackProof/HASUMS/tree/main/Code%20Generation)
+- [Automatic Generated Sourcecode](https://github.com/HackProof/HASUMS/tree/main/Code%20Generation)
