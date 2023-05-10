@@ -1,0 +1,30 @@
+﻿/* CRM_Server_Firewall_i
+ * Author: SANE
+ * Creation date: 2023-04-25
+ */
+
+IMPLEMENTATION CRM_Server_Firewall_i
+REFINES Network
+
+INITIALISATION
+    Input_Agent := Empty_Agent ;
+    Input_IP := Empty_IP ;
+    Input_IP_List := IP_Unknown ;
+    Available_Port := 443 ;
+    Input_Port := 0 ;
+    Agent := Access_Fail
+
+OPERATIONS
+    access_control =
+    BEGIN
+        IF Input_Agent = Vehicle &
+           Input_IP = Vehicle_IP &
+           Input_Port = Available_Port &
+           Input_IP_List /= IP_Blacklist
+        THEN
+           Agent := Access_Success
+        ELSE
+           Agent := Access_Fail
+        END
+    END
+END

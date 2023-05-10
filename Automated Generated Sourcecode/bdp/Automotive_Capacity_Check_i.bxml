@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='Automotive_Capacity_Check_i' type='implementation' position='true' semantic='true' b0check='false'>
+<Abstraction>Storage</Abstraction>
+<Initialisation>
+<Attr>
+<Pos l='9' c='1' s='14'/>
+</Attr>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='10' c='22' s='2'/>
+</Attr>
+<Variables>
+<Id value='Storage_Capacity' typref='1'>
+<Attr>
+<Pos l='10' c='5' s='16'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='100' typref='1'>
+<Attr>
+<Pos l='10' c='25' s='3'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='11' c='31' s='2'/>
+</Attr>
+<Variables>
+<Id value='Storage_Capacity_Criteria' typref='1'>
+<Attr>
+<Pos l='11' c='5' s='25'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='85' typref='1'>
+<Attr>
+<Pos l='11' c='34' s='2'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='12' c='13' s='2'/>
+</Attr>
+<Variables>
+<Id value='Version' typref='1'>
+<Attr>
+<Pos l='12' c='5' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='12' c='16' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='13' c='15' s='2'/>
+</Attr>
+<Variables>
+<Id value='File_Type' typref='4'>
+<Attr>
+<Pos l='13' c='5' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Empty_Data' typref='4'>
+<Attr>
+<Pos l='13' c='18' s='10'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='14' c='17' s='2'/>
+</Attr>
+<Variables>
+<Id value='Save_Result' typref='5'>
+<Attr>
+<Pos l='14' c='5' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Not_Save' typref='5'>
+<Attr>
+<Pos l='14' c='20' s='8'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='15' c='9' s='2'/>
+</Attr>
+<Variables>
+<Id value='Tag' typref='6'>
+<Attr>
+<Pos l='15' c='5' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Normal_State' typref='6'>
+<Attr>
+<Pos l='15' c='12' s='12'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='16' c='21' s='2'/>
+</Attr>
+<Variables>
+<Id value='Stored_Capacity' typref='1'>
+<Attr>
+<Pos l='16' c='5' s='15'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='16' c='24' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='17' c='17' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Status' typref='7'>
+<Attr>
+<Pos l='17' c='5' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Empty_File' typref='7'>
+<Attr>
+<Pos l='17' c='20' s='10'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='18' c='20' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='18' c='5' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='None' typref='8'>
+<Attr>
+<Pos l='18' c='23' s='4'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='19' c='17' s='2'/>
+</Attr>
+<Variables>
+<Id value='Send_Target' typref='9'>
+<Attr>
+<Pos l='19' c='5' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Empty_Target' typref='9'>
+<Attr>
+<Pos l='19' c='20' s='12'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='20' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Update_Request_Result' typref='10'>
+<Attr>
+<Pos l='20' c='5' s='21'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Update_Unrequired' typref='10'>
+<Attr>
+<Pos l='20' c='30' s='17'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='21' c='20' s='2'/>
+</Attr>
+<Variables>
+<Id value='Subject_Entity' typref='11'>
+<Attr>
+<Pos l='21' c='5' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Noone' typref='11'>
+<Attr>
+<Pos l='21' c='23' s='5'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Initialisation>
+<Operations>
+<Operation name='capacity_check'>
+<Attr>
+<Pos l='24' c='5' s='14' endLine='56'/>
+</Attr>
+<Input_Parameters>
+<Id value='File_Size' typref='1'>
+<Attr>
+<Pos l='24' c='20' s='9'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='26' c='9' s='2'/>
+</Attr>
+<Condition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='26' c='22' s='1'/>
+</Attr>
+<Id value='File_Type' typref='4'>
+<Attr>
+<Pos l='26' c='12' s='9'/>
+</Attr>
+</Id>
+<Id value='Encrypted_Binary' typref='4'>
+<Attr>
+<Pos l='26' c='24' s='16'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='27' c='28' s='1'/>
+</Attr>
+<Id value='Stored_Capacity' typref='1'>
+<Attr>
+<Pos l='27' c='12' s='15'/>
+</Attr>
+</Id>
+<Id value='File_Size' typref='1'>
+<Attr>
+<Pos l='27' c='30' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='28' c='29' s='1'/>
+</Attr>
+<Id value='Storage_Capacity' typref='1'>
+<Attr>
+<Pos l='28' c='12' s='16'/>
+</Attr>
+</Id>
+<Id value='Storage_Capacity_Criteria' typref='1'>
+<Attr>
+<Pos l='28' c='31' s='25'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Condition>
+<Then>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='31' c='28' s='2'/>
+</Attr>
+<Variables>
+<Id value='Save_Result' typref='5'>
+<Attr>
+<Pos l='31' c='16' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Save' typref='5'>
+<Attr>
+<Pos l='31' c='31' s='4'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='32' c='20' s='2'/>
+</Attr>
+<Variables>
+<Id value='Tag' typref='6'>
+<Attr>
+<Pos l='32' c='16' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Normal_State' typref='6'>
+<Attr>
+<Pos l='32' c='23' s='12'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+<Else>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='34' c='21' s='2'/>
+</Attr>
+<Condition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='34' c='34' s='1'/>
+</Attr>
+<Id value='File_Type' typref='4'>
+<Attr>
+<Pos l='34' c='24' s='9'/>
+</Attr>
+</Id>
+<Id value='Encrypted_Binary' typref='4'>
+<Attr>
+<Pos l='34' c='36' s='16'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='35' c='40' s='1'/>
+</Attr>
+<Id value='Stored_Capacity' typref='1'>
+<Attr>
+<Pos l='35' c='24' s='15'/>
+</Attr>
+</Id>
+<Id value='File_Size' typref='1'>
+<Attr>
+<Pos l='35' c='42' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&gt;=i'>
+<Attr>
+<Pos l='36' c='41' s='2'/>
+</Attr>
+<Id value='Storage_Capacity' typref='1'>
+<Attr>
+<Pos l='36' c='24' s='16'/>
+</Attr>
+</Id>
+<Id value='Storage_Capacity_Criteria' typref='1'>
+<Attr>
+<Pos l='36' c='44' s='25'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='37' c='41' s='1'/>
+</Attr>
+<Id value='Storage_Capacity' typref='1'>
+<Attr>
+<Pos l='37' c='24' s='16'/>
+</Attr>
+</Id>
+<Integer_Literal value='100' typref='1'>
+<Attr>
+<Pos l='37' c='43' s='3'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Condition>
+<Then>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='40' c='32' s='2'/>
+</Attr>
+<Variables>
+<Id value='Save_Result' typref='5'>
+<Attr>
+<Pos l='40' c='20' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Not_Save' typref='5'>
+<Attr>
+<Pos l='40' c='35' s='8'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='41' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='Tag' typref='6'>
+<Attr>
+<Pos l='41' c='20' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Alarm' typref='6'>
+<Attr>
+<Pos l='41' c='27' s='5'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+<Else>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='43' c='21' s='2'/>
+</Attr>
+<Condition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='43' c='34' s='1'/>
+</Attr>
+<Id value='File_Type' typref='4'>
+<Attr>
+<Pos l='43' c='24' s='9'/>
+</Attr>
+</Id>
+<Id value='Encrypted_Binary' typref='4'>
+<Attr>
+<Pos l='43' c='36' s='16'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='44' c='40' s='1'/>
+</Attr>
+<Id value='Stored_Capacity' typref='1'>
+<Attr>
+<Pos l='44' c='24' s='15'/>
+</Attr>
+</Id>
+<Id value='File_Size' typref='1'>
+<Attr>
+<Pos l='44' c='42' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&gt;=i'>
+<Attr>
+<Pos l='45' c='41' s='2'/>
+</Attr>
+<Id value='Storage_Capacity' typref='1'>
+<Attr>
+<Pos l='45' c='24' s='16'/>
+</Attr>
+</Id>
+<Integer_Literal value='100' typref='1'>
+<Attr>
+<Pos l='45' c='44' s='3'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Condition>
+<Then>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='48' c='32' s='2'/>
+</Attr>
+<Variables>
+<Id value='Save_Result' typref='5'>
+<Attr>
+<Pos l='48' c='20' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Not_Save' typref='5'>
+<Attr>
+<Pos l='48' c='35' s='8'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='49' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='Tag' typref='6'>
+<Attr>
+<Pos l='49' c='20' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Overwrite' typref='6'>
+<Attr>
+<Pos l='49' c='27' s='9'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='52' c='32' s='2'/>
+</Attr>
+<Variables>
+<Id value='Save_Result' typref='5'>
+<Attr>
+<Pos l='52' c='20' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Not_Save' typref='5'>
+<Attr>
+<Pos l='52' c='35' s='8'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Else>
+</If_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='version_check'>
+<Attr>
+<Pos l='58' c='5' s='13' endLine='68'/>
+</Attr>
+<Input_Parameters>
+<Id value='Vehicle_Patchfile_Version' typref='1'>
+<Attr>
+<Pos l='58' c='19' s='25'/>
+</Attr>
+</Id>
+<Id value='Patchfile_Version' typref='1'>
+<Attr>
+<Pos l='58' c='46' s='17'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='60' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='&gt;i'>
+<Attr>
+<Pos l='60' c='38' s='1'/>
+</Attr>
+<Id value='Vehicle_Patchfile_Version' typref='1'>
+<Attr>
+<Pos l='60' c='12' s='25'/>
+</Attr>
+</Id>
+<Id value='Patchfile_Version' typref='1'>
+<Attr>
+<Pos l='60' c='40' s='17'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='63' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='63' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Send' typref='8'>
+<Attr>
+<Pos l='63' c='30' s='4'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='64' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='Send_Target' typref='9'>
+<Attr>
+<Pos l='64' c='12' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Secondary_ECU' typref='9'>
+<Attr>
+<Pos l='64' c='27' s='13'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='66' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='66' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='None' typref='8'>
+<Attr>
+<Pos l='66' c='30' s='4'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='patchfile_installation'>
+<Attr>
+<Pos l='70' c='5' s='22' endLine='79'/>
+</Attr>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='72' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='72' c='24' s='1'/>
+</Attr>
+<Id value='Data_Status' typref='7'>
+<Attr>
+<Pos l='72' c='12' s='11'/>
+</Attr>
+</Id>
+<Id value='Patchfile' typref='7'>
+<Attr>
+<Pos l='72' c='26' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='75' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='75' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Install' typref='8'>
+<Attr>
+<Pos l='75' c='30' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='77' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='77' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='None' typref='8'>
+<Attr>
+<Pos l='77' c='30' s='4'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='patchfile_backup'>
+<Attr>
+<Pos l='81' c='5' s='16' endLine='90'/>
+</Attr>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='83' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='83' c='24' s='1'/>
+</Attr>
+<Id value='Data_Status' typref='7'>
+<Attr>
+<Pos l='83' c='12' s='11'/>
+</Attr>
+</Id>
+<Id value='Patchfile' typref='7'>
+<Attr>
+<Pos l='83' c='26' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='86' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='86' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Backup' typref='8'>
+<Attr>
+<Pos l='86' c='30' s='6'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='88' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='88' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='None' typref='8'>
+<Attr>
+<Pos l='88' c='30' s='4'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='patchfile_recovery'>
+<Attr>
+<Pos l='92' c='5' s='18' endLine='101'/>
+</Attr>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='94' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='94' c='24' s='1'/>
+</Attr>
+<Id value='Data_Status' typref='7'>
+<Attr>
+<Pos l='94' c='12' s='11'/>
+</Attr>
+</Id>
+<Id value='Patchfile' typref='7'>
+<Attr>
+<Pos l='94' c='26' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='97' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='97' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Recovery' typref='8'>
+<Attr>
+<Pos l='97' c='30' s='8'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='99' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Data_Operation' typref='8'>
+<Attr>
+<Pos l='99' c='12' s='14'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='None' typref='8'>
+<Attr>
+<Pos l='99' c='30' s='4'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='configuration_management'>
+<Attr>
+<Pos l='103' c='5' s='24'/>
+</Attr>
+<Input_Parameters>
+<Id value='Current_Item_Version' typref='1'>
+<Attr>
+<Pos l='103' c='30' s='20'/>
+</Attr>
+</Id>
+<Id value='Latest_Item_Version' typref='1'>
+<Attr>
+<Pos l='103' c='52' s='19'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Body>
+<Skip>
+<Attr>
+<Pos l='103' c='75' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Id value='Data_Format'/>
+</Type>
+<Type id='5'>
+<Id value='Store_Result'/>
+</Type>
+<Type id='6'>
+<Id value='Storage_Response_Tag'/>
+</Type>
+<Type id='7'>
+<Id value='File_Status'/>
+</Type>
+<Type id='8'>
+<Id value='Operation'/>
+</Type>
+<Type id='9'>
+<Id value='Target'/>
+</Type>
+<Type id='10'>
+<Id value='Update_Response'/>
+</Type>
+<Type id='11'>
+<Id value='Subject'/>
+</Type>
+</TypeInfos>
+
+</Machine>
