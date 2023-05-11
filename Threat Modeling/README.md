@@ -35,7 +35,7 @@ The contents of these entries are presented in the table below.
 
 |Type|ID|Name|Threat|Attack Library|No.|
 |---|---|---|---|---|---|
-|Entity|E1|Software Developer|S|AL-V-19|T1|
+|<r3>Entity|<r3>E1|Software Developer|S|AL-V-19|T1|
 ||||S|AL-W-5|T2|
 ||||S|AL-P-1|T3|
 
