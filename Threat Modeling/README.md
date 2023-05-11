@@ -53,4 +53,3 @@ The contents of these entries are presented in the table below.
 |---|---|
 |SR10|When authentication of the OEM server is attempted, the authentication process must be terminated if the authentication fails more than a certain number of times (e.g., 5 times) to prevent attacks such as a full investigation.|
 |SR11|Before performing an action on the OEM server, the OEM server must verify that each object is authorized to perform the action based on each object's identifier (e.g., ID/PW).|
-
