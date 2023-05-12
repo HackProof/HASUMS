@@ -14,9 +14,9 @@ The details of the research flow are shown in the picture below.
 
 ### Research Results
 - [Threat Modeling](https://github.com/HackProof/HASUMS/tree/main/Threat%20Modeling)
-- [Secure SUMS Architecture](https://github.com/HackProof/HASUMS/tree/main/UML)
+- [Secure SUMS Architecture](https://github.com/HackProof/HASUMS/tree/main/Secure%20SUMS%20Architecture)
 - [Formal Model](https://github.com/HackProof/HASUMS/tree/main/Formal%20Model)
-- [Automatic Generated Sourcecode](https://github.com/HackProof/HASUMS/tree/main/Code%20Generation)
+- [Automatic Generated Sourcecode](https://github.com/HackProof/HASUMS/tree/main/Automatically%20Generated%20Sourcecode)
 
 ### Paper
 - [VehicleSec 2023](https://github.com/HackProof/HASUMS/blob/main/%5BVehicleSec%202023%5D%20Formally%20Verified%20Software%20Update%20Management%20System%20in%20Automotive.pdf)
