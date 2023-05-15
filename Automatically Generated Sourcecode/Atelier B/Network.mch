@@ -17,7 +17,8 @@ CONCRETE_VARIABLES
     Input_IP_List,
     Available_Port,
     Input_Port,
-    Agent
+    Agent,
+    Communication_Timeout
 
 INVARIANT
     Input_Agent : Access_Agent &
@@ -25,7 +26,8 @@ INVARIANT
     Input_IP_List : Access_IP_List &
     Input_Port : INT &
     Available_Port : INT &
-    Agent : Access_grant
+    Agent : Access_grant &
+    Communication_Timeout : INT
 
 INITIALISATION
     Input_Agent :: {} ||
@@ -33,7 +35,8 @@ INITIALISATION
     Input_IP_List :: {} ||
     Input_Port :: INT ||
     Available_Port :: INT ||
-    Agent :: {}
+    Agent :: {} ||
+    Communication_Timeout :: INT
     
     
 OPERATIONS

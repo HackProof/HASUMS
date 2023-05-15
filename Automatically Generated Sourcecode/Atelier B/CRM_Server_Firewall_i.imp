@@ -12,7 +12,8 @@ INITIALISATION
     Input_IP_List := IP_Unknown;
     Available_Port := 443;
     Input_Port := 0;
-    Agent := Access_Fail
+    Agent := Access_Fail;
+    Communication_Timeout := 600
 
 OPERATIONS
     access_control = 

@@ -22,7 +22,8 @@ INITIALISATION
     Hash_Key_length := 0 ;
     Test_Result := Crypto_Test_Fail ;
     Send_Target := Empty_Agent ;
-    Data_Status := Empty_Message
+    Data_Status := Empty_Message ;
+    User_Data_Processing := All
 
 OPERATIONS
     receive_message = skip ;

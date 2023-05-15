@@ -406,394 +406,438 @@
 </Id>
 </Enumerated_Values>
 </Set>
+<Set>
+<Id value='Data_Processing' typref='20'>
+<Attr>
+<Pos l='17' c='5' s='15'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='All' typref='21'>
+<Attr>
+<Pos l='17' c='24' s='3'/>
+</Attr>
+</Id>
+<Id value='Pseudonymization' typref='21'>
+<Attr>
+<Pos l='17' c='29' s='16'/>
+</Attr>
+</Id>
+<Id value='Masking' typref='21'>
+<Attr>
+<Pos l='17' c='47' s='7'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
 </Sets>
 <Concrete_Variables>
 <Attr>
-<Pos l='18' c='1' s='18'/>
+<Pos l='19' c='1' s='18'/>
 </Attr>
 <Id value='Subject' typref='5'>
 <Attr>
-<Pos l='19' c='5' s='7'/>
+<Pos l='20' c='5' s='7'/>
 </Attr>
 </Id>
 <Id value='Encryption_Algorithm' typref='7'>
 <Attr>
-<Pos l='20' c='5' s='20'/>
+<Pos l='21' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='Encryption_Mode' typref='9'>
 <Attr>
-<Pos l='21' c='5' s='15'/>
+<Pos l='22' c='5' s='15'/>
 </Attr>
 </Id>
 <Id value='Signature_Algorithm' typref='13'>
 <Attr>
-<Pos l='22' c='5' s='19'/>
+<Pos l='23' c='5' s='19'/>
 </Attr>
 </Id>
 <Id value='Hash_Algorithm' typref='15'>
 <Attr>
-<Pos l='23' c='5' s='14'/>
+<Pos l='24' c='5' s='14'/>
 </Attr>
 </Id>
 <Id value='Receive_Encrypt_Message' typref='19'>
 <Attr>
-<Pos l='24' c='5' s='23'/>
+<Pos l='25' c='5' s='23'/>
 </Attr>
 </Id>
 <Id value='Receive_Sign_Message' typref='19'>
 <Attr>
-<Pos l='25' c='5' s='20'/>
+<Pos l='26' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='Send_Encrypt_Message' typref='19'>
 <Attr>
-<Pos l='26' c='5' s='20'/>
+<Pos l='27' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='Send_Sign_Message' typref='19'>
 <Attr>
-<Pos l='27' c='5' s='17'/>
+<Pos l='28' c='5' s='17'/>
 </Attr>
 </Id>
 <Id value='Permission' typref='17'>
 <Attr>
-<Pos l='28' c='5' s='10'/>
+<Pos l='29' c='5' s='10'/>
 </Attr>
 </Id>
 <Id value='Encryption_Key_length' typref='1'>
 <Attr>
-<Pos l='29' c='5' s='21'/>
+<Pos l='30' c='5' s='21'/>
 </Attr>
 </Id>
 <Id value='Signature_Key_length' typref='1'>
 <Attr>
-<Pos l='30' c='5' s='20'/>
+<Pos l='31' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='Hash_Key_length' typref='1'>
 <Attr>
-<Pos l='31' c='5' s='15'/>
+<Pos l='32' c='5' s='15'/>
 </Attr>
 </Id>
 <Id value='Test_Result' typref='11'>
 <Attr>
-<Pos l='32' c='5' s='11'/>
+<Pos l='33' c='5' s='11'/>
 </Attr>
 </Id>
 <Id value='Send_Target' typref='5'>
 <Attr>
-<Pos l='33' c='5' s='11'/>
+<Pos l='34' c='5' s='11'/>
 </Attr>
 </Id>
 <Id value='Data_Status' typref='19'>
 <Attr>
-<Pos l='34' c='5' s='11'/>
+<Pos l='35' c='5' s='11'/>
+</Attr>
+</Id>
+<Id value='User_Data_Processing' typref='21'>
+<Attr>
+<Pos l='36' c='5' s='20'/>
 </Attr>
 </Id>
 </Concrete_Variables>
 <Invariant>
 <Attr>
-<Pos l='36' c='1' s='9'/>
+<Pos l='38' c='1' s='9'/>
 </Attr>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='37' c='13' s='1'/>
+<Pos l='39' c='13' s='1'/>
 </Attr>
 <Id value='Subject' typref='5'>
 <Attr>
-<Pos l='37' c='5' s='7'/>
+<Pos l='39' c='5' s='7'/>
 </Attr>
 </Id>
 <Id value='Subject_Agent' typref='4'>
 <Attr>
-<Pos l='37' c='15' s='13'/>
+<Pos l='39' c='15' s='13'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='38' c='26' s='1'/>
+<Pos l='40' c='26' s='1'/>
 </Attr>
 <Id value='Encryption_Algorithm' typref='7'>
 <Attr>
-<Pos l='38' c='5' s='20'/>
+<Pos l='40' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='Encrypt_Method' typref='6'>
 <Attr>
-<Pos l='38' c='28' s='14'/>
+<Pos l='40' c='28' s='14'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='39' c='21' s='1'/>
+<Pos l='41' c='21' s='1'/>
 </Attr>
 <Id value='Encryption_Mode' typref='9'>
 <Attr>
-<Pos l='39' c='5' s='15'/>
+<Pos l='41' c='5' s='15'/>
 </Attr>
 </Id>
 <Id value='Encrypt_Mode' typref='8'>
 <Attr>
-<Pos l='39' c='23' s='12'/>
+<Pos l='41' c='23' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='40' c='25' s='1'/>
+<Pos l='42' c='25' s='1'/>
 </Attr>
 <Id value='Signature_Algorithm' typref='13'>
 <Attr>
-<Pos l='40' c='5' s='19'/>
+<Pos l='42' c='5' s='19'/>
 </Attr>
 </Id>
 <Id value='Sign_Method' typref='12'>
 <Attr>
-<Pos l='40' c='27' s='11'/>
+<Pos l='42' c='27' s='11'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='41' c='20' s='1'/>
+<Pos l='43' c='20' s='1'/>
 </Attr>
 <Id value='Hash_Algorithm' typref='15'>
 <Attr>
-<Pos l='41' c='5' s='14'/>
+<Pos l='43' c='5' s='14'/>
 </Attr>
 </Id>
 <Id value='Hash_Method' typref='14'>
 <Attr>
-<Pos l='41' c='22' s='11'/>
+<Pos l='43' c='22' s='11'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='42' c='29' s='1'/>
+<Pos l='44' c='29' s='1'/>
 </Attr>
 <Id value='Receive_Encrypt_Message' typref='19'>
 <Attr>
-<Pos l='42' c='5' s='23'/>
+<Pos l='44' c='5' s='23'/>
 </Attr>
 </Id>
 <Id value='Message_Status' typref='18'>
 <Attr>
-<Pos l='42' c='31' s='14'/>
+<Pos l='44' c='31' s='14'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='43' c='26' s='1'/>
+<Pos l='45' c='26' s='1'/>
 </Attr>
 <Id value='Receive_Sign_Message' typref='19'>
 <Attr>
-<Pos l='43' c='5' s='20'/>
+<Pos l='45' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='Message_Status' typref='18'>
 <Attr>
-<Pos l='43' c='28' s='14'/>
+<Pos l='45' c='28' s='14'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='44' c='26' s='1'/>
+<Pos l='46' c='26' s='1'/>
 </Attr>
 <Id value='Send_Encrypt_Message' typref='19'>
 <Attr>
-<Pos l='44' c='5' s='20'/>
+<Pos l='46' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='Message_Status' typref='18'>
 <Attr>
-<Pos l='44' c='28' s='14'/>
+<Pos l='46' c='28' s='14'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='45' c='23' s='1'/>
+<Pos l='47' c='23' s='1'/>
 </Attr>
 <Id value='Send_Sign_Message' typref='19'>
 <Attr>
-<Pos l='45' c='5' s='17'/>
+<Pos l='47' c='5' s='17'/>
 </Attr>
 </Id>
 <Id value='Message_Status' typref='18'>
 <Attr>
-<Pos l='45' c='25' s='14'/>
+<Pos l='47' c='25' s='14'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='46' c='16' s='1'/>
+<Pos l='48' c='16' s='1'/>
 </Attr>
 <Id value='Permission' typref='17'>
 <Attr>
-<Pos l='46' c='5' s='10'/>
+<Pos l='48' c='5' s='10'/>
 </Attr>
 </Id>
 <Id value='Operation' typref='16'>
 <Attr>
-<Pos l='46' c='18' s='9'/>
+<Pos l='48' c='18' s='9'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='47' c='27' s='1'/>
+<Pos l='49' c='27' s='1'/>
 </Attr>
 <Id value='Encryption_Key_length' typref='1'>
 <Attr>
-<Pos l='47' c='5' s='21'/>
+<Pos l='49' c='5' s='21'/>
 </Attr>
 </Id>
 <Id value='INT' typref='2'>
 <Attr>
-<Pos l='47' c='29' s='3'/>
+<Pos l='49' c='29' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='48' c='26' s='1'/>
+<Pos l='50' c='26' s='1'/>
 </Attr>
 <Id value='Signature_Key_length' typref='1'>
 <Attr>
-<Pos l='48' c='5' s='20'/>
+<Pos l='50' c='5' s='20'/>
 </Attr>
 </Id>
 <Id value='INT' typref='2'>
 <Attr>
-<Pos l='48' c='28' s='3'/>
+<Pos l='50' c='28' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='49' c='21' s='1'/>
+<Pos l='51' c='21' s='1'/>
 </Attr>
 <Id value='Hash_Key_length' typref='1'>
 <Attr>
-<Pos l='49' c='5' s='15'/>
+<Pos l='51' c='5' s='15'/>
 </Attr>
 </Id>
 <Id value='INT' typref='2'>
 <Attr>
-<Pos l='49' c='23' s='3'/>
+<Pos l='51' c='23' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='50' c='17' s='1'/>
+<Pos l='52' c='17' s='1'/>
 </Attr>
 <Id value='Test_Result' typref='11'>
 <Attr>
-<Pos l='50' c='5' s='11'/>
+<Pos l='52' c='5' s='11'/>
 </Attr>
 </Id>
 <Id value='Crypto_Test_Result' typref='10'>
 <Attr>
-<Pos l='50' c='19' s='18'/>
+<Pos l='52' c='19' s='18'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='51' c='26' s='1'/>
-</Attr>
-<Unary_Exp op='card' typref='1'>
-<Attr>
-<Pos l='51' c='5' s='4'/>
-</Attr>
-<Id value='Encrypt_Method' typref='6'>
-<Attr>
-<Pos l='51' c='10' s='14'/>
-</Attr>
-</Id>
-</Unary_Exp>
-<Integer_Literal value='1' typref='1'>
-<Attr>
-<Pos l='51' c='28' s='1'/>
-</Attr>
-</Integer_Literal>
-</Exp_Comparison>
-<Exp_Comparison op='='>
-<Attr>
-<Pos l='52' c='23' s='1'/>
-</Attr>
-<Unary_Exp op='card' typref='1'>
-<Attr>
-<Pos l='52' c='5' s='4'/>
-</Attr>
-<Id value='Sign_Method' typref='12'>
-<Attr>
-<Pos l='52' c='10' s='11'/>
-</Attr>
-</Id>
-</Unary_Exp>
-<Integer_Literal value='1' typref='1'>
-<Attr>
-<Pos l='52' c='25' s='1'/>
-</Attr>
-</Integer_Literal>
-</Exp_Comparison>
-<Exp_Comparison op='='>
-<Attr>
-<Pos l='53' c='23' s='1'/>
+<Pos l='53' c='26' s='1'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
 <Pos l='53' c='5' s='4'/>
 </Attr>
-<Id value='Hash_Method' typref='14'>
+<Id value='Encrypt_Method' typref='6'>
 <Attr>
-<Pos l='53' c='10' s='11'/>
+<Pos l='53' c='10' s='14'/>
 </Attr>
 </Id>
 </Unary_Exp>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='53' c='25' s='1'/>
+<Pos l='53' c='28' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='54' c='23' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='54' c='5' s='4'/>
+</Attr>
+<Id value='Sign_Method' typref='12'>
+<Attr>
+<Pos l='54' c='10' s='11'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='54' c='25' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='55' c='23' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='55' c='5' s='4'/>
+</Attr>
+<Id value='Hash_Method' typref='14'>
+<Attr>
+<Pos l='55' c='10' s='11'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='55' c='25' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='54' c='17' s='1'/>
+<Pos l='56' c='17' s='1'/>
 </Attr>
 <Id value='Send_Target' typref='5'>
 <Attr>
-<Pos l='54' c='5' s='11'/>
+<Pos l='56' c='5' s='11'/>
 </Attr>
 </Id>
 <Id value='Subject_Agent' typref='4'>
 <Attr>
-<Pos l='54' c='19' s='13'/>
+<Pos l='56' c='19' s='13'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='55' c='17' s='1'/>
+<Pos l='57' c='17' s='1'/>
 </Attr>
 <Id value='Data_Status' typref='19'>
 <Attr>
-<Pos l='55' c='5' s='11'/>
+<Pos l='57' c='5' s='11'/>
 </Attr>
 </Id>
 <Id value='Message_Status' typref='18'>
 <Attr>
-<Pos l='55' c='19' s='14'/>
+<Pos l='57' c='19' s='14'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='58' c='26' s='1'/>
+</Attr>
+<Id value='User_Data_Processing' typref='21'>
+<Attr>
+<Pos l='58' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='Data_Processing' typref='20'>
+<Attr>
+<Pos l='58' c='28' s='15'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -801,309 +845,328 @@
 </Invariant>
 <Initialisation>
 <Attr>
-<Pos l='57' c='1' s='14'/>
+<Pos l='60' c='1' s='14'/>
 </Attr>
 <Nary_Sub op='||'>
 <Becomes_In>
 <Attr>
-<Pos l='58' c='13' s='2'/>
+<Pos l='61' c='13' s='2'/>
 </Attr>
 <Variables>
 <Id value='Subject' typref='5'>
 <Attr>
-<Pos l='58' c='5' s='7'/>
+<Pos l='61' c='5' s='7'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='4'>
 <Attr>
-<Pos l='58' c='16' s='2'/>
+<Pos l='61' c='16' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='59' c='26' s='2'/>
+<Pos l='62' c='26' s='2'/>
 </Attr>
 <Variables>
 <Id value='Encryption_Algorithm' typref='7'>
 <Attr>
-<Pos l='59' c='5' s='20'/>
+<Pos l='62' c='5' s='20'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='6'>
 <Attr>
-<Pos l='59' c='29' s='2'/>
+<Pos l='62' c='29' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='60' c='21' s='2'/>
+<Pos l='63' c='21' s='2'/>
 </Attr>
 <Variables>
 <Id value='Encryption_Mode' typref='9'>
 <Attr>
-<Pos l='60' c='5' s='15'/>
+<Pos l='63' c='5' s='15'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='8'>
 <Attr>
-<Pos l='60' c='24' s='2'/>
+<Pos l='63' c='24' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='61' c='25' s='2'/>
+<Pos l='64' c='25' s='2'/>
 </Attr>
 <Variables>
 <Id value='Signature_Algorithm' typref='13'>
 <Attr>
-<Pos l='61' c='5' s='19'/>
+<Pos l='64' c='5' s='19'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='12'>
 <Attr>
-<Pos l='61' c='28' s='2'/>
+<Pos l='64' c='28' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='62' c='20' s='2'/>
+<Pos l='65' c='20' s='2'/>
 </Attr>
 <Variables>
 <Id value='Hash_Algorithm' typref='15'>
 <Attr>
-<Pos l='62' c='5' s='14'/>
+<Pos l='65' c='5' s='14'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='14'>
 <Attr>
-<Pos l='62' c='23' s='2'/>
+<Pos l='65' c='23' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='63' c='29' s='2'/>
+<Pos l='66' c='29' s='2'/>
 </Attr>
 <Variables>
 <Id value='Receive_Encrypt_Message' typref='19'>
 <Attr>
-<Pos l='63' c='5' s='23'/>
+<Pos l='66' c='5' s='23'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='18'>
 <Attr>
-<Pos l='63' c='32' s='2'/>
+<Pos l='66' c='32' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='64' c='26' s='2'/>
+<Pos l='67' c='26' s='2'/>
 </Attr>
 <Variables>
 <Id value='Receive_Sign_Message' typref='19'>
 <Attr>
-<Pos l='64' c='5' s='20'/>
+<Pos l='67' c='5' s='20'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='18'>
 <Attr>
-<Pos l='64' c='29' s='2'/>
+<Pos l='67' c='29' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='65' c='26' s='2'/>
+<Pos l='68' c='26' s='2'/>
 </Attr>
 <Variables>
 <Id value='Send_Encrypt_Message' typref='19'>
 <Attr>
-<Pos l='65' c='5' s='20'/>
+<Pos l='68' c='5' s='20'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='18'>
 <Attr>
-<Pos l='65' c='29' s='2'/>
+<Pos l='68' c='29' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='66' c='23' s='2'/>
+<Pos l='69' c='23' s='2'/>
 </Attr>
 <Variables>
 <Id value='Send_Sign_Message' typref='19'>
 <Attr>
-<Pos l='66' c='5' s='17'/>
+<Pos l='69' c='5' s='17'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='18'>
 <Attr>
-<Pos l='66' c='26' s='2'/>
+<Pos l='69' c='26' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='67' c='16' s='2'/>
+<Pos l='70' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='Permission' typref='17'>
 <Attr>
-<Pos l='67' c='5' s='10'/>
+<Pos l='70' c='5' s='10'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='16'>
 <Attr>
-<Pos l='67' c='19' s='2'/>
+<Pos l='70' c='19' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='68' c='27' s='2'/>
+<Pos l='71' c='27' s='2'/>
 </Attr>
 <Variables>
 <Id value='Encryption_Key_length' typref='1'>
 <Attr>
-<Pos l='68' c='5' s='21'/>
+<Pos l='71' c='5' s='21'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <Id value='INT' typref='2'>
 <Attr>
-<Pos l='68' c='30' s='3'/>
+<Pos l='71' c='30' s='3'/>
 </Attr>
 </Id>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='69' c='26' s='2'/>
+<Pos l='72' c='26' s='2'/>
 </Attr>
 <Variables>
 <Id value='Signature_Key_length' typref='1'>
 <Attr>
-<Pos l='69' c='5' s='20'/>
+<Pos l='72' c='5' s='20'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <Id value='INT' typref='2'>
 <Attr>
-<Pos l='69' c='29' s='3'/>
+<Pos l='72' c='29' s='3'/>
 </Attr>
 </Id>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='70' c='21' s='2'/>
+<Pos l='73' c='21' s='2'/>
 </Attr>
 <Variables>
 <Id value='Hash_Key_length' typref='1'>
 <Attr>
-<Pos l='70' c='5' s='15'/>
+<Pos l='73' c='5' s='15'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <Id value='INT' typref='2'>
 <Attr>
-<Pos l='70' c='24' s='3'/>
+<Pos l='73' c='24' s='3'/>
 </Attr>
 </Id>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='71' c='17' s='2'/>
+<Pos l='74' c='17' s='2'/>
 </Attr>
 <Variables>
 <Id value='Test_Result' typref='11'>
 <Attr>
-<Pos l='71' c='5' s='11'/>
+<Pos l='74' c='5' s='11'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='10'>
 <Attr>
-<Pos l='71' c='20' s='2'/>
+<Pos l='74' c='20' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='72' c='17' s='2'/>
+<Pos l='75' c='17' s='2'/>
 </Attr>
 <Variables>
 <Id value='Send_Target' typref='5'>
 <Attr>
-<Pos l='72' c='5' s='11'/>
+<Pos l='75' c='5' s='11'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='4'>
 <Attr>
-<Pos l='72' c='20' s='2'/>
+<Pos l='75' c='20' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
 </Becomes_In>
 <Becomes_In>
 <Attr>
-<Pos l='73' c='17' s='2'/>
+<Pos l='76' c='17' s='2'/>
 </Attr>
 <Variables>
 <Id value='Data_Status' typref='19'>
 <Attr>
-<Pos l='73' c='5' s='11'/>
+<Pos l='76' c='5' s='11'/>
 </Attr>
 </Id>
 </Variables>
 <Value>
 <EmptySet typref='18'>
 <Attr>
-<Pos l='73' c='20' s='2'/>
+<Pos l='76' c='20' s='2'/>
+</Attr>
+</EmptySet>
+</Value>
+</Becomes_In>
+<Becomes_In>
+<Attr>
+<Pos l='77' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='User_Data_Processing' typref='21'>
+<Attr>
+<Pos l='77' c='5' s='20'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<EmptySet typref='20'>
+<Attr>
+<Pos l='77' c='29' s='2'/>
 </Attr>
 </EmptySet>
 </Value>
@@ -1113,34 +1176,34 @@
 <Operations>
 <Operation name='receive_message'>
 <Attr>
-<Pos l='76' c='5' s='15'/>
+<Pos l='80' c='5' s='15'/>
 </Attr>
 <Body>
 <Skip>
 <Attr>
-<Pos l='76' c='23' s='4'/>
+<Pos l='80' c='23' s='4'/>
 </Attr>
 </Skip>
 </Body>
 </Operation>
 <Operation name='signature_verify'>
 <Attr>
-<Pos l='77' c='5' s='16' endLine='84'/>
+<Pos l='81' c='5' s='16' endLine='88'/>
 </Attr>
 <Input_Parameters>
 <Id value='Timestamp' typref='1'>
 <Attr>
-<Pos l='77' c='22' s='9'/>
+<Pos l='81' c='22' s='9'/>
 </Attr>
 </Id>
 <Id value='Current_Timestamp' typref='1'>
 <Attr>
-<Pos l='77' c='33' s='17'/>
+<Pos l='81' c='33' s='17'/>
 </Attr>
 </Id>
 <Id value='Timestamp_Subtraction' typref='1'>
 <Attr>
-<Pos l='77' c='52' s='21'/>
+<Pos l='81' c='52' s='21'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -1148,46 +1211,46 @@
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='79' c='19' s='1'/>
+<Pos l='83' c='19' s='1'/>
 </Attr>
 <Id value='Timestamp' typref='1'>
 <Attr>
-<Pos l='79' c='9' s='9'/>
+<Pos l='83' c='9' s='9'/>
 </Attr>
 </Id>
 <Id value='NAT' typref='2'>
 <Attr>
-<Pos l='79' c='21' s='3'/>
+<Pos l='83' c='21' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='80' c='27' s='1'/>
+<Pos l='84' c='27' s='1'/>
 </Attr>
 <Id value='Current_Timestamp' typref='1'>
 <Attr>
-<Pos l='80' c='9' s='17'/>
+<Pos l='84' c='9' s='17'/>
 </Attr>
 </Id>
 <Id value='NAT' typref='2'>
 <Attr>
-<Pos l='80' c='29' s='3'/>
+<Pos l='84' c='29' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='81' c='31' s='1'/>
+<Pos l='85' c='31' s='1'/>
 </Attr>
 <Id value='Timestamp_Subtraction' typref='1'>
 <Attr>
-<Pos l='81' c='9' s='21'/>
+<Pos l='85' c='9' s='21'/>
 </Attr>
 </Id>
 <Id value='NAT' typref='2'>
 <Attr>
-<Pos l='81' c='33' s='3'/>
+<Pos l='85' c='33' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -1196,19 +1259,19 @@
 <Body>
 <Assignement_Sub>
 <Attr>
-<Pos l='83' c='21' s='2'/>
+<Pos l='87' c='21' s='2'/>
 </Attr>
 <Variables>
 <Id value='Test_Result' typref='11'>
 <Attr>
-<Pos l='83' c='9' s='11'/>
+<Pos l='87' c='9' s='11'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='Signature_Verify_Fail' typref='11'>
 <Attr>
-<Pos l='83' c='24' s='21'/>
+<Pos l='87' c='24' s='21'/>
 </Attr>
 </Id>
 </Values>
@@ -1217,48 +1280,48 @@
 </Operation>
 <Operation name='patchfile_decryption'>
 <Attr>
-<Pos l='85' c='5' s='20'/>
+<Pos l='89' c='5' s='20'/>
 </Attr>
 <Body>
 <Skip>
 <Attr>
-<Pos l='85' c='28' s='4'/>
+<Pos l='89' c='28' s='4'/>
 </Attr>
 </Skip>
 </Body>
 </Operation>
 <Operation name='patchfile_encryption'>
 <Attr>
-<Pos l='86' c='5' s='20'/>
+<Pos l='90' c='5' s='20'/>
 </Attr>
 <Body>
 <Skip>
 <Attr>
-<Pos l='86' c='28' s='4'/>
+<Pos l='90' c='28' s='4'/>
 </Attr>
 </Skip>
 </Body>
 </Operation>
 <Operation name='signature'>
 <Attr>
-<Pos l='87' c='5' s='9'/>
+<Pos l='91' c='5' s='9'/>
 </Attr>
 <Body>
 <Skip>
 <Attr>
-<Pos l='87' c='17' s='4'/>
+<Pos l='91' c='17' s='4'/>
 </Attr>
 </Skip>
 </Body>
 </Operation>
 <Operation name='send_message'>
 <Attr>
-<Pos l='88' c='5' s='12'/>
+<Pos l='92' c='5' s='12'/>
 </Attr>
 <Body>
 <Skip>
 <Attr>
-<Pos l='88' c='20' s='4'/>
+<Pos l='92' c='20' s='4'/>
 </Attr>
 </Skip>
 </Body>
@@ -1346,6 +1409,14 @@
 </Type>
 <Type id='19'>
 <Id value='Message_Status'/>
+</Type>
+<Type id='20'>
+<Unary_Exp op='POW'>
+<Id value='Data_Processing'/>
+</Unary_Exp>
+</Type>
+<Type id='21'>
+<Id value='Data_Processing'/>
 </Type>
 </TypeInfos>
 

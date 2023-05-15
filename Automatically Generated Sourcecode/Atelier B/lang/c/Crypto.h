@@ -115,6 +115,14 @@ typedef enum
     
 } Crypto__Message_Status;
 #define Crypto__Message_Status__max 22
+typedef enum
+{
+    Crypto__All,
+    Crypto__Pseudonymization,
+    Crypto__Masking
+    
+} Crypto__Data_Processing;
+#define Crypto__Data_Processing__max 3
 
 /* Clause CONCRETE_CONSTANTS */
 /* Basic constants */
@@ -138,6 +146,7 @@ extern int32_t Crypto__Hash_Key_length;
 extern Crypto__Crypto_Test_Result Crypto__Test_Result;
 extern Crypto__Subject_Agent Crypto__Send_Target;
 extern Crypto__Message_Status Crypto__Data_Status;
+extern Crypto__Data_Processing Crypto__User_Data_Processing;
 extern void Crypto__INITIALISATION(void);
 
 /* Clause OPERATIONS */

@@ -13,7 +13,8 @@ SETS
     Sign_Method = { Empty_Sign_Method , RSA , Curve25519_Ed25519 , NIST_Curve_P256_P384_P521 } ;
     Hash_Method = { Empty_Hash_Method , SHA_1 , SHA_2 , SHA_3 } ;
     Operation = { None , Download , Upload , Fix , Transfer , Approve , Decrypt , Encrypt } ;
-    Message_Status = { Empty_Message , Encrypted_Message , Signed_Message , Decrypted_Message , Binary , Encrypted_Binary , Decrypted_Binary , Signed_Binary , Decrypted_Signed_Binary , Vehicle_Data , Encrypted_Vehicle_Data , Signed_Vehicle_Data , Decrypted_Signed_Vehicle_Data , Decrypted_Vehicle_Data , Encrypted_Update_Response , Signed_Update_Response , Encrypted_Written_Sourcecode , Signed_Written_Sourcecode , Decrypted_Signed_Sourcecode , Encrypted_Sourcecode , Signed_Sourcecode , Decrypted_Sourcecode }
+    Message_Status = { Empty_Message , Encrypted_Message , Signed_Message , Decrypted_Message , Binary , Encrypted_Binary , Decrypted_Binary , Signed_Binary , Decrypted_Signed_Binary , Vehicle_Data , Encrypted_Vehicle_Data , Signed_Vehicle_Data , Decrypted_Signed_Vehicle_Data , Decrypted_Vehicle_Data , Encrypted_Update_Response , Signed_Update_Response , Encrypted_Written_Sourcecode , Signed_Written_Sourcecode , Decrypted_Signed_Sourcecode , Encrypted_Sourcecode , Signed_Sourcecode , Decrypted_Sourcecode } ;
+    Data_Processing = { All , Pseudonymization , Masking }
 
 CONCRETE_VARIABLES
     Subject ,
@@ -31,7 +32,8 @@ CONCRETE_VARIABLES
     Hash_Key_length ,
     Test_Result ,
     Send_Target ,
-    Data_Status
+    Data_Status ,
+    User_Data_Processing
 
 INVARIANT
     Subject : Subject_Agent &
@@ -52,7 +54,8 @@ INVARIANT
     card ( Sign_Method ) = 1 &
     card ( Hash_Method ) = 1 &
     Send_Target : Subject_Agent &
-    Data_Status : Message_Status
+    Data_Status : Message_Status &
+    User_Data_Processing : Data_Processing
 
 INITIALISATION
     Subject :: {} ||
@@ -70,7 +73,8 @@ INITIALISATION
     Hash_Key_length :: INT ||
     Test_Result :: {} ||
     Send_Target :: {} ||
-    Data_Status :: {}
+    Data_Status :: {} ||
+    User_Data_Processing :: {}
 
 OPERATIONS
     receive_message = skip ;

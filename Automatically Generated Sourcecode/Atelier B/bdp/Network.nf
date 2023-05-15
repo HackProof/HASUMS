@@ -47,8 +47,8 @@ THEORY ListVisibleVariablesX IS
   Abstract_List_VisibleVariables(Machine(Network))==(?);
   External_List_VisibleVariables(Machine(Network))==(?);
   Expanded_List_VisibleVariables(Machine(Network))==(?);
-  List_VisibleVariables(Machine(Network))==(Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent);
-  Internal_List_VisibleVariables(Machine(Network))==(Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent)
+  List_VisibleVariables(Machine(Network))==(Communication_Timeout,Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent);
+  Internal_List_VisibleVariables(Machine(Network))==(Communication_Timeout,Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent)
 END
 &
 THEORY ListInvariantX IS
@@ -57,7 +57,7 @@ THEORY ListInvariantX IS
   Expanded_List_Invariant(Machine(Network))==(btrue);
   Abstract_List_Invariant(Machine(Network))==(btrue);
   Context_List_Invariant(Machine(Network))==(btrue);
-  List_Invariant(Machine(Network))==(Input_Agent: Access_Agent & Input_IP: Access_IP & Input_IP_List: Access_IP_List & Input_Port: INT & Available_Port: INT & Agent: Access_grant)
+  List_Invariant(Machine(Network))==(Input_Agent: Access_Agent & Input_IP: Access_IP & Input_IP_List: Access_IP_List & Input_Port: INT & Available_Port: INT & Agent: Access_grant & Communication_Timeout: INT)
 END
 &
 THEORY ListAssertionsX IS
@@ -76,9 +76,9 @@ THEORY ListExclusivityX IS
 END
 &
 THEORY ListInitialisationX IS
-  Expanded_List_Initialisation(Machine(Network))==(@(Input_Agent$0).(Input_Agent$0: {} ==> Input_Agent:=Input_Agent$0) || @(Input_IP$0).(Input_IP$0: {} ==> Input_IP:=Input_IP$0) || @(Input_IP_List$0).(Input_IP_List$0: {} ==> Input_IP_List:=Input_IP_List$0) || @(Input_Port$0).(Input_Port$0: INT ==> Input_Port:=Input_Port$0) || @(Available_Port$0).(Available_Port$0: INT ==> Available_Port:=Available_Port$0) || @(Agent$0).(Agent$0: {} ==> Agent:=Agent$0));
+  Expanded_List_Initialisation(Machine(Network))==(@(Input_Agent$0).(Input_Agent$0: {} ==> Input_Agent:=Input_Agent$0) || @(Input_IP$0).(Input_IP$0: {} ==> Input_IP:=Input_IP$0) || @(Input_IP_List$0).(Input_IP_List$0: {} ==> Input_IP_List:=Input_IP_List$0) || @(Input_Port$0).(Input_Port$0: INT ==> Input_Port:=Input_Port$0) || @(Available_Port$0).(Available_Port$0: INT ==> Available_Port:=Available_Port$0) || @(Agent$0).(Agent$0: {} ==> Agent:=Agent$0) || @(Communication_Timeout$0).(Communication_Timeout$0: INT ==> Communication_Timeout:=Communication_Timeout$0));
   Context_List_Initialisation(Machine(Network))==(skip);
-  List_Initialisation(Machine(Network))==(Input_Agent:: {} || Input_IP:: {} || Input_IP_List:: {} || Input_Port:: INT || Available_Port:: INT || Agent:: {})
+  List_Initialisation(Machine(Network))==(Input_Agent:: {} || Input_IP:: {} || Input_IP_List:: {} || Input_Port:: INT || Available_Port:: INT || Agent:: {} || Communication_Timeout:: INT)
 END
 &
 THEORY ListParametersX IS
@@ -167,7 +167,7 @@ THEORY ListOfIdsX IS
   List_Of_Ids(Machine(Network)) == (Access_Agent,Access_IP,Access_IP_List,Access_grant,Empty_Agent,Secondary_ECU,Auto_Repair_Shop,Vehicle,Development_Server,Diagnostic_Server,Update_Server,CRM_Server,Developer_PC,DiagnosticTester_PC,Engineer_PC,Empty_IP,Development_Server_IP,Diagnostic_Server_IP,Update_Server_IP,CRM_Server_IP,Vehicle_IP,Engineer_PC_IP,Developer_PC_IP,DiagnosticTester_PC_IP,IP_Unknown,IP_Whitelist,IP_Blacklist,Access_Success,Access_Fail | ? | ? | ? | access_control | ? | ? | ? | Network);
   List_Of_HiddenCst_Ids(Machine(Network)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(Network)) == (?);
-  List_Of_VisibleVar_Ids(Machine(Network)) == (Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent | ?);
+  List_Of_VisibleVar_Ids(Machine(Network)) == (Communication_Timeout,Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent | ?);
   List_Of_Ids_SeenBNU(Machine(Network)) == (?: ?)
 END
 &
@@ -180,7 +180,7 @@ THEORY ConstantsEnvX IS
 END
 &
 THEORY VisibleVariablesEnvX IS
-  VisibleVariables(Machine(Network)) == (Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Input_Port) == Mvv(btype(INTEGER,?,?));Type(Available_Port) == Mvv(btype(INTEGER,?,?));Type(Input_IP_List) == Mvv(etype(Access_IP_List,?,?));Type(Input_IP) == Mvv(etype(Access_IP,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?)))
+  VisibleVariables(Machine(Network)) == (Type(Communication_Timeout) == Mvv(btype(INTEGER,?,?));Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Input_Port) == Mvv(btype(INTEGER,?,?));Type(Available_Port) == Mvv(btype(INTEGER,?,?));Type(Input_IP_List) == Mvv(etype(Access_IP_List,?,?));Type(Input_IP) == Mvv(etype(Access_IP,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?)))
 END
 &
 THEORY OperationsEnvX IS

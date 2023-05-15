@@ -14,6 +14,7 @@ Network__Access_IP_List Network__Input_IP_List;
 int32_t Network__Available_Port;
 int32_t Network__Input_Port;
 Network__Access_grant Network__Agent;
+int32_t Network__Communication_Timeout;
 /* Clause INITIALISATION */
 void Network__INITIALISATION(void)
 {
@@ -24,6 +25,7 @@ void Network__INITIALISATION(void)
     Network__Available_Port = 443;
     Network__Input_Port = 0;
     Network__Agent = Network__Access_Fail;
+    Network__Communication_Timeout = 600;
 }
 
 /* Clause OPERATIONS */

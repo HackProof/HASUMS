@@ -24,6 +24,7 @@ int32_t Crypto__Hash_Key_length;
 Crypto__Crypto_Test_Result Crypto__Test_Result;
 Crypto__Subject_Agent Crypto__Send_Target;
 Crypto__Message_Status Crypto__Data_Status;
+Crypto__Data_Processing Crypto__User_Data_Processing;
 /* Clause INITIALISATION */
 void Crypto__INITIALISATION(void)
 {
@@ -44,6 +45,7 @@ void Crypto__INITIALISATION(void)
     Crypto__Test_Result = Crypto__Crypto_Test_Fail;
     Crypto__Send_Target = Crypto__Empty_Agent;
     Crypto__Data_Status = Crypto__Empty_Message;
+    Crypto__User_Data_Processing = Crypto__All;
 }
 
 /* Clause OPERATIONS */

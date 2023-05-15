@@ -69,6 +69,13 @@ typedef enum
     
 } AccessControl__Access_grant;
 #define AccessControl__Access_grant__max 2
+typedef enum
+{
+    AccessControl__Success,
+    AccessControl__Failure
+    
+} AccessControl__Access_Result;
+#define AccessControl__Access_Result__max 2
 
 /* Clause CONCRETE_CONSTANTS */
 /* Basic constants */
@@ -82,11 +89,15 @@ extern AccessControl__Access_Agent AccessControl__Input_Agent;
 extern int32_t AccessControl__Login_Try;
 extern AccessControl__Operation AccessControl__Permission;
 extern AccessControl__Access_grant AccessControl__Agent;
+extern int32_t AccessControl__Same_Account_Connection;
+extern AccessControl__Access_Result AccessControl__Account_Connection_Result;
+extern bool AccessControl__Special_Char;
 extern void AccessControl__INITIALISATION(void);
 
 /* Clause OPERATIONS */
 
-extern void AccessControl__access_grant(void);
+extern void AccessControl__access_grant(int32_t Input_String_Length, int32_t Buffer_Length);
+extern void AccessControl__connection_refuse(void);
 
 #ifdef __cplusplus
 }

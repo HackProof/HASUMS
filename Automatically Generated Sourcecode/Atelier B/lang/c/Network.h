@@ -67,6 +67,7 @@ extern Network__Access_IP_List Network__Input_IP_List;
 extern int32_t Network__Available_Port;
 extern int32_t Network__Input_Port;
 extern Network__Access_grant Network__Agent;
+extern int32_t Network__Communication_Timeout;
 extern void Network__INITIALISATION(void);
 
 /* Clause OPERATIONS */

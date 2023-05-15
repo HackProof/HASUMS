@@ -120,77 +120,96 @@
 </Id>
 </Values>
 </Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='16' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Communication_Timeout' typref='1'>
+<Attr>
+<Pos l='16' c='5' s='21'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='600' typref='1'>
+<Attr>
+<Pos l='16' c='30' s='3'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
 </Nary_Sub>
 </Initialisation>
 <Operations>
 <Operation name='access_control'>
 <Attr>
-<Pos l='18' c='5' s='14' endLine='29'/>
+<Pos l='19' c='5' s='14' endLine='30'/>
 </Attr>
 <Body>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='20' c='9' s='2'/>
+<Pos l='21' c='9' s='2'/>
 </Attr>
 <Condition>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='20' c='24' s='1'/>
+<Pos l='21' c='24' s='1'/>
 </Attr>
 <Id value='Input_Agent' typref='4'>
 <Attr>
-<Pos l='20' c='12' s='11'/>
+<Pos l='21' c='12' s='11'/>
 </Attr>
 </Id>
 <Id value='Vehicle' typref='4'>
 <Attr>
-<Pos l='20' c='26' s='7'/>
+<Pos l='21' c='26' s='7'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='21' c='21' s='1'/>
+<Pos l='22' c='21' s='1'/>
 </Attr>
 <Id value='Input_IP' typref='5'>
 <Attr>
-<Pos l='21' c='12' s='8'/>
+<Pos l='22' c='12' s='8'/>
 </Attr>
 </Id>
 <Id value='Vehicle_IP' typref='5'>
 <Attr>
-<Pos l='21' c='23' s='10'/>
+<Pos l='22' c='23' s='10'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='22' c='23' s='1'/>
+<Pos l='23' c='23' s='1'/>
 </Attr>
 <Id value='Input_Port' typref='1'>
 <Attr>
-<Pos l='22' c='12' s='10'/>
+<Pos l='23' c='12' s='10'/>
 </Attr>
 </Id>
 <Id value='Available_Port' typref='1'>
 <Attr>
-<Pos l='22' c='25' s='14'/>
+<Pos l='23' c='25' s='14'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='/='>
 <Attr>
-<Pos l='23' c='26' s='2'/>
+<Pos l='24' c='26' s='2'/>
 </Attr>
 <Id value='Input_IP_List' typref='6'>
 <Attr>
-<Pos l='23' c='12' s='13'/>
+<Pos l='24' c='12' s='13'/>
 </Attr>
 </Id>
 <Id value='IP_Blacklist' typref='6'>
 <Attr>
-<Pos l='23' c='29' s='12'/>
+<Pos l='24' c='29' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -199,19 +218,19 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='25' c='18' s='2'/>
+<Pos l='26' c='18' s='2'/>
 </Attr>
 <Variables>
 <Id value='Agent' typref='7'>
 <Attr>
-<Pos l='25' c='12' s='5'/>
+<Pos l='26' c='12' s='5'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='Access_Success' typref='7'>
 <Attr>
-<Pos l='25' c='21' s='14'/>
+<Pos l='26' c='21' s='14'/>
 </Attr>
 </Id>
 </Values>
@@ -220,19 +239,19 @@
 <Else>
 <Assignement_Sub>
 <Attr>
-<Pos l='27' c='18' s='2'/>
+<Pos l='28' c='18' s='2'/>
 </Attr>
 <Variables>
 <Id value='Agent' typref='7'>
 <Attr>
-<Pos l='27' c='12' s='5'/>
+<Pos l='28' c='12' s='5'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='Access_Fail' typref='7'>
 <Attr>
-<Pos l='27' c='21' s='11'/>
+<Pos l='28' c='21' s='11'/>
 </Attr>
 </Id>
 </Values>

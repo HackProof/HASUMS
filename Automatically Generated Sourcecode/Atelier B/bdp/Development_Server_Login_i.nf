@@ -40,8 +40,8 @@ THEORY ListVariablesX IS
 END
 &
 THEORY ListVisibleVariablesX IS
-  Inherited_List_VisibleVariables(Implementation(Development_Server_Login_i))==(Agent,Permission,Login_Try,Input_Agent,Input_Password,Input_ID);
-  Abstract_List_VisibleVariables(Implementation(Development_Server_Login_i))==(Agent,Permission,Login_Try,Input_Agent,Input_Password,Input_ID);
+  Inherited_List_VisibleVariables(Implementation(Development_Server_Login_i))==(Special_Char,Account_Connection_Result,Same_Account_Connection,Agent,Permission,Login_Try,Input_Agent,Input_Password,Input_ID);
+  Abstract_List_VisibleVariables(Implementation(Development_Server_Login_i))==(Special_Char,Account_Connection_Result,Same_Account_Connection,Agent,Permission,Login_Try,Input_Agent,Input_Password,Input_ID);
   External_List_VisibleVariables(Implementation(Development_Server_Login_i))==(?);
   Expanded_List_VisibleVariables(Implementation(Development_Server_Login_i))==(?);
   List_VisibleVariables(Implementation(Development_Server_Login_i))==(?);
@@ -51,7 +51,7 @@ END
 THEORY ListInvariantX IS
   Gluing_Seen_List_Invariant(Implementation(Development_Server_Login_i))==(btrue);
   Expanded_List_Invariant(Implementation(Development_Server_Login_i))==(btrue);
-  Abstract_List_Invariant(Implementation(Development_Server_Login_i))==(Input_ID: Access_ID & Input_Password: Access_Password & Input_Agent: Access_Agent & Login_Try: INT & Permission: Operation & Agent: Access_grant);
+  Abstract_List_Invariant(Implementation(Development_Server_Login_i))==(Input_ID: Access_ID & Input_Password: Access_Password & Input_Agent: Access_Agent & Login_Try: INT & Permission: Operation & Agent: Access_grant & Same_Account_Connection: INT & Account_Connection_Result: Access_Result & Special_Char: BOOL);
   Context_List_Invariant(Implementation(Development_Server_Login_i))==(btrue);
   List_Invariant(Implementation(Development_Server_Login_i))==(btrue)
 END
@@ -72,9 +72,9 @@ THEORY ListExclusivityX IS
 END
 &
 THEORY ListInitialisationX IS
-  Expanded_List_Initialisation(Implementation(Development_Server_Login_i))==(Input_ID:=Empty_ID;Input_Password:=Empty_Password;Input_Agent:=Empty_Agent;(0: INT | Login_Try:=0);Permission:=None;Agent:=Access_Fail);
+  Expanded_List_Initialisation(Implementation(Development_Server_Login_i))==(Input_ID:=Empty_ID;Input_Password:=Empty_Password;Input_Agent:=Empty_Agent;(0: INT | Login_Try:=0);Permission:=None;Agent:=Access_Fail;(1: INT | Same_Account_Connection:=1);Account_Connection_Result:=Failure;Special_Char:=FALSE);
   Context_List_Initialisation(Implementation(Development_Server_Login_i))==(skip);
-  List_Initialisation(Implementation(Development_Server_Login_i))==(Input_ID:=Empty_ID;Input_Password:=Empty_Password;Input_Agent:=Empty_Agent;Login_Try:=0;Permission:=None;Agent:=Access_Fail)
+  List_Initialisation(Implementation(Development_Server_Login_i))==(Input_ID:=Empty_ID;Input_Password:=Empty_Password;Input_Agent:=Empty_Agent;Login_Try:=0;Permission:=None;Agent:=Access_Fail;Same_Account_Connection:=1;Account_Connection_Result:=Failure;Special_Char:=FALSE)
 END
 &
 THEORY ListParametersX IS
@@ -91,30 +91,37 @@ THEORY ListConstraintsX IS
 END
 &
 THEORY ListOperationsX IS
-  Internal_List_Operations(Implementation(Development_Server_Login_i))==(access_grant);
-  List_Operations(Implementation(Development_Server_Login_i))==(access_grant)
+  Internal_List_Operations(Implementation(Development_Server_Login_i))==(access_grant,connection_refuse);
+  List_Operations(Implementation(Development_Server_Login_i))==(access_grant,connection_refuse)
 END
 &
 THEORY ListInputX IS
-  List_Input(Implementation(Development_Server_Login_i),access_grant)==(?)
+  List_Input(Implementation(Development_Server_Login_i),access_grant)==(Input_String_Length,Buffer_Length);
+  List_Input(Implementation(Development_Server_Login_i),connection_refuse)==(?)
 END
 &
 THEORY ListOutputX IS
-  List_Output(Implementation(Development_Server_Login_i),access_grant)==(?)
+  List_Output(Implementation(Development_Server_Login_i),access_grant)==(?);
+  List_Output(Implementation(Development_Server_Login_i),connection_refuse)==(?)
 END
 &
 THEORY ListHeaderX IS
-  List_Header(Implementation(Development_Server_Login_i),access_grant)==(access_grant)
+  List_Header(Implementation(Development_Server_Login_i),access_grant)==(access_grant(Input_String_Length,Buffer_Length));
+  List_Header(Implementation(Development_Server_Login_i),connection_refuse)==(connection_refuse)
 END
 &
 THEORY ListPreconditionX IS
   Own_Precondition(Implementation(Development_Server_Login_i),access_grant)==(btrue);
-  List_Precondition(Implementation(Development_Server_Login_i),access_grant)==(btrue)
+  List_Precondition(Implementation(Development_Server_Login_i),access_grant)==(Input_String_Length: NAT & Buffer_Length: NAT & Input_String_Length<Buffer_Length);
+  Own_Precondition(Implementation(Development_Server_Login_i),connection_refuse)==(btrue);
+  List_Precondition(Implementation(Development_Server_Login_i),connection_refuse)==(btrue)
 END
 &
 THEORY ListSubstitutionX IS
-  Expanded_List_Substitution(Implementation(Development_Server_Login_i),access_grant)==(btrue | Input_ID = OEM_TeamLeader_ID & Input_Password = OEM_TeamLeader_Password & Input_Agent = Developer_PC & Login_Try<=5 ==> (Agent:=Access_Success;Permission:=Upload_Fix_Transfer_Download_Approve;(0: INT | Login_Try:=0);("Login Success!\n": STRING | skip);("Login Entity: OEM_TeamLeader\n": STRING | skip);("============================\n": STRING | skip)) [] not(Input_ID = OEM_TeamLeader_ID & Input_Password = OEM_TeamLeader_Password & Input_Agent = Developer_PC & Login_Try<=5) ==> (Input_ID = OEM_TeamMember_ID & Input_Password = OEM_TeamMember_Password & Input_Agent = Developer_PC & Login_Try<=5 ==> (Agent:=Access_Success;Permission:=Upload_Fix_Transfer;(0: INT | Login_Try:=0);("Login Success!\n": STRING | skip);("Login Entity: OEM_TeamMember\n": STRING | skip);("============================\n": STRING | skip)) [] not(Input_ID = OEM_TeamMember_ID & Input_Password = OEM_TeamMember_Password & Input_Agent = Developer_PC & Login_Try<=5) ==> (Agent:=Access_Fail;Permission:=None;(Login_Try+1: INT & Login_Try: INT & 1: INT | Login_Try:=Login_Try+1);("Login Fail!\n": STRING | skip);("============================\n": STRING | skip))));
-  List_Substitution(Implementation(Development_Server_Login_i),access_grant)==(IF Input_ID = OEM_TeamLeader_ID & Input_Password = OEM_TeamLeader_Password & Input_Agent = Developer_PC & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Upload_Fix_Transfer_Download_Approve;Login_Try:=0;STRING_WRITE("Login Success!\n");STRING_WRITE("Login Entity: OEM_TeamLeader\n");STRING_WRITE("============================\n") ELSE IF Input_ID = OEM_TeamMember_ID & Input_Password = OEM_TeamMember_Password & Input_Agent = Developer_PC & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Upload_Fix_Transfer;Login_Try:=0;STRING_WRITE("Login Success!\n");STRING_WRITE("Login Entity: OEM_TeamMember\n");STRING_WRITE("============================\n") ELSE Agent:=Access_Fail;Permission:=None;Login_Try:=Login_Try+1;STRING_WRITE("Login Fail!\n");STRING_WRITE("============================\n") END END)
+  Expanded_List_Substitution(Implementation(Development_Server_Login_i),connection_refuse)==(btrue | Same_Account_Connection = 1 ==> Account_Connection_Result:=Success [] not(Same_Account_Connection = 1) ==> Account_Connection_Result:=Failure);
+  Expanded_List_Substitution(Implementation(Development_Server_Login_i),access_grant)==(Input_String_Length: NAT & Buffer_Length: NAT & Input_String_Length<Buffer_Length | Input_ID = OEM_TeamLeader_ID & Input_Password = OEM_TeamLeader_Password & Input_Agent = Developer_PC & Login_Try<=5 ==> (Agent:=Access_Success;Permission:=Upload_Fix_Transfer_Download_Approve;(0: INT | Login_Try:=0);("Login Success!\n": STRING | skip);("Login Entity: OEM_TeamLeader\n": STRING | skip);("============================\n": STRING | skip)) [] not(Input_ID = OEM_TeamLeader_ID & Input_Password = OEM_TeamLeader_Password & Input_Agent = Developer_PC & Login_Try<=5) ==> (Input_ID = OEM_TeamMember_ID & Input_Password = OEM_TeamMember_Password & Input_Agent = Developer_PC & Login_Try<=5 ==> (Agent:=Access_Success;Permission:=Upload_Fix_Transfer;(0: INT | Login_Try:=0);("Login Success!\n": STRING | skip);("Login Entity: OEM_TeamMember\n": STRING | skip);("============================\n": STRING | skip)) [] not(Input_ID = OEM_TeamMember_ID & Input_Password = OEM_TeamMember_Password & Input_Agent = Developer_PC & Login_Try<=5) ==> (Agent:=Access_Fail;Permission:=None;(Login_Try+1: INT & Login_Try: INT & 1: INT | Login_Try:=Login_Try+1);("Login Fail!\n": STRING | skip);("============================\n": STRING | skip))));
+  List_Substitution(Implementation(Development_Server_Login_i),access_grant)==(IF Input_ID = OEM_TeamLeader_ID & Input_Password = OEM_TeamLeader_Password & Input_Agent = Developer_PC & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Upload_Fix_Transfer_Download_Approve;Login_Try:=0;STRING_WRITE("Login Success!\n");STRING_WRITE("Login Entity: OEM_TeamLeader\n");STRING_WRITE("============================\n") ELSE IF Input_ID = OEM_TeamMember_ID & Input_Password = OEM_TeamMember_Password & Input_Agent = Developer_PC & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Upload_Fix_Transfer;Login_Try:=0;STRING_WRITE("Login Success!\n");STRING_WRITE("Login Entity: OEM_TeamMember\n");STRING_WRITE("============================\n") ELSE Agent:=Access_Fail;Permission:=None;Login_Try:=Login_Try+1;STRING_WRITE("Login Fail!\n");STRING_WRITE("============================\n") END END);
+  List_Substitution(Implementation(Development_Server_Login_i),connection_refuse)==(IF Same_Account_Connection = 1 THEN Account_Connection_Result:=Success ELSE Account_Connection_Result:=Failure END)
 END
 &
 THEORY ListConstantsX IS
@@ -124,18 +131,19 @@ THEORY ListConstantsX IS
 END
 &
 THEORY ListSetsX IS
-  Set_Definition(Implementation(Development_Server_Login_i),Access_grant)==({Access_Success,Access_Fail});
+  Set_Definition(Implementation(Development_Server_Login_i),Access_Result)==({Success,Failure});
   Context_List_Enumerated(Implementation(Development_Server_Login_i))==(?);
   Context_List_Defered(Implementation(Development_Server_Login_i))==(?);
   Context_List_Sets(Implementation(Development_Server_Login_i))==(?);
-  List_Own_Enumerated(Implementation(Development_Server_Login_i))==(Access_ID,Access_Password,Access_Agent,Operation,Access_grant);
+  List_Own_Enumerated(Implementation(Development_Server_Login_i))==(Access_ID,Access_Password,Access_Agent,Operation,Access_grant,Access_Result);
   List_Valuable_Sets(Implementation(Development_Server_Login_i))==(?);
-  Inherited_List_Enumerated(Implementation(Development_Server_Login_i))==(Access_ID,Access_Password,Access_Agent,Operation,Access_grant);
+  Inherited_List_Enumerated(Implementation(Development_Server_Login_i))==(Access_ID,Access_Password,Access_Agent,Operation,Access_grant,Access_Result);
   Inherited_List_Defered(Implementation(Development_Server_Login_i))==(?);
-  Inherited_List_Sets(Implementation(Development_Server_Login_i))==(Access_ID,Access_Password,Access_Agent,Operation,Access_grant);
+  Inherited_List_Sets(Implementation(Development_Server_Login_i))==(Access_ID,Access_Password,Access_Agent,Operation,Access_grant,Access_Result);
   List_Enumerated(Implementation(Development_Server_Login_i))==(?);
   List_Defered(Implementation(Development_Server_Login_i))==(?);
   List_Sets(Implementation(Development_Server_Login_i))==(?);
+  Set_Definition(Implementation(Development_Server_Login_i),Access_grant)==({Access_Success,Access_Fail});
   Set_Definition(Implementation(Development_Server_Login_i),Operation)==({None,All,Upload,Fix,Transfer,Download,Approve,Upload_Fix_Transfer,Upload_Fix_Transfer_Download_Approve});
   Set_Definition(Implementation(Development_Server_Login_i),Access_Agent)==({Empty_Agent,Secondary_ECU,Auto_Repair_Shop,Vehicle,Development_Server,Diagnostic_Server,Update_Server,CRM_Server,Developer_PC,DiagnosticTester_PC,Engineer_PC});
   Set_Definition(Implementation(Development_Server_Login_i),Access_Password)==({Empty_Password,Engineer_Password,OEM_TeamLeader_Password,OEM_TeamMember_Password});
@@ -150,7 +158,7 @@ THEORY ListHiddenConstantsX IS
 END
 &
 THEORY ListPropertiesX IS
-  Abstract_List_Properties(Implementation(Development_Server_Login_i))==(Access_ID: FIN(INTEGER) & not(Access_ID = {}) & Access_Password: FIN(INTEGER) & not(Access_Password = {}) & Access_Agent: FIN(INTEGER) & not(Access_Agent = {}) & Operation: FIN(INTEGER) & not(Operation = {}) & Access_grant: FIN(INTEGER) & not(Access_grant = {}));
+  Abstract_List_Properties(Implementation(Development_Server_Login_i))==(Access_ID: FIN(INTEGER) & not(Access_ID = {}) & Access_Password: FIN(INTEGER) & not(Access_Password = {}) & Access_Agent: FIN(INTEGER) & not(Access_Agent = {}) & Operation: FIN(INTEGER) & not(Operation = {}) & Access_grant: FIN(INTEGER) & not(Access_grant = {}) & Access_Result: FIN(INTEGER) & not(Access_Result = {}));
   Context_List_Properties(Implementation(Development_Server_Login_i))==(btrue);
   Inherited_List_Properties(Implementation(Development_Server_Login_i))==(btrue);
   List_Properties(Implementation(Development_Server_Login_i))==(btrue)
@@ -183,15 +191,15 @@ THEORY ListIncludedOperationsX IS
 END
 &
 THEORY InheritedEnvX IS
-  Operations(Implementation(Development_Server_Login_i))==(Type(access_grant) == Cst(No_type,No_type));
-  VisibleVariables(Implementation(Development_Server_Login_i))==(Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Permission) == Mvv(etype(Operation,?,?));Type(Login_Try) == Mvv(btype(INTEGER,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?));Type(Input_Password) == Mvv(etype(Access_Password,?,?));Type(Input_ID) == Mvv(etype(Access_ID,?,?)));
-  Constants(Implementation(Development_Server_Login_i))==(Type(Empty_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamLeader_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamMember_ID) == Cst(etype(Access_ID,0,5));Type(Vehicle_ID) == Cst(etype(Access_ID,0,5));Type(Update_Server_ID) == Cst(etype(Access_ID,0,5));Type(Engineer_ID) == Cst(etype(Access_ID,0,5));Type(Empty_Password) == Cst(etype(Access_Password,0,3));Type(Engineer_Password) == Cst(etype(Access_Password,0,3));Type(OEM_TeamLeader_Password) == Cst(etype(Access_Password,0,3));Type(OEM_TeamMember_Password) == Cst(etype(Access_Password,0,3));Type(Empty_Agent) == Cst(etype(Access_Agent,0,10));Type(Secondary_ECU) == Cst(etype(Access_Agent,0,10));Type(Auto_Repair_Shop) == Cst(etype(Access_Agent,0,10));Type(Vehicle) == Cst(etype(Access_Agent,0,10));Type(Development_Server) == Cst(etype(Access_Agent,0,10));Type(Diagnostic_Server) == Cst(etype(Access_Agent,0,10));Type(Update_Server) == Cst(etype(Access_Agent,0,10));Type(CRM_Server) == Cst(etype(Access_Agent,0,10));Type(Developer_PC) == Cst(etype(Access_Agent,0,10));Type(DiagnosticTester_PC) == Cst(etype(Access_Agent,0,10));Type(Engineer_PC) == Cst(etype(Access_Agent,0,10));Type(None) == Cst(etype(Operation,0,8));Type(All) == Cst(etype(Operation,0,8));Type(Upload) == Cst(etype(Operation,0,8));Type(Fix) == Cst(etype(Operation,0,8));Type(Transfer) == Cst(etype(Operation,0,8));Type(Download) == Cst(etype(Operation,0,8));Type(Approve) == Cst(etype(Operation,0,8));Type(Upload_Fix_Transfer) == Cst(etype(Operation,0,8));Type(Upload_Fix_Transfer_Download_Approve) == Cst(etype(Operation,0,8));Type(Access_Success) == Cst(etype(Access_grant,0,1));Type(Access_Fail) == Cst(etype(Access_grant,0,1)))
+  Operations(Implementation(Development_Server_Login_i))==(Type(connection_refuse) == Cst(No_type,No_type);Type(access_grant) == Cst(No_type,btype(INTEGER,?,?)*btype(INTEGER,?,?)));
+  VisibleVariables(Implementation(Development_Server_Login_i))==(Type(Special_Char) == Mvv(btype(BOOL,?,?));Type(Account_Connection_Result) == Mvv(etype(Access_Result,?,?));Type(Same_Account_Connection) == Mvv(btype(INTEGER,?,?));Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Permission) == Mvv(etype(Operation,?,?));Type(Login_Try) == Mvv(btype(INTEGER,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?));Type(Input_Password) == Mvv(etype(Access_Password,?,?));Type(Input_ID) == Mvv(etype(Access_ID,?,?)));
+  Constants(Implementation(Development_Server_Login_i))==(Type(Empty_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamLeader_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamMember_ID) == Cst(etype(Access_ID,0,5));Type(Vehicle_ID) == Cst(etype(Access_ID,0,5));Type(Update_Server_ID) == Cst(etype(Access_ID,0,5));Type(Engineer_ID) == Cst(etype(Access_ID,0,5));Type(Empty_Password) == Cst(etype(Access_Password,0,3));Type(Engineer_Password) == Cst(etype(Access_Password,0,3));Type(OEM_TeamLeader_Password) == Cst(etype(Access_Password,0,3));Type(OEM_TeamMember_Password) == Cst(etype(Access_Password,0,3));Type(Empty_Agent) == Cst(etype(Access_Agent,0,10));Type(Secondary_ECU) == Cst(etype(Access_Agent,0,10));Type(Auto_Repair_Shop) == Cst(etype(Access_Agent,0,10));Type(Vehicle) == Cst(etype(Access_Agent,0,10));Type(Development_Server) == Cst(etype(Access_Agent,0,10));Type(Diagnostic_Server) == Cst(etype(Access_Agent,0,10));Type(Update_Server) == Cst(etype(Access_Agent,0,10));Type(CRM_Server) == Cst(etype(Access_Agent,0,10));Type(Developer_PC) == Cst(etype(Access_Agent,0,10));Type(DiagnosticTester_PC) == Cst(etype(Access_Agent,0,10));Type(Engineer_PC) == Cst(etype(Access_Agent,0,10));Type(None) == Cst(etype(Operation,0,8));Type(All) == Cst(etype(Operation,0,8));Type(Upload) == Cst(etype(Operation,0,8));Type(Fix) == Cst(etype(Operation,0,8));Type(Transfer) == Cst(etype(Operation,0,8));Type(Download) == Cst(etype(Operation,0,8));Type(Approve) == Cst(etype(Operation,0,8));Type(Upload_Fix_Transfer) == Cst(etype(Operation,0,8));Type(Upload_Fix_Transfer_Download_Approve) == Cst(etype(Operation,0,8));Type(Access_Success) == Cst(etype(Access_grant,0,1));Type(Access_Fail) == Cst(etype(Access_grant,0,1));Type(Success) == Cst(etype(Access_Result,0,1));Type(Failure) == Cst(etype(Access_Result,0,1)))
 END
 &
 THEORY ListVisibleStaticX END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Implementation(Development_Server_Login_i)) == (? | ? | ? | ? | access_grant | ? | seen(Machine(BASIC_IO)) | ? | Development_Server_Login_i);
+  List_Of_Ids(Implementation(Development_Server_Login_i)) == (? | ? | ? | ? | access_grant,connection_refuse | ? | seen(Machine(BASIC_IO)) | ? | Development_Server_Login_i);
   List_Of_HiddenCst_Ids(Implementation(Development_Server_Login_i)) == (? | ?);
   List_Of_VisibleCst_Ids(Implementation(Development_Server_Login_i)) == (?);
   List_Of_VisibleVar_Ids(Implementation(Development_Server_Login_i)) == (? | ?);
@@ -204,15 +212,15 @@ THEORY ListOfIdsX IS
 END
 &
 THEORY SetsEnvX IS
-  Sets(Implementation(Development_Server_Login_i)) == (Type(Access_grant) == Cst(SetOf(etype(Access_grant,0,1)));Type(Operation) == Cst(SetOf(etype(Operation,0,8)));Type(Access_Agent) == Cst(SetOf(etype(Access_Agent,0,10)));Type(Access_Password) == Cst(SetOf(etype(Access_Password,0,3)));Type(Access_ID) == Cst(SetOf(etype(Access_ID,0,5))))
+  Sets(Implementation(Development_Server_Login_i)) == (Type(Access_Result) == Cst(SetOf(etype(Access_Result,0,1)));Type(Access_grant) == Cst(SetOf(etype(Access_grant,0,1)));Type(Operation) == Cst(SetOf(etype(Operation,0,8)));Type(Access_Agent) == Cst(SetOf(etype(Access_Agent,0,10)));Type(Access_Password) == Cst(SetOf(etype(Access_Password,0,3)));Type(Access_ID) == Cst(SetOf(etype(Access_ID,0,5))))
 END
 &
 THEORY ConstantsEnvX IS
-  Constants(Implementation(Development_Server_Login_i)) == (Type(Access_Fail) == Cst(etype(Access_grant,0,1));Type(Access_Success) == Cst(etype(Access_grant,0,1));Type(Upload_Fix_Transfer_Download_Approve) == Cst(etype(Operation,0,8));Type(Upload_Fix_Transfer) == Cst(etype(Operation,0,8));Type(Approve) == Cst(etype(Operation,0,8));Type(Download) == Cst(etype(Operation,0,8));Type(Transfer) == Cst(etype(Operation,0,8));Type(Fix) == Cst(etype(Operation,0,8));Type(Upload) == Cst(etype(Operation,0,8));Type(All) == Cst(etype(Operation,0,8));Type(None) == Cst(etype(Operation,0,8));Type(Engineer_PC) == Cst(etype(Access_Agent,0,10));Type(DiagnosticTester_PC) == Cst(etype(Access_Agent,0,10));Type(Developer_PC) == Cst(etype(Access_Agent,0,10));Type(CRM_Server) == Cst(etype(Access_Agent,0,10));Type(Update_Server) == Cst(etype(Access_Agent,0,10));Type(Diagnostic_Server) == Cst(etype(Access_Agent,0,10));Type(Development_Server) == Cst(etype(Access_Agent,0,10));Type(Vehicle) == Cst(etype(Access_Agent,0,10));Type(Auto_Repair_Shop) == Cst(etype(Access_Agent,0,10));Type(Secondary_ECU) == Cst(etype(Access_Agent,0,10));Type(Empty_Agent) == Cst(etype(Access_Agent,0,10));Type(OEM_TeamMember_Password) == Cst(etype(Access_Password,0,3));Type(OEM_TeamLeader_Password) == Cst(etype(Access_Password,0,3));Type(Engineer_Password) == Cst(etype(Access_Password,0,3));Type(Empty_Password) == Cst(etype(Access_Password,0,3));Type(Engineer_ID) == Cst(etype(Access_ID,0,5));Type(Update_Server_ID) == Cst(etype(Access_ID,0,5));Type(Vehicle_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamMember_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamLeader_ID) == Cst(etype(Access_ID,0,5));Type(Empty_ID) == Cst(etype(Access_ID,0,5)))
+  Constants(Implementation(Development_Server_Login_i)) == (Type(Failure) == Cst(etype(Access_Result,0,1));Type(Success) == Cst(etype(Access_Result,0,1));Type(Access_Fail) == Cst(etype(Access_grant,0,1));Type(Access_Success) == Cst(etype(Access_grant,0,1));Type(Upload_Fix_Transfer_Download_Approve) == Cst(etype(Operation,0,8));Type(Upload_Fix_Transfer) == Cst(etype(Operation,0,8));Type(Approve) == Cst(etype(Operation,0,8));Type(Download) == Cst(etype(Operation,0,8));Type(Transfer) == Cst(etype(Operation,0,8));Type(Fix) == Cst(etype(Operation,0,8));Type(Upload) == Cst(etype(Operation,0,8));Type(All) == Cst(etype(Operation,0,8));Type(None) == Cst(etype(Operation,0,8));Type(Engineer_PC) == Cst(etype(Access_Agent,0,10));Type(DiagnosticTester_PC) == Cst(etype(Access_Agent,0,10));Type(Developer_PC) == Cst(etype(Access_Agent,0,10));Type(CRM_Server) == Cst(etype(Access_Agent,0,10));Type(Update_Server) == Cst(etype(Access_Agent,0,10));Type(Diagnostic_Server) == Cst(etype(Access_Agent,0,10));Type(Development_Server) == Cst(etype(Access_Agent,0,10));Type(Vehicle) == Cst(etype(Access_Agent,0,10));Type(Auto_Repair_Shop) == Cst(etype(Access_Agent,0,10));Type(Secondary_ECU) == Cst(etype(Access_Agent,0,10));Type(Empty_Agent) == Cst(etype(Access_Agent,0,10));Type(OEM_TeamMember_Password) == Cst(etype(Access_Password,0,3));Type(OEM_TeamLeader_Password) == Cst(etype(Access_Password,0,3));Type(Engineer_Password) == Cst(etype(Access_Password,0,3));Type(Empty_Password) == Cst(etype(Access_Password,0,3));Type(Engineer_ID) == Cst(etype(Access_ID,0,5));Type(Update_Server_ID) == Cst(etype(Access_ID,0,5));Type(Vehicle_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamMember_ID) == Cst(etype(Access_ID,0,5));Type(OEM_TeamLeader_ID) == Cst(etype(Access_ID,0,5));Type(Empty_ID) == Cst(etype(Access_ID,0,5)))
 END
 &
 THEORY VisibleVariablesEnvX IS
-  VisibleVariables(Implementation(Development_Server_Login_i)) == (Type(Input_ID) == Mvv(etype(Access_ID,?,?));Type(Input_Password) == Mvv(etype(Access_Password,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?));Type(Login_Try) == Mvv(btype(INTEGER,?,?));Type(Permission) == Mvv(etype(Operation,?,?));Type(Agent) == Mvv(etype(Access_grant,?,?)))
+  VisibleVariables(Implementation(Development_Server_Login_i)) == (Type(Input_ID) == Mvv(etype(Access_ID,?,?));Type(Input_Password) == Mvv(etype(Access_Password,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?));Type(Login_Try) == Mvv(btype(INTEGER,?,?));Type(Permission) == Mvv(etype(Operation,?,?));Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Same_Account_Connection) == Mvv(btype(INTEGER,?,?));Type(Account_Connection_Result) == Mvv(etype(Access_Result,?,?));Type(Special_Char) == Mvv(btype(BOOL,?,?)))
 END
 &
 THEORY TCIntRdX IS
@@ -244,7 +252,7 @@ THEORY ListLocalPreconditionX END
 THEORY ListLocalSubstitutionX END
 &
 THEORY TypingPredicateX IS
-  TypingPredicate(Implementation(Development_Server_Login_i))==(Agent: Access_grant & Permission: Operation & Login_Try: INTEGER & Input_Agent: Access_Agent & Input_Password: Access_Password & Input_ID: Access_ID)
+  TypingPredicate(Implementation(Development_Server_Login_i))==(Special_Char: BOOL & Account_Connection_Result: Access_Result & Same_Account_Connection: INTEGER & Agent: Access_grant & Permission: Operation & Login_Try: INTEGER & Input_Agent: Access_Agent & Input_Password: Access_Password & Input_ID: Access_ID)
 END
 &
 THEORY ImportedVariablesListX END

@@ -1,7 +1,7 @@
 /* WARNING if type checker is not performed, translation could contain errors ! */
 
 #include "AccessControl.h"
-#include<stdio.h>
+
 /* Clause SEES */
 #include "BASIC_IO.h"
 
@@ -17,6 +17,9 @@ AccessControl__Access_Agent AccessControl__Input_Agent;
 int32_t AccessControl__Login_Try;
 AccessControl__Operation AccessControl__Permission;
 AccessControl__Access_grant AccessControl__Agent;
+int32_t AccessControl__Same_Account_Connection;
+AccessControl__Access_Result AccessControl__Account_Connection_Result;
+bool AccessControl__Special_Char;
 /* Clause INITIALISATION */
 void AccessControl__INITIALISATION(void)
 {
@@ -27,11 +30,14 @@ void AccessControl__INITIALISATION(void)
     AccessControl__Login_Try = 0;
     AccessControl__Permission = AccessControl__None;
     AccessControl__Agent = AccessControl__Access_Fail;
+    AccessControl__Same_Account_Connection = 1;
+    AccessControl__Account_Connection_Result = AccessControl__Failure;
+    AccessControl__Special_Char = false;
 }
 
 /* Clause OPERATIONS */
 
-void AccessControl__access_grant(void)
+void AccessControl__access_grant(int32_t Input_String_Length, int32_t Buffer_Length)
 {
     if((((AccessControl__Input_ID == AccessControl__OEM_TeamLeader_ID) &&
             (AccessControl__Input_Password == AccessControl__OEM_TeamLeader_Password)) &&
@@ -41,9 +47,9 @@ void AccessControl__access_grant(void)
         AccessControl__Agent = AccessControl__Access_Success;
         AccessControl__Permission = AccessControl__Upload_Fix_Transfer_Download_Approve;
         AccessControl__Login_Try = 0;
-        printf("Login Success!\n");
-        printf("Login Entity: OEM_TeamLeader\n");
-        printf("============================\n");
+        BASIC_IO__STRING_WRITE("Login Success!\n");
+        BASIC_IO__STRING_WRITE("Login Entity: OEM_TeamLeader\n");
+        BASIC_IO__STRING_WRITE("============================\n");
     }
     else
     {
@@ -55,41 +61,30 @@ void AccessControl__access_grant(void)
             AccessControl__Agent = AccessControl__Access_Success;
             AccessControl__Permission = AccessControl__Upload_Fix_Transfer;
             AccessControl__Login_Try = 0;
-            printf("Login Success!\n");
-            printf("Login Entity: OEM_TeamMember\n");
-            printf("============================\n");
+            BASIC_IO__STRING_WRITE("Login Success!\n");
+            BASIC_IO__STRING_WRITE("Login Entity: OEM_TeamMember\n");
+            BASIC_IO__STRING_WRITE("============================\n");
         }
         else
         {
             AccessControl__Agent = AccessControl__Access_Fail;
             AccessControl__Permission = AccessControl__None;
             AccessControl__Login_Try = AccessControl__Login_Try+1;
-            printf("Login Fail!\n");
-            printf("============================\n");
+            BASIC_IO__STRING_WRITE("Login Fail!\n");
+            BASIC_IO__STRING_WRITE("============================\n");
         }
     }
 }
 
-int main() {
-    AccessControl__INITIALISATION();
-
-    AccessControl__Input_ID = AccessControl__OEM_TeamLeader_ID;
-    AccessControl__Input_Password = AccessControl__OEM_TeamLeader_Password;
-    AccessControl__Input_Agent = AccessControl__Developer_PC;
-    AccessControl__Login_Try = 0;
-    AccessControl__access_grant();
-
-    AccessControl__Input_ID = AccessControl__OEM_TeamMember_ID;
-    AccessControl__Input_Password = AccessControl__OEM_TeamMember_Password;
-    AccessControl__Input_Agent = AccessControl__Developer_PC;
-    AccessControl__Login_Try = 0;
-    AccessControl__access_grant();
-
-    AccessControl__Input_ID = AccessControl__OEM_TeamMember_ID;
-    AccessControl__Input_Password = AccessControl__OEM_TeamMember_Password;
-    AccessControl__Input_Agent = AccessControl__Developer_PC;
-    AccessControl__Login_Try = 6;
-    AccessControl__access_grant();
-
-    return 0;
+void AccessControl__connection_refuse(void)
+{
+    if(AccessControl__Same_Account_Connection == 1)
+    {
+        AccessControl__Account_Connection_Result = AccessControl__Success;
+    }
+    else
+    {
+        AccessControl__Account_Connection_Result = AccessControl__Failure;
+    }
 }
+

@@ -40,8 +40,8 @@ THEORY ListVariablesX IS
 END
 &
 THEORY ListVisibleVariablesX IS
-  Inherited_List_VisibleVariables(Implementation(CRM_Server_Firewall_i))==(Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent);
-  Abstract_List_VisibleVariables(Implementation(CRM_Server_Firewall_i))==(Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent);
+  Inherited_List_VisibleVariables(Implementation(CRM_Server_Firewall_i))==(Communication_Timeout,Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent);
+  Abstract_List_VisibleVariables(Implementation(CRM_Server_Firewall_i))==(Communication_Timeout,Agent,Input_Port,Available_Port,Input_IP_List,Input_IP,Input_Agent);
   External_List_VisibleVariables(Implementation(CRM_Server_Firewall_i))==(?);
   Expanded_List_VisibleVariables(Implementation(CRM_Server_Firewall_i))==(?);
   List_VisibleVariables(Implementation(CRM_Server_Firewall_i))==(?);
@@ -51,7 +51,7 @@ END
 THEORY ListInvariantX IS
   Gluing_Seen_List_Invariant(Implementation(CRM_Server_Firewall_i))==(btrue);
   Expanded_List_Invariant(Implementation(CRM_Server_Firewall_i))==(btrue);
-  Abstract_List_Invariant(Implementation(CRM_Server_Firewall_i))==(Input_Agent: Access_Agent & Input_IP: Access_IP & Input_IP_List: Access_IP_List & Input_Port: INT & Available_Port: INT & Agent: Access_grant);
+  Abstract_List_Invariant(Implementation(CRM_Server_Firewall_i))==(Input_Agent: Access_Agent & Input_IP: Access_IP & Input_IP_List: Access_IP_List & Input_Port: INT & Available_Port: INT & Agent: Access_grant & Communication_Timeout: INT);
   Context_List_Invariant(Implementation(CRM_Server_Firewall_i))==(btrue);
   List_Invariant(Implementation(CRM_Server_Firewall_i))==(btrue)
 END
@@ -72,9 +72,9 @@ THEORY ListExclusivityX IS
 END
 &
 THEORY ListInitialisationX IS
-  Expanded_List_Initialisation(Implementation(CRM_Server_Firewall_i))==(Input_Agent:=Empty_Agent;Input_IP:=Empty_IP;Input_IP_List:=IP_Unknown;(443: INT | Available_Port:=443);(0: INT | Input_Port:=0);Agent:=Access_Fail);
+  Expanded_List_Initialisation(Implementation(CRM_Server_Firewall_i))==(Input_Agent:=Empty_Agent;Input_IP:=Empty_IP;Input_IP_List:=IP_Unknown;(443: INT | Available_Port:=443);(0: INT | Input_Port:=0);Agent:=Access_Fail;(600: INT | Communication_Timeout:=600));
   Context_List_Initialisation(Implementation(CRM_Server_Firewall_i))==(skip);
-  List_Initialisation(Implementation(CRM_Server_Firewall_i))==(Input_Agent:=Empty_Agent;Input_IP:=Empty_IP;Input_IP_List:=IP_Unknown;Available_Port:=443;Input_Port:=0;Agent:=Access_Fail)
+  List_Initialisation(Implementation(CRM_Server_Firewall_i))==(Input_Agent:=Empty_Agent;Input_IP:=Empty_IP;Input_IP_List:=IP_Unknown;Available_Port:=443;Input_Port:=0;Agent:=Access_Fail;Communication_Timeout:=600)
 END
 &
 THEORY ListParametersX IS
@@ -164,7 +164,7 @@ THEORY ListIncludedOperationsX END
 &
 THEORY InheritedEnvX IS
   Operations(Implementation(CRM_Server_Firewall_i))==(Type(access_control) == Cst(No_type,No_type));
-  VisibleVariables(Implementation(CRM_Server_Firewall_i))==(Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Input_Port) == Mvv(btype(INTEGER,?,?));Type(Available_Port) == Mvv(btype(INTEGER,?,?));Type(Input_IP_List) == Mvv(etype(Access_IP_List,?,?));Type(Input_IP) == Mvv(etype(Access_IP,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?)));
+  VisibleVariables(Implementation(CRM_Server_Firewall_i))==(Type(Communication_Timeout) == Mvv(btype(INTEGER,?,?));Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Input_Port) == Mvv(btype(INTEGER,?,?));Type(Available_Port) == Mvv(btype(INTEGER,?,?));Type(Input_IP_List) == Mvv(etype(Access_IP_List,?,?));Type(Input_IP) == Mvv(etype(Access_IP,?,?));Type(Input_Agent) == Mvv(etype(Access_Agent,?,?)));
   Constants(Implementation(CRM_Server_Firewall_i))==(Type(Empty_Agent) == Cst(etype(Access_Agent,0,10));Type(Secondary_ECU) == Cst(etype(Access_Agent,0,10));Type(Auto_Repair_Shop) == Cst(etype(Access_Agent,0,10));Type(Vehicle) == Cst(etype(Access_Agent,0,10));Type(Development_Server) == Cst(etype(Access_Agent,0,10));Type(Diagnostic_Server) == Cst(etype(Access_Agent,0,10));Type(Update_Server) == Cst(etype(Access_Agent,0,10));Type(CRM_Server) == Cst(etype(Access_Agent,0,10));Type(Developer_PC) == Cst(etype(Access_Agent,0,10));Type(DiagnosticTester_PC) == Cst(etype(Access_Agent,0,10));Type(Engineer_PC) == Cst(etype(Access_Agent,0,10));Type(Empty_IP) == Cst(etype(Access_IP,0,8));Type(Development_Server_IP) == Cst(etype(Access_IP,0,8));Type(Diagnostic_Server_IP) == Cst(etype(Access_IP,0,8));Type(Update_Server_IP) == Cst(etype(Access_IP,0,8));Type(CRM_Server_IP) == Cst(etype(Access_IP,0,8));Type(Vehicle_IP) == Cst(etype(Access_IP,0,8));Type(Engineer_PC_IP) == Cst(etype(Access_IP,0,8));Type(Developer_PC_IP) == Cst(etype(Access_IP,0,8));Type(DiagnosticTester_PC_IP) == Cst(etype(Access_IP,0,8));Type(IP_Unknown) == Cst(etype(Access_IP_List,0,2));Type(IP_Whitelist) == Cst(etype(Access_IP_List,0,2));Type(IP_Blacklist) == Cst(etype(Access_IP_List,0,2));Type(Access_Success) == Cst(etype(Access_grant,0,1));Type(Access_Fail) == Cst(etype(Access_grant,0,1)))
 END
 &
@@ -187,7 +187,7 @@ THEORY ConstantsEnvX IS
 END
 &
 THEORY VisibleVariablesEnvX IS
-  VisibleVariables(Implementation(CRM_Server_Firewall_i)) == (Type(Input_Agent) == Mvv(etype(Access_Agent,?,?));Type(Input_IP) == Mvv(etype(Access_IP,?,?));Type(Input_IP_List) == Mvv(etype(Access_IP_List,?,?));Type(Available_Port) == Mvv(btype(INTEGER,?,?));Type(Input_Port) == Mvv(btype(INTEGER,?,?));Type(Agent) == Mvv(etype(Access_grant,?,?)))
+  VisibleVariables(Implementation(CRM_Server_Firewall_i)) == (Type(Input_Agent) == Mvv(etype(Access_Agent,?,?));Type(Input_IP) == Mvv(etype(Access_IP,?,?));Type(Input_IP_List) == Mvv(etype(Access_IP_List,?,?));Type(Available_Port) == Mvv(btype(INTEGER,?,?));Type(Input_Port) == Mvv(btype(INTEGER,?,?));Type(Agent) == Mvv(etype(Access_grant,?,?));Type(Communication_Timeout) == Mvv(btype(INTEGER,?,?)))
 END
 &
 THEORY TCIntRdX IS
@@ -219,7 +219,7 @@ THEORY ListLocalPreconditionX END
 THEORY ListLocalSubstitutionX END
 &
 THEORY TypingPredicateX IS
-  TypingPredicate(Implementation(CRM_Server_Firewall_i))==(Agent: Access_grant & Input_Port: INTEGER & Available_Port: INTEGER & Input_IP_List: Access_IP_List & Input_IP: Access_IP & Input_Agent: Access_Agent)
+  TypingPredicate(Implementation(CRM_Server_Firewall_i))==(Communication_Timeout: INTEGER & Agent: Access_grant & Input_Port: INTEGER & Available_Port: INTEGER & Input_IP_List: Access_IP_List & Input_IP: Access_IP & Input_Agent: Access_Agent)
 END
 &
 THEORY ImportedVariablesListX END
