@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="1">
-    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="3">
         <org.eventb.core.poIdentifier name="Sourcecode_Format" org.eventb.core.type="ℙ(Sourcecode_Format)"/>
         <org.eventb.core.poIdentifier name="Patchfile_Format" org.eventb.core.type="ℙ(Patchfile_Format)"/>
         <org.eventb.core.poIdentifier name="Develop_Language" org.eventb.core.type="ℙ(Develop_Language)"/>
@@ -21,6 +21,7 @@
         <org.eventb.core.poPredicate name="Written_Sourcecodi" org.eventb.core.predicate="partition(Sourcecode_Format,{Written_Sourcecode},{Writing_Sourcecode})" org.eventb.core.source="/SUMS/PatchFile_Format_C.buc|org.eventb.core.contextFile#PatchFile_Format_C|org.eventb.core.axiom#7"/>
         <org.eventb.core.poIdentifier name="Sign_Method" org.eventb.core.type="ℙ(Sign_Method)"/>
         <org.eventb.core.poIdentifier name="Encrypt_Mode" org.eventb.core.type="ℙ(Encrypt_Mode)"/>
+        <org.eventb.core.poIdentifier name="Data_Processing" org.eventb.core.type="ℙ(Data_Processing)"/>
         <org.eventb.core.poIdentifier name="Crypto_Test_Result" org.eventb.core.type="ℙ(Crypto_Test_Result)"/>
         <org.eventb.core.poIdentifier name="Hash_Method" org.eventb.core.type="ℙ(Hash_Method)"/>
         <org.eventb.core.poIdentifier name="Encrypt_Method" org.eventb.core.type="ℙ(Encrypt_Method)"/>
@@ -39,9 +40,11 @@
         <org.eventb.core.poIdentifier name="GCM" org.eventb.core.type="Encrypt_Mode"/>
         <org.eventb.core.poIdentifier name="Fail" org.eventb.core.type="Crypto_Test_Result"/>
         <org.eventb.core.poIdentifier name="ECB" org.eventb.core.type="Encrypt_Mode"/>
+        <org.eventb.core.poIdentifier name="Pseudonymization" org.eventb.core.type="Data_Processing"/>
         <org.eventb.core.poIdentifier name="Binary_Hash" org.eventb.core.type="ℙ(ℙ(ℙ(ℙ(Hash_Method)×ℤ)×Patchfile_Format))"/>
         <org.eventb.core.poIdentifier name="CBC" org.eventb.core.type="Encrypt_Mode"/>
         <org.eventb.core.poIdentifier name="CCM" org.eventb.core.type="Encrypt_Mode"/>
+        <org.eventb.core.poIdentifier name="Masking" org.eventb.core.type="Data_Processing"/>
         <org.eventb.core.poIdentifier name="CFB" org.eventb.core.type="Encrypt_Mode"/>
         <org.eventb.core.poIdentifier name="Signature_Algorithm" org.eventb.core.type="ℙ(Sign_Method)"/>
         <org.eventb.core.poIdentifier name="Decrypted_Message" org.eventb.core.type="ℙ(ℙ(ℙ(Hash_Method)×ℤ))"/>
@@ -85,10 +88,12 @@
         <org.eventb.core.poPredicate name="NIST_Curve_P256_P384_P52I" org.eventb.core.predicate="Binary_Hash≠Sourcecode_Hash" org.eventb.core.source="/SUMS/Crypto_C.buc|org.eventb.core.contextFile#Crypto_C|org.eventb.core.axiom#'6"/>
         <org.eventb.core.poPredicate name="NIST_Curve_P256_P384_P52J" org.eventb.core.predicate="Hash_Info ⇸ {Test_Data}≠Binary_Hash∨Hash_Info ⇸ {Test_Data}≠Sourcecode_Hash" org.eventb.core.source="/SUMS/Crypto_C.buc|org.eventb.core.contextFile#Crypto_C|org.eventb.core.axiom#'7"/>
         <org.eventb.core.poPredicate name="NIST_Curve_P256_P384_P52K" org.eventb.core.predicate="Binary_Hash=Sourcecode_Hash∧Binary≠Sourcecode" org.eventb.core.source="/SUMS/Crypto_C.buc|org.eventb.core.contextFile#Crypto_C|org.eventb.core.axiom#':"/>
+        <org.eventb.core.poPredicate name="NIST_Curve_P256_P384_P52L" org.eventb.core.predicate="partition(Data_Processing,{Pseudonymization},{Masking})" org.eventb.core.source="/SUMS/Crypto_C.buc|org.eventb.core.contextFile#Crypto_C|org.eventb.core.axiom#'?"/>
         <org.eventb.core.poIdentifier name="Network_Info" org.eventb.core.type="ℙ(Network_Info)"/>
         <org.eventb.core.poIdentifier name="IP" org.eventb.core.type="ℙ(IP)"/>
         <org.eventb.core.poIdentifier name="Agent_Port" org.eventb.core.type="ℙ(Agent_Port)"/>
         <org.eventb.core.poIdentifier name="Agent_IP" org.eventb.core.type="ℙ(Agent_IP)"/>
+        <org.eventb.core.poIdentifier name="Communication_Timeout" org.eventb.core.type="ℤ"/>
         <org.eventb.core.poIdentifier name="IP_Unknown" org.eventb.core.type="IP"/>
         <org.eventb.core.poIdentifier name="IP_Blacklist" org.eventb.core.type="IP"/>
         <org.eventb.core.poIdentifier name="CRM_Server_IP" org.eventb.core.type="Agent_IP"/>
@@ -101,10 +106,11 @@
         <org.eventb.core.poIdentifier name="Update_Server_IP" org.eventb.core.type="Agent_IP"/>
         <org.eventb.core.poIdentifier name="Engineer_PC_IP" org.eventb.core.type="Agent_IP"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SUMS/Network_C.bpo|org.eventb.core.poFile#Network_C|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SUMS/Network_C.bpo|org.eventb.core.poFile#Network_C|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
         <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(IP,{IP_Unknown},{IP_Whitelist},{IP_Blacklist})" org.eventb.core.source="/SUMS/Network_C.buc|org.eventb.core.contextFile#Network_C|org.eventb.core.axiom#'"/>
         <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Port∈ℕ" org.eventb.core.source="/SUMS/Network_C.buc|org.eventb.core.contextFile#Network_C|org.eventb.core.axiom#@"/>
         <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Available_Port∈ℕ∧(Available_Port&gt;442∧Available_Port≤443)" org.eventb.core.source="/SUMS/Network_C.buc|org.eventb.core.contextFile#Network_C|org.eventb.core.axiom#A"/>
         <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(Agent_IP,{Development_Server_IP},{Diagnostic_Server_IP},{Update_Server_IP},{CRM_Server_IP},{Automotive_IP},{Engineer_PC_IP})" org.eventb.core.source="/SUMS/Network_C.buc|org.eventb.core.contextFile#Network_C|org.eventb.core.axiom#B"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="Communication_Timeout=600" org.eventb.core.source="/SUMS/Network_C.buc|org.eventb.core.contextFile#Network_C|org.eventb.core.axiom#K"/>
     </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

@@ -12,4 +12,8 @@
     <org.eventb.core.carrierSet name="cst8" org.eventb.core.identifier="Password_List"/>
     <org.eventb.core.constant name="cst14" org.eventb.core.identifier="OEM_TeamLeader_Password"/>
     <org.eventb.core.constant name="cst16" org.eventb.core.identifier="OEM_TeamMember_Password"/>
+    <org.eventb.core.axiom name="cst17" org.eventb.core.label="axm3" org.eventb.core.predicate="Buffer_Length ∈ ℕ"/>
+    <org.eventb.core.constant name="cst18" org.eventb.core.identifier="Buffer_Length"/>
+    <org.eventb.core.axiom name="cst19" org.eventb.core.label="axm4" org.eventb.core.predicate="Special_Char = FALSE"/>
+    <org.eventb.core.constant name="cst1:" org.eventb.core.identifier="Special_Char"/>
 </org.eventb.core.contextFile>

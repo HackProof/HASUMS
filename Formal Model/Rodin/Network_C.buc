@@ -20,4 +20,6 @@
     <org.eventb.core.constant name="H" org.eventb.core.identifier="Automotive_IP"/>
     <org.eventb.core.constant name="I" org.eventb.core.identifier="Engineer_PC_IP"/>
     <org.eventb.core.carrierSet name="J" org.eventb.core.identifier="Agent_Port"/>
+    <org.eventb.core.axiom name="K" org.eventb.core.label="axm5" org.eventb.core.predicate="Communication_Timeout = 600"/>
+    <org.eventb.core.constant name="L" org.eventb.core.identifier="Communication_Timeout"/>
 </org.eventb.core.contextFile>

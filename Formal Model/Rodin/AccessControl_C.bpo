@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="5">
-    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poFile org.eventb.core.poStamp="12">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="12">
         <org.eventb.core.poIdentifier name="Agent" org.eventb.core.type="ℙ(Agent)"/>
         <org.eventb.core.poIdentifier name="Role" org.eventb.core.type="ℙ(Role)"/>
+        <org.eventb.core.poIdentifier name="Access_Result" org.eventb.core.type="ℙ(Access_Result)"/>
         <org.eventb.core.poIdentifier name="Operation" org.eventb.core.type="ℙ(Operation)"/>
         <org.eventb.core.poIdentifier name="Vehicle" org.eventb.core.type="Agent"/>
         <org.eventb.core.poIdentifier name="Approve" org.eventb.core.type="Operation"/>
@@ -10,13 +11,16 @@
         <org.eventb.core.poIdentifier name="Secondary_ECU" org.eventb.core.type="Agent"/>
         <org.eventb.core.poIdentifier name="Install" org.eventb.core.type="Operation"/>
         <org.eventb.core.poIdentifier name="Engineer" org.eventb.core.type="Role"/>
+        <org.eventb.core.poIdentifier name="Failure" org.eventb.core.type="Access_Result"/>
         <org.eventb.core.poIdentifier name="Update_Server" org.eventb.core.type="Agent"/>
         <org.eventb.core.poIdentifier name="ECU" org.eventb.core.type="Agent"/>
         <org.eventb.core.poIdentifier name="Fix" org.eventb.core.type="Operation"/>
+        <org.eventb.core.poIdentifier name="Success" org.eventb.core.type="Access_Result"/>
         <org.eventb.core.poIdentifier name="Transfer" org.eventb.core.type="Operation"/>
         <org.eventb.core.poIdentifier name="Development_Server" org.eventb.core.type="Agent"/>
         <org.eventb.core.poIdentifier name="Download" org.eventb.core.type="Operation"/>
         <org.eventb.core.poIdentifier name="Engineer_PC" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="Same_Account_Connection" org.eventb.core.type="BOOL"/>
         <org.eventb.core.poIdentifier name="Upload" org.eventb.core.type="Operation"/>
         <org.eventb.core.poIdentifier name="Auto_Repair_Shop" org.eventb.core.type="Agent"/>
         <org.eventb.core.poIdentifier name="DiagnosticTester_PC" org.eventb.core.type="Agent"/>
@@ -28,9 +32,11 @@
         <org.eventb.core.poIdentifier name="Backup" org.eventb.core.type="Operation"/>
         <org.eventb.core.poIdentifier name="OEM_TeamMember" org.eventb.core.type="Role"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SUMS/AccessControl_C.bpo|org.eventb.core.poFile#AccessControl_C|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="5">
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SUMS/AccessControl_C.bpo|org.eventb.core.poFile#AccessControl_C|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="12">
         <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(Role,{Engineer},{Automotive},{OEM_TeamLeader},{OEM_TeamMember})" org.eventb.core.source="/SUMS/AccessControl_C.buc|org.eventb.core.contextFile#AccessControl_C|org.eventb.core.axiom#axm1"/>
         <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(Operation,{Upload},{Fix},{Transfer},{Download},{Approve},{Install},{Backup},{Recovery})" org.eventb.core.source="/SUMS/AccessControl_C.buc|org.eventb.core.contextFile#AccessControl_C|org.eventb.core.axiom#axm5"/>
         <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(Agent,{ECU},{Secondary_ECU},{Auto_Repair_Shop},{Vehicle},{Development_Server},{Diagnostic_Server},{Update_Server},{CRM_Server},{Developer_PC},{DiagnosticTester_PC},{Engineer_PC})" org.eventb.core.source="/SUMS/AccessControl_C.buc|org.eventb.core.contextFile#AccessControl_C|org.eventb.core.axiom#axmL"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Same_Account_Connection=FALSE" org.eventb.core.source="/SUMS/AccessControl_C.buc|org.eventb.core.contextFile#AccessControl_C|org.eventb.core.axiom#axm^"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="partition(Access_Result,{Success},{Failure})" org.eventb.core.source="/SUMS/AccessControl_C.buc|org.eventb.core.contextFile#AccessControl_C|org.eventb.core.axiom#axmb"/>
     </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
