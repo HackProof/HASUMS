@@ -3,14 +3,9 @@
 *HASUMS* is a Secure SUMS systematically developed following strict security engineering process.
 
 #### Motivation
-Connected cars and self-driving cars began to appear, and various parts began to be installed in vehicles.
-Generally, vehicles are equipped with wireless communication systems and have begun to provide wireless updates through OTA (Over-The-Air).
-In addition, various equipment is installed in the vehicle to provide many functions.
+As software installed in a vehicle increases, the importance of a Software Update Management System(SUMS) for automotive is increasing. In particular, as studies were announced that exploiting vulnerabilities in the software update management system could threaten the lives of passengers, UNECE announced regulations to ensure security for SUMS. However, there is a limitation that the requirements specified in the regulation are too abstract to follow.
 
 ![SUMS](https://github.com/HackProof/HASUMS/assets/31889026/2a2a3b33-35ee-40b1-9eff-2118b1030099)
-
-However, cyberattacks are increasing as attack points on vehicles increase due to various parts.
-UNECE announced the SUMS (Software Update Management System) through UN R156, which defines the process of securely providing patch files to vehicles when updating software, but it is difficult to refer to when developing SUMS in OEMs because it contains abstract requirements.
 
 #### Content
 - In this paper, we identify threats that can occur in SUMS through [threat modeling](https://github.com/HackProof/HASUMS/tree/main/Threat%20Modeling) and derive security requirements to mitigate the threats.
