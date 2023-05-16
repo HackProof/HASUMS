@@ -1,13 +1,13 @@
 ## HASUMS(High-Assurance Software Update Management System)
-### Reseach Overview
-*HASUMS* is a Secure SUMS systematically developed following strict security engineering procedures.
+### Introduction
+*HASUMS* is a Secure SUMS systematically developed following strict security engineering process.
 
 #### Motivation
 Connected cars and self-driving cars began to appear, and various parts began to be installed in vehicles.
 Generally, vehicles are equipped with wireless communication systems and have begun to provide wireless updates through OTA (Over-The-Air).
 In addition, various equipment is installed in the vehicle to provide many functions.
 
-![SUMS](https://github.com/HackProof/HASUMS/assets/31889026/dfdc10d7-6d0b-4493-9aba-26a5fae36f5c)
+![SUMS](https://github.com/HackProof/HASUMS/assets/31889026/2a2a3b33-35ee-40b1-9eff-2118b1030099)
 
 However, cyberattacks are increasing as attack points on vehicles increase due to various parts.
 UNECE announced the SUMS (Software Update Management System) through UN R156, which defines the process of securely providing patch files to vehicles when updating software, but it is difficult to refer to when developing SUMS in OEMs because it contains abstract requirements.
