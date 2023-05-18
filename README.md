@@ -2,7 +2,7 @@
 ### Research Overview
 *HASUMS* is a Secure SUMS systematically developed following strict security engineering process.
 
-![SecureSUMS](https://github.com/HackProof/HASUMS/assets/31889026/716c7996-28dc-42f7-9778-9de4fd1bcfc2)
+![SecureSUMS](https://github.com/HackProof/HASUMS/assets/31889026/16122183-dfa0-4621-a77a-8aa95a9faed4)
 
 #### Motivation
 - As software installed in a vehicle increases, the importance of a Software Update Management System(SUMS) for automotive is increasing. 
