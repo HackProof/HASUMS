@@ -23,13 +23,14 @@ SET(Secure_SUMS_SOURCES
     Update_Server_Capacity_Check_i.c
     Update_Server_Communication_i.c
     Update_Server_Firewall_i.c
+    b_main.c
 )
 SET(Secure_SUMS_HEADERS
     AccessControl.h
+    BASIC_IO.h
     Crypto.h
     Network.h
     PatchFile_Test.h
     Storage.h
 )
-
-add_library(Secure_SUMS ${Secure_SUMS_SOURCES} ${Secure_SUMS_HEADERS})
+add_executable(Secure_SUMS ${Secure_SUMS_SOURCES} ${Secure_SUMS_HEADERS})

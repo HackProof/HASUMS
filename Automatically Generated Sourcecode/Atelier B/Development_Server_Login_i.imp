@@ -25,7 +25,8 @@ OPERATIONS
         IF Input_ID = OEM_TeamLeader_ID & 
            Input_Password = OEM_TeamLeader_Password & 
            Input_Agent = Developer_PC &
-           Login_Try <= 5 
+           Login_Try <= 5 &
+           Input_String_Length < Buffer_Length
         THEN
            Agent := Access_Success;
            Permission := Upload_Fix_Transfer_Download_Approve; 
@@ -38,7 +39,8 @@ OPERATIONS
                Input_ID = OEM_TeamMember_ID & 
                Input_Password = OEM_TeamMember_Password & 
                Input_Agent = Developer_PC & 
-               Login_Try <= 5 
+               Login_Try <= 5 &
+               Input_String_Length < Buffer_Length
            THEN 
                Agent := Access_Success;
                Permission := Upload_Fix_Transfer;
@@ -59,7 +61,7 @@ OPERATIONS
     
     connection_refuse = 
     BEGIN
-        IF Same_Account_Connection = 1 
+        IF Same_Account_Connection = 0 
         THEN
            Account_Connection_Result := Success
         ELSE

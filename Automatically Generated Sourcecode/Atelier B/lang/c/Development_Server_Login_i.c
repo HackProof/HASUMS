@@ -1,7 +1,9 @@
 /* WARNING if type checker is not performed, translation could contain errors ! */
 
 #include "AccessControl.h"
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 /* Clause SEES */
 #include "BASIC_IO.h"
 
@@ -39,46 +41,48 @@ void AccessControl__INITIALISATION(void)
 
 void AccessControl__access_grant(int32_t Input_String_Length, int32_t Buffer_Length)
 {
-    if((((AccessControl__Input_ID == AccessControl__OEM_TeamLeader_ID) &&
-            (AccessControl__Input_Password == AccessControl__OEM_TeamLeader_Password)) &&
-        (AccessControl__Input_Agent == AccessControl__Developer_PC)) &&
-    ((AccessControl__Login_Try) <= (5)))
+    if(((((AccessControl__Input_ID == AccessControl__OEM_TeamLeader_ID) &&
+                (AccessControl__Input_Password == AccessControl__OEM_TeamLeader_Password)) &&
+            (AccessControl__Input_Agent == AccessControl__Developer_PC)) &&
+        ((AccessControl__Login_Try) <= (5))) &&
+    ((Input_String_Length) < (Buffer_Length)))
     {
         AccessControl__Agent = AccessControl__Access_Success;
         AccessControl__Permission = AccessControl__Upload_Fix_Transfer_Download_Approve;
         AccessControl__Login_Try = 0;
-        BASIC_IO__STRING_WRITE("Login Success!\n");
-        BASIC_IO__STRING_WRITE("Login Entity: OEM_TeamLeader\n");
-        BASIC_IO__STRING_WRITE("============================\n");
+        printf("Login Success!\n");
+        printf("Login Entity: OEM_TeamLeader\n");
+        printf("============================\n");
     }
     else
     {
-        if((((AccessControl__Input_ID == AccessControl__OEM_TeamMember_ID) &&
-                (AccessControl__Input_Password == AccessControl__OEM_TeamMember_Password)) &&
-            (AccessControl__Input_Agent == AccessControl__Developer_PC)) &&
-        ((AccessControl__Login_Try) <= (5)))
+        if(((((AccessControl__Input_ID == AccessControl__OEM_TeamMember_ID) &&
+                    (AccessControl__Input_Password == AccessControl__OEM_TeamMember_Password)) &&
+                (AccessControl__Input_Agent == AccessControl__Developer_PC)) &&
+            ((AccessControl__Login_Try) <= (5))) &&
+        ((Input_String_Length) < (Buffer_Length)))
         {
             AccessControl__Agent = AccessControl__Access_Success;
             AccessControl__Permission = AccessControl__Upload_Fix_Transfer;
             AccessControl__Login_Try = 0;
-            BASIC_IO__STRING_WRITE("Login Success!\n");
-            BASIC_IO__STRING_WRITE("Login Entity: OEM_TeamMember\n");
-            BASIC_IO__STRING_WRITE("============================\n");
+            printf("Login Success!\n");
+            printf("Login Entity: OEM_TeamMember\n");
+            printf("============================\n");
         }
         else
         {
             AccessControl__Agent = AccessControl__Access_Fail;
             AccessControl__Permission = AccessControl__None;
             AccessControl__Login_Try = AccessControl__Login_Try+1;
-            BASIC_IO__STRING_WRITE("Login Fail!\n");
-            BASIC_IO__STRING_WRITE("============================\n");
+            printf("Login Fail!\n");
+            printf("============================\n");
         }
     }
 }
 
 void AccessControl__connection_refuse(void)
 {
-    if(AccessControl__Same_Account_Connection == 1)
+    if(AccessControl__Same_Account_Connection == 0)
     {
         AccessControl__Account_Connection_Result = AccessControl__Success;
     }
@@ -88,3 +92,28 @@ void AccessControl__connection_refuse(void)
     }
 }
 
+int main() {
+    AccessControl__INITIALISATION();
+
+    AccessControl__Input_ID = AccessControl__OEM_TeamLeader_ID;
+    AccessControl__Input_Password = AccessControl__OEM_TeamLeader_Password;
+    AccessControl__Input_Agent = AccessControl__Developer_PC;
+    AccessControl__Login_Try = 0;
+    AccessControl__access_grant(10, 11);
+
+
+    AccessControl__Input_ID = AccessControl__OEM_TeamMember_ID;
+    AccessControl__Input_Password = AccessControl__OEM_TeamMember_Password;
+    AccessControl__Input_Agent = AccessControl__Developer_PC;
+    AccessControl__Login_Try = 0;
+    AccessControl__access_grant(10, 14);
+
+
+    AccessControl__Input_ID = AccessControl__OEM_TeamMember_ID;
+    AccessControl__Input_Password = AccessControl__OEM_TeamMember_Password;
+    AccessControl__Input_Agent = AccessControl__Developer_PC;
+    AccessControl__Login_Try = 6;
+    AccessControl__access_grant(10, 14);
+
+    return 0;
+}
