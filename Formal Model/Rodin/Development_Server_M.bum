@@ -13,7 +13,7 @@
         <org.eventb.core.action name="3" org.eventb.core.assignment="Sourcecode_Status :∈ {Writing_Sourcecode}" org.eventb.core.label="act13"/>
         <org.eventb.core.action name="4" org.eventb.core.assignment="Access_Port :∈ ∅" org.eventb.core.label="act14"/>
         <org.eventb.core.action name="5" org.eventb.core.assignment="Access_IP :∈ ∅" org.eventb.core.label="act15"/>
-        <org.eventb.core.action name="6" org.eventb.core.assignment="Account_Connection_Result :∈ {Failure}" org.eventb.core.label="act16"/>
+        <org.eventb.core.action name="6" org.eventb.core.assignment="Account_Connection_Result :∈ {Access_Fail}" org.eventb.core.label="act16"/>
     </org.eventb.core.event>
     <org.eventb.core.seesContext name="(" org.eventb.core.target="AccessControl_C"/>
     <org.eventb.core.variable name="+" org.eventb.core.identifier="Permission"/>
@@ -130,7 +130,7 @@
     <org.eventb.core.invariant name="Z" org.eventb.core.label="inv19" org.eventb.core.predicate="Access_Port ∈ Agent ⇸ {Port}"/>
     <org.eventb.core.event name="[" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Connection_Refuse">
         <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="Same_Account_Connection = TRUE"/>
-        <org.eventb.core.action name="(" org.eventb.core.assignment="Account_Connection_Result :∈ {Failure}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="Account_Connection_Result :∈ {Access_Fail}" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
     <org.eventb.core.variable name="\" org.eventb.core.identifier="Account_Connection_Result"/>
     <org.eventb.core.invariant name="]" org.eventb.core.label="inv20" org.eventb.core.predicate="Account_Connection_Result ∈ Access_Result"/>
