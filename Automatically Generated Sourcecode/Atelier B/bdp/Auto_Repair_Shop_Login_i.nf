@@ -120,7 +120,7 @@ END
 THEORY ListSubstitutionX IS
   Expanded_List_Substitution(Implementation(Auto_Repair_Shop_Login_i),connection_refuse)==(btrue | Same_Account_Connection = 1 ==> Account_Connection_Result:=Success [] not(Same_Account_Connection = 1) ==> Account_Connection_Result:=Failure);
   Expanded_List_Substitution(Implementation(Auto_Repair_Shop_Login_i),access_grant)==(Input_String_Length: NAT & Buffer_Length: NAT & Input_String_Length<Buffer_Length | Input_ID = Engineer_ID & Input_Password = Engineer_Password & Input_Agent = Engineer_PC & Login_Try<=5 ==> (Agent:=Access_Success;Permission:=Download;(0: INT | Login_Try:=0);("Login Success!\n": STRING | skip);("Login Entity: Engineer\n": STRING | skip);("============================\n": STRING | skip)) [] not(Input_ID = Engineer_ID & Input_Password = Engineer_Password & Input_Agent = Engineer_PC & Login_Try<=5) ==> (Agent:=Access_Fail;Permission:=None;(Login_Try+1: INT & Login_Try: INT & 1: INT | Login_Try:=Login_Try+1);("Login Fail!\n": STRING | skip);("============================\n": STRING | skip)));
-  List_Substitution(Implementation(Auto_Repair_Shop_Login_i),access_grant)==(IF Input_ID = Engineer_ID & Input_Password = Engineer_Password & Input_Agent = Engineer_PC & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Download;Login_Try:=0;STRING_WRITE("Login Success!\n");STRING_WRITE("Login Entity: Engineer\n");STRING_WRITE("============================\n") ELSE Agent:=Access_Fail;Permission:=None;Login_Try:=Login_Try+1;STRING_WRITE("Login Fail!\n");STRING_WRITE("============================\n") END);
+  List_Substitution(Implementation(Auto_Repair_Shop_Login_i),access_grant)==(IF Input_ID = Engineer_ID & Input_Password = Engineer_Password & Input_Agent = Engineer_PC & Login_Try<=5 THEN Agent:=Access_Success;Permission:=Download;Login_Try:=0;printf("Login Success!\n");printf("Login Entity: Engineer\n");printf("============================\n") ELSE Agent:=Access_Fail;Permission:=None;Login_Try:=Login_Try+1;printf("Login Fail!\n");printf("============================\n") END);
   List_Substitution(Implementation(Auto_Repair_Shop_Login_i),connection_refuse)==(IF Same_Account_Connection = 1 THEN Account_Connection_Result:=Success ELSE Account_Connection_Result:=Failure END)
 END
 &
@@ -170,24 +170,22 @@ THEORY ListValuesX IS
 END
 &
 THEORY ListSeenInfoX IS
-  Seen_Internal_List_Operations(Implementation(Auto_Repair_Shop_Login_i),Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE);
+  Seen_Internal_List_Operations(Implementation(Auto_Repair_Shop_Login_i),Machine(BASIC_IO))==(printf,scanf);
   Seen_Context_List_Enumerated(Implementation(Auto_Repair_Shop_Login_i))==(?);
   Seen_Context_List_Invariant(Implementation(Auto_Repair_Shop_Login_i))==(btrue);
   Seen_Context_List_Assertions(Implementation(Auto_Repair_Shop_Login_i))==(btrue);
   Seen_Context_List_Properties(Implementation(Auto_Repair_Shop_Login_i))==(btrue);
   Seen_List_Constraints(Implementation(Auto_Repair_Shop_Login_i))==(btrue);
-  Seen_List_Precondition(Implementation(Auto_Repair_Shop_Login_i),STRING_WRITE)==(ss: STRING);
-  Seen_Expanded_List_Substitution(Implementation(Auto_Repair_Shop_Login_i),STRING_WRITE)==(skip);
-  Seen_List_Precondition(Implementation(Auto_Repair_Shop_Login_i),INT_WRITE)==(vv: NAT);
-  Seen_Expanded_List_Substitution(Implementation(Auto_Repair_Shop_Login_i),INT_WRITE)==(skip);
-  Seen_List_Precondition(Implementation(Auto_Repair_Shop_Login_i),INTERVAL_READ)==(nn: NAT & mm: NAT & mm<=nn);
-  Seen_Expanded_List_Substitution(Implementation(Auto_Repair_Shop_Login_i),INTERVAL_READ)==(@(bb$0).(bb$0: mm..nn ==> bb:=bb$0));
-  Seen_List_Operations(Implementation(Auto_Repair_Shop_Login_i),Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE);
+  Seen_List_Precondition(Implementation(Auto_Repair_Shop_Login_i),scanf)==(ss: STRING);
+  Seen_Expanded_List_Substitution(Implementation(Auto_Repair_Shop_Login_i),scanf)==(skip);
+  Seen_List_Precondition(Implementation(Auto_Repair_Shop_Login_i),printf)==(ss: STRING);
+  Seen_Expanded_List_Substitution(Implementation(Auto_Repair_Shop_Login_i),printf)==(skip);
+  Seen_List_Operations(Implementation(Auto_Repair_Shop_Login_i),Machine(BASIC_IO))==(printf,scanf);
   Seen_Expanded_List_Invariant(Implementation(Auto_Repair_Shop_Login_i),Machine(BASIC_IO))==(btrue)
 END
 &
 THEORY ListIncludedOperationsX IS
-  List_Included_Operations(Implementation(Auto_Repair_Shop_Login_i),Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE)
+  List_Included_Operations(Implementation(Auto_Repair_Shop_Login_i),Machine(BASIC_IO))==(printf,scanf)
 END
 &
 THEORY InheritedEnvX IS
@@ -204,7 +202,7 @@ THEORY ListOfIdsX IS
   List_Of_VisibleCst_Ids(Implementation(Auto_Repair_Shop_Login_i)) == (?);
   List_Of_VisibleVar_Ids(Implementation(Auto_Repair_Shop_Login_i)) == (? | ?);
   List_Of_Ids_SeenBNU(Implementation(Auto_Repair_Shop_Login_i)) == (?: ?);
-  List_Of_Ids(Machine(BASIC_IO)) == (? | ? | ? | ? | INTERVAL_READ,INT_WRITE,STRING_WRITE | ? | ? | ? | BASIC_IO);
+  List_Of_Ids(Machine(BASIC_IO)) == (? | ? | ? | ? | printf,scanf | ? | ? | ? | BASIC_IO);
   List_Of_HiddenCst_Ids(Machine(BASIC_IO)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(BASIC_IO)) == (?);
   List_Of_VisibleVar_Ids(Machine(BASIC_IO)) == (? | ?);

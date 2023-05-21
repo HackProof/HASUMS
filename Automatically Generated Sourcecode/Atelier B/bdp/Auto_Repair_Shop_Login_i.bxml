@@ -337,57 +337,57 @@
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='33' c='24' s='0'/>
+<Pos l='33' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='33' c='12' s='12'/>
+<Pos l='33' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Success!\n' typref='10'>
 <Attr>
-<Pos l='33' c='25' s='16'/>
+<Pos l='33' c='19' s='16'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='34' c='24' s='0'/>
+<Pos l='34' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='34' c='12' s='12'/>
+<Pos l='34' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Entity: Engineer\n' typref='10'>
 <Attr>
-<Pos l='34' c='25' s='24'/>
+<Pos l='34' c='19' s='24'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='35' c='24' s='0'/>
+<Pos l='35' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='35' c='12' s='12'/>
+<Pos l='35' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='============================\n' typref='10'>
 <Attr>
-<Pos l='35' c='25' s='30'/>
+<Pos l='35' c='19' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
@@ -465,38 +465,38 @@
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='40' c='24' s='0'/>
+<Pos l='40' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='40' c='12' s='12'/>
+<Pos l='40' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Fail!\n' typref='10'>
 <Attr>
-<Pos l='40' c='25' s='13'/>
+<Pos l='40' c='19' s='13'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='41' c='24' s='0'/>
+<Pos l='41' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='41' c='12' s='12'/>
+<Pos l='41' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='============================\n' typref='10'>
 <Attr>
-<Pos l='41' c='25' s='30'/>
+<Pos l='41' c='19' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>

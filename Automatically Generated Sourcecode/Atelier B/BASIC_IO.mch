@@ -6,21 +6,13 @@ MACHINE
     BASIC_IO
 
 OPERATIONS
-    bb ← INTERVAL_READ ( mm , nn ) = PRE
-        nn : NAT ∧
-        mm : NAT ∧
-        mm <= nn
-    THEN
-        bb :: mm .. nn
-    END ;
-    
-    INT_WRITE ( vv ) = PRE
-        vv : NAT
+    printf ( ss ) = PRE
+        ss : STRING
     THEN
         skip
-    END ;
+    END;
     
-    STRING_WRITE ( ss ) = PRE
+    scanf ( ss ) = PRE
         ss : STRING
     THEN
         skip

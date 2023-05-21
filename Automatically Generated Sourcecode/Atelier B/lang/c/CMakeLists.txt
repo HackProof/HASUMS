@@ -23,7 +23,6 @@ SET(Secure_SUMS_SOURCES
     Update_Server_Capacity_Check_i.c
     Update_Server_Communication_i.c
     Update_Server_Firewall_i.c
-    b_main.c
 )
 SET(Secure_SUMS_HEADERS
     AccessControl.h

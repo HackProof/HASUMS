@@ -352,57 +352,57 @@
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='34' c='24' s='0'/>
+<Pos l='34' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='34' c='12' s='12'/>
+<Pos l='34' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Success!\n' typref='10'>
 <Attr>
-<Pos l='34' c='25' s='16'/>
+<Pos l='34' c='19' s='16'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='35' c='24' s='0'/>
+<Pos l='35' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='35' c='12' s='12'/>
+<Pos l='35' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Entity: OEM_TeamLeader\n' typref='10'>
 <Attr>
-<Pos l='35' c='25' s='30'/>
+<Pos l='35' c='19' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='36' c='24' s='0'/>
+<Pos l='36' c='18' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='36' c='12' s='12'/>
+<Pos l='36' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='============================\n' typref='10'>
 <Attr>
-<Pos l='36' c='25' s='30'/>
+<Pos l='36' c='19' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
@@ -554,57 +554,57 @@
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='48' c='28' s='0'/>
+<Pos l='48' c='22' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='48' c='16' s='12'/>
+<Pos l='48' c='16' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Success!\n' typref='10'>
 <Attr>
-<Pos l='48' c='29' s='16'/>
+<Pos l='48' c='23' s='16'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='49' c='28' s='0'/>
+<Pos l='49' c='22' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='49' c='16' s='12'/>
+<Pos l='49' c='16' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Entity: OEM_TeamMember\n' typref='10'>
 <Attr>
-<Pos l='49' c='29' s='30'/>
+<Pos l='49' c='23' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='50' c='28' s='0'/>
+<Pos l='50' c='22' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='50' c='16' s='12'/>
+<Pos l='50' c='16' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='============================\n' typref='10'>
 <Attr>
-<Pos l='50' c='29' s='30'/>
+<Pos l='50' c='23' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
@@ -682,38 +682,38 @@
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='56' c='28' s='0'/>
+<Pos l='56' c='22' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='56' c='16' s='12'/>
+<Pos l='56' c='16' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Fail!\n' typref='10'>
 <Attr>
-<Pos l='56' c='29' s='13'/>
+<Pos l='56' c='23' s='13'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='57' c='28' s='0'/>
+<Pos l='57' c='22' s='0'/>
 </Attr>
 <Name>
-<Id value='STRING_WRITE'>
+<Id value='printf'>
 <Attr>
-<Pos l='57' c='16' s='12'/>
+<Pos l='57' c='16' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='============================\n' typref='10'>
 <Attr>
-<Pos l='57' c='29' s='30'/>
+<Pos l='57' c='23' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>

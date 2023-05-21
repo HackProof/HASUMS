@@ -93,43 +93,37 @@ THEORY ListConstraintsX IS
 END
 &
 THEORY ListOperationsX IS
-  Internal_List_Operations(Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE);
-  List_Operations(Machine(BASIC_IO))==(INTERVAL_READ,INT_WRITE,STRING_WRITE)
+  Internal_List_Operations(Machine(BASIC_IO))==(printf,scanf);
+  List_Operations(Machine(BASIC_IO))==(printf,scanf)
 END
 &
 THEORY ListInputX IS
-  List_Input(Machine(BASIC_IO),INTERVAL_READ)==(mm,nn);
-  List_Input(Machine(BASIC_IO),INT_WRITE)==(vv);
-  List_Input(Machine(BASIC_IO),STRING_WRITE)==(ss)
+  List_Input(Machine(BASIC_IO),printf)==(ss);
+  List_Input(Machine(BASIC_IO),scanf)==(ss)
 END
 &
 THEORY ListOutputX IS
-  List_Output(Machine(BASIC_IO),INTERVAL_READ)==(bb);
-  List_Output(Machine(BASIC_IO),INT_WRITE)==(?);
-  List_Output(Machine(BASIC_IO),STRING_WRITE)==(?)
+  List_Output(Machine(BASIC_IO),printf)==(?);
+  List_Output(Machine(BASIC_IO),scanf)==(?)
 END
 &
 THEORY ListHeaderX IS
-  List_Header(Machine(BASIC_IO),INTERVAL_READ)==(bb <-- INTERVAL_READ(mm,nn));
-  List_Header(Machine(BASIC_IO),INT_WRITE)==(INT_WRITE(vv));
-  List_Header(Machine(BASIC_IO),STRING_WRITE)==(STRING_WRITE(ss))
+  List_Header(Machine(BASIC_IO),printf)==(printf(ss));
+  List_Header(Machine(BASIC_IO),scanf)==(scanf(ss))
 END
 &
 THEORY ListOperationGuardX END
 &
 THEORY ListPreconditionX IS
-  List_Precondition(Machine(BASIC_IO),INTERVAL_READ)==(nn: NAT & mm: NAT & mm<=nn);
-  List_Precondition(Machine(BASIC_IO),INT_WRITE)==(vv: NAT);
-  List_Precondition(Machine(BASIC_IO),STRING_WRITE)==(ss: STRING)
+  List_Precondition(Machine(BASIC_IO),printf)==(ss: STRING);
+  List_Precondition(Machine(BASIC_IO),scanf)==(ss: STRING)
 END
 &
 THEORY ListSubstitutionX IS
-  Expanded_List_Substitution(Machine(BASIC_IO),STRING_WRITE)==(ss: STRING | skip);
-  Expanded_List_Substitution(Machine(BASIC_IO),INT_WRITE)==(vv: NAT | skip);
-  Expanded_List_Substitution(Machine(BASIC_IO),INTERVAL_READ)==(nn: NAT & mm: NAT & mm<=nn | @(bb$0).(bb$0: mm..nn ==> bb:=bb$0));
-  List_Substitution(Machine(BASIC_IO),INTERVAL_READ)==(bb:: mm..nn);
-  List_Substitution(Machine(BASIC_IO),INT_WRITE)==(skip);
-  List_Substitution(Machine(BASIC_IO),STRING_WRITE)==(skip)
+  Expanded_List_Substitution(Machine(BASIC_IO),scanf)==(ss: STRING | skip);
+  Expanded_List_Substitution(Machine(BASIC_IO),printf)==(ss: STRING | skip);
+  List_Substitution(Machine(BASIC_IO),printf)==(skip);
+  List_Substitution(Machine(BASIC_IO),scanf)==(skip)
 END
 &
 THEORY ListConstantsX IS
@@ -168,13 +162,12 @@ END
 THEORY ListSeenInfoX END
 &
 THEORY ListANYVarX IS
-  List_ANY_Var(Machine(BASIC_IO),INTERVAL_READ)==(?);
-  List_ANY_Var(Machine(BASIC_IO),INT_WRITE)==(?);
-  List_ANY_Var(Machine(BASIC_IO),STRING_WRITE)==(?)
+  List_ANY_Var(Machine(BASIC_IO),printf)==(?);
+  List_ANY_Var(Machine(BASIC_IO),scanf)==(?)
 END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(BASIC_IO)) == (? | ? | ? | ? | INTERVAL_READ,INT_WRITE,STRING_WRITE | ? | ? | ? | BASIC_IO);
+  List_Of_Ids(Machine(BASIC_IO)) == (? | ? | ? | ? | printf,scanf | ? | ? | ? | BASIC_IO);
   List_Of_HiddenCst_Ids(Machine(BASIC_IO)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(BASIC_IO)) == (?);
   List_Of_VisibleVar_Ids(Machine(BASIC_IO)) == (? | ?);
@@ -182,8 +175,8 @@ THEORY ListOfIdsX IS
 END
 &
 THEORY OperationsEnvX IS
-  Operations(Machine(BASIC_IO)) == (Type(STRING_WRITE) == Cst(No_type,btype(STRING,?,?));Type(INT_WRITE) == Cst(No_type,btype(INTEGER,?,?));Type(INTERVAL_READ) == Cst(btype(INTEGER,mm,nn),btype(INTEGER,?,?)*btype(INTEGER,?,?)));
-  Observers(Machine(BASIC_IO)) == (Type(STRING_WRITE) == Cst(No_type,btype(STRING,?,?));Type(INT_WRITE) == Cst(No_type,btype(INTEGER,?,?));Type(INTERVAL_READ) == Cst(btype(INTEGER,mm,nn),btype(INTEGER,?,?)*btype(INTEGER,?,?)))
+  Operations(Machine(BASIC_IO)) == (Type(scanf) == Cst(No_type,btype(STRING,?,?));Type(printf) == Cst(No_type,btype(STRING,?,?)));
+  Observers(Machine(BASIC_IO)) == (Type(scanf) == Cst(No_type,btype(STRING,?,?));Type(printf) == Cst(No_type,btype(STRING,?,?)))
 END
 &
 THEORY TCIntRdX IS

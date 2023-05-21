@@ -57,5 +57,4 @@ OPERATIONS
     END;
     
     connection_refuse = skip
-    
 END

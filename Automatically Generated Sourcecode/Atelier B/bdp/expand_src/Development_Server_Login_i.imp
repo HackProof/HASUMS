@@ -31,9 +31,9 @@ OPERATIONS
            Agent := Access_Success ;
            Permission := Upload_Fix_Transfer_Download_Approve ;
            Login_Try := 0 ;
-           STRING_WRITE ( "Login Success!\n" ) ;
-           STRING_WRITE ( "Login Entity: OEM_TeamLeader\n" ) ;
-           STRING_WRITE ( "============================\n" )
+           printf ( "Login Success!\n" ) ;
+           printf ( "Login Entity: OEM_TeamLeader\n" ) ;
+           printf ( "============================\n" )
 
            ELSE IF
                Input_ID = OEM_TeamMember_ID &
@@ -45,16 +45,16 @@ OPERATIONS
                Agent := Access_Success ;
                Permission := Upload_Fix_Transfer ;
                Login_Try := 0 ;
-               STRING_WRITE ( "Login Success!\n" ) ;
-               STRING_WRITE ( "Login Entity: OEM_TeamMember\n" ) ;
-               STRING_WRITE ( "============================\n" )
+               printf ( "Login Success!\n" ) ;
+               printf ( "Login Entity: OEM_TeamMember\n" ) ;
+               printf ( "============================\n" )
 
            ELSE
                Agent := Access_Fail ;
                Permission := None ;
                Login_Try := Login_Try + 1 ;
-               STRING_WRITE ( "Login Fail!\n" ) ;
-               STRING_WRITE ( "============================\n" )
+               printf ( "Login Fail!\n" ) ;
+               printf ( "============================\n" )
            END
         END
     END ;
