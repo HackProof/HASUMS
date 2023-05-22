@@ -10,6 +10,9 @@
 - However, there is a limitation that the requirements specified in the regulation are too abstract to follow.
 
 #### Methodology & Deliverable
+
+![workflow](https://github.com/HackProof/HASUMS/assets/31889026/fbe0a78e-7607-4752-b23b-1b7018c7060f)
+
 - **(Threat modeling)** We identify threats that can occur in SUMS through [STRIDE Methodology](https://github.com/HackProof/HASUMS/tree/main/Threat%20Modeling) and derive security requirements to mitigate the threats.
 - **(Design in UML)** We design [Secure SUMS](https://github.com/HackProof/HASUMS/tree/main/Secure%20SUMS%20Architecture) by adding security functions corresponding to the security requirements.
 - **(Formal modeling)** Through [Event-B](https://github.com/HackProof/HASUMS/tree/main/Formal%20Model), Secure SUMS is formally specified and verified that it operates normally without conflict between security functions.
