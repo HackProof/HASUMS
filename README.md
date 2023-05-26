@@ -11,7 +11,7 @@
 
 #### Methodology & Deliverable
 
-![workflow](https://github.com/HackProof/HASUMS/assets/31889026/f41588b1-2087-47fe-9649-9ad5cd08dc6e)
+![workflow](https://github.com/HackProof/HASUMS/assets/31889026/50d6628d-d21d-4ecf-8a0e-26d594bbed3e)
 
 - **(Threat modeling)** We identify threats that can occur in SUMS through [STRIDE Methodology](https://github.com/HackProof/HASUMS/tree/main/Threat%20Modeling) and derive security requirements to mitigate the threats.
 - **(Design in UML)** We design [Secure SUMS](https://github.com/HackProof/HASUMS/tree/main/Secure%20SUMS%20Architecture) by adding security functions corresponding to the security requirements.
