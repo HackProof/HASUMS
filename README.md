@@ -20,3 +20,6 @@
 
 ### Papers
 - Jaewan Seo, Jiwon Kwak, and Seungjoo Kim, "[Formally Verified Software Update Management System in Automotive](https://www.ndss-symposium.org/wp-content/uploads/2023/02/vehiclesec2023-23087-paper.pdf)", Inaugural Symposium on Vehicle Security and Privacy(VehicleSec), February, 2023.
+
+### Videos
+- Jaewan Seo, "[HASUMS: High-Assurance Software Update Management System](https://youtu.be/nnnsgNpdxpY)" in Youtube(Channel: "[Skim TV](https://www.youtube.com/@skim71)")
