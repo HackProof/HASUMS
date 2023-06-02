@@ -143,4 +143,10 @@
     <org.eventb.core.variable name="m" org.eventb.core.identifier="Access_Port"/>
     <org.eventb.core.invariant name="n" org.eventb.core.label="inv21" org.eventb.core.predicate="Access_IP ∈ Agent ⇸ IP"/>
     <org.eventb.core.invariant name="o" org.eventb.core.label="inv22" org.eventb.core.predicate="Access_Port ∈ Agent ⇸ {Port}"/>
+    <org.eventb.core.event name="p" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Update_Granted">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="Input_ID"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Input_ID = {OEM_TeamLeader_ID}"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="Permission ≔ {Encrypt, Configuration_Manage}" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.seesContext name="q" org.eventb.core.target="Authentication_C"/>
 </org.eventb.core.machineFile>

@@ -16,13 +16,17 @@ Development_Server_Firewall_i [ label=" Network\nDevelopment_Server_Firewall_i "
 Development_Server_Login_i [ label=" AccessControl\nDevelopment_Server_Login_i " shape= box ]
 Diagnostic_Server_Communication_i [ label=" Crypto\nDiagnostic_Server_Communication_i " shape= box ]
 Diagnostic_Server_Firewall_i [ label=" Network\nDiagnostic_Server_Firewall_i " shape= box ]
+Diagnostic_Server_Grant_i [ label=" AccessControl\nDiagnostic_Server_Grant_i " shape= box ]
 Diagnostic_Server_Test_i [ label=" PatchFile_Test\nDiagnostic_Server_Test_i " shape= box ]
 Update_Server_Capacity_Check_i [ label=" Storage\nUpdate_Server_Capacity_Check_i " shape= box ]
 Update_Server_Communication_i [ label=" Crypto\nUpdate_Server_Communication_i " shape= box ]
 Update_Server_Firewall_i [ label=" Network\nUpdate_Server_Firewall_i " shape= box ]
+Update_Server_Grant_i [ label=" AccessControl\nUpdate_Server_Grant_i " shape= box ]
 
 "Auto_Repair_Shop_Login_i" -> "BASIC_IO" [style= dotted ]
 "Automotive_Login_i" -> "BASIC_IO" [style= dotted ]
 "CRM_Server_Login_i" -> "BASIC_IO" [style= dotted ]
 "Development_Server_Login_i" -> "BASIC_IO" [style= dotted ]
+"Diagnostic_Server_Grant_i" -> "BASIC_IO" [style= dotted ]
+"Update_Server_Grant_i" -> "BASIC_IO" [style= dotted ]
 }

@@ -111,4 +111,9 @@
     <org.eventb.core.variable name="k" org.eventb.core.identifier="Access_Port"/>
     <org.eventb.core.invariant name="l" org.eventb.core.label="inv18" org.eventb.core.predicate="Access_IP ∈ Agent ⇸ IP"/>
     <org.eventb.core.invariant name="m" org.eventb.core.label="inv19" org.eventb.core.predicate="Access_Port ∈ Agent ⇸ {Port}"/>
+    <org.eventb.core.event name="n" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ECU_Data_Management">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="Permission ≔ {Manage}" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Input_Agent ∈ {Engineer_PC}"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="Input_Agent"/>
+    </org.eventb.core.event>
 </org.eventb.core.machineFile>

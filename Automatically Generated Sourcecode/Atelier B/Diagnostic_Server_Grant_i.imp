@@ -1,0 +1,44 @@
+ /* CRM_Server_Login_i
+ * Author: SANE
+ * Creation date: 2023-04-25
+ */
+
+IMPLEMENTATION Diagnostic_Server_Grant_i
+REFINES AccessControl
+
+SEES BASIC_IO
+
+INITIALISATION
+    Input_ID := Empty_ID;
+    Input_Password := Empty_Password;
+    Input_Agent := Empty_Agent;
+    Login_Try := 0;
+    Permission := None;
+    Agent := Access_Fail;
+    Same_Account_Connection := 1;
+    Account_Connection_Result := Failure;
+    Special_Char := FALSE
+
+OPERATIONS
+    access_grant(Input_String_Length, Buffer_Length) = 
+    BEGIN
+        IF Input_ID = OEM_TeamLeader_ID
+        THEN
+           Agent := Access_Success;
+           Permission := Test
+        ELSE
+           Agent := Access_Fail;
+           Permission := None     
+        END
+    END;
+    
+    connection_refuse = 
+    BEGIN
+        IF Same_Account_Connection = 1 
+        THEN
+           Account_Connection_Result := Success
+        ELSE
+           Account_Connection_Result := Failure
+        END
+    END
+END

@@ -39,8 +39,10 @@ void AccessControl__INITIALISATION(void)
 
 void AccessControl__access_grant(int32_t Input_String_Length, int32_t Buffer_Length)
 {
-    if(((AccessControl__Input_ID == AccessControl__Update_Server_ID) &&
-        (AccessControl__Input_Agent == AccessControl__Update_Server)) &&
+    if(((((AccessControl__Input_ID == AccessControl__Update_Server_ID) ||
+                (AccessControl__Input_ID == AccessControl__Engineer_ID)) &&
+            (AccessControl__Input_Agent == AccessControl__Update_Server)) ||
+        (AccessControl__Input_Agent == AccessControl__Engineer_PC)) &&
     ((AccessControl__Login_Try) <= (5)))
     {
         AccessControl__Agent = AccessControl__Access_Success;

@@ -22,8 +22,10 @@ INITIALISATION
 OPERATIONS
     access_grant ( Input_String_Length , Buffer_Length ) =
     BEGIN
-        IF Input_ID = Update_Server_ID &
-           Input_Agent = Update_Server &
+        IF Input_ID = Update_Server_ID or
+           Input_ID = Engineer_ID  &
+           Input_Agent = Update_Server or
+           Input_Agent = Engineer_PC &
            Login_Try <= 5
         THEN
            Agent := Access_Success ;

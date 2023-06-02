@@ -309,9 +309,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='Download' typref='7'>
+<Id value='Download_ECU_Data_Manage' typref='7'>
 <Attr>
-<Pos l='31' c='26' s='8'/>
+<Pos l='31' c='26' s='24'/>
 </Attr>
 </Id>
 </Values>

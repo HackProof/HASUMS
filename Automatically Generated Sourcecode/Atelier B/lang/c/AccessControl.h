@@ -57,11 +57,20 @@ typedef enum
     AccessControl__Transfer,
     AccessControl__Download,
     AccessControl__Approve,
+    AccessControl__Backup,
+    AccessControl__Recovery,
+    AccessControl__Install,
+    AccessControl__Test,
+    AccessControl__ECU_Data_Manage,
+    AccessControl__Encrypt,
+    AccessControl__Configuration_Manage,
     AccessControl__Upload_Fix_Transfer,
-    AccessControl__Upload_Fix_Transfer_Download_Approve
+    AccessControl__Upload_Fix_Transfer_Download_Approve,
+    AccessControl__Download_ECU_Data_Manage,
+    AccessControl__Encrypt_Configuration_Manage
     
 } AccessControl__Operation;
-#define AccessControl__Operation__max 9
+#define AccessControl__Operation__max 18
 typedef enum
 {
     AccessControl__Access_Success,

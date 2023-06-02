@@ -45,7 +45,7 @@ void AccessControl__access_grant(int32_t Input_String_Length, int32_t Buffer_Len
     ((AccessControl__Login_Try) <= (5)))
     {
         AccessControl__Agent = AccessControl__Access_Success;
-        AccessControl__Permission = AccessControl__Download;
+        AccessControl__Permission = AccessControl__Download_ECU_Data_Manage;
         AccessControl__Login_Try = 0;
         BASIC_IO__printf("Login Success!\n");
         BASIC_IO__printf("Login Entity: Engineer\n");

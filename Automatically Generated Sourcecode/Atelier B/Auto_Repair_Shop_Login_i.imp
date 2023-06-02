@@ -28,7 +28,7 @@ OPERATIONS
            Login_Try <= 5 
         THEN
            Agent := Access_Success;
-           Permission := Download; 
+           Permission := Download_ECU_Data_Manage; 
            Login_Try := 0;
            printf("Login Success!\n");
            printf("Login Entity: Engineer\n");

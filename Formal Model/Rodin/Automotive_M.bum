@@ -50,22 +50,22 @@
         <org.eventb.core.action name="3" org.eventb.core.assignment="Subject_entity :∈ {Vehicle}" org.eventb.core.comment="Ｖｅｈｉｃｌｅ에서" org.eventb.core.label="act1"/>
         <org.eventb.core.action name="4" org.eventb.core.assignment="Permission ≔ {Download}" org.eventb.core.comment="바이너리 수신이 완료됨" org.eventb.core.label="act2"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="J" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Update_Server_Access_Granted">
+    <org.eventb.core.event name="J" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Update_Server_Engineer_Access_Granted">
         <org.eventb.core.parameter name="'" org.eventb.core.identifier="Input_ID"/>
-        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Input_ID = {Update_Server_ID}"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Input_ID = {Update_Server_ID, Engineer_ID}"/>
         <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="OEM_Update_Server_LogIn_Try ≤ 5"/>
         <org.eventb.core.action name="-" org.eventb.core.assignment="Access_Agent ≔ Input_Agent" org.eventb.core.label="act3"/>
-        <org.eventb.core.guard name="." org.eventb.core.label="grd3" org.eventb.core.predicate="Input_Agent ∈ {Update_Server}"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd3" org.eventb.core.predicate="Input_Agent ∈ {Update_Server, Engineer_PC}"/>
         <org.eventb.core.parameter name="/" org.eventb.core.identifier="Input_Agent"/>
         <org.eventb.core.action name="0" org.eventb.core.assignment="Permission ≔ {Download}" org.eventb.core.label="act4"/>
         <org.eventb.core.action name="2" org.eventb.core.assignment="OEM_Update_Server_LogIn_Try ≔ 0" org.eventb.core.label="act6"/>
     </org.eventb.core.event>
-    <org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Update_Server_Access_Denied">
+    <org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Update_Server_Engineer_Access_Denied">
         <org.eventb.core.parameter name="'" org.eventb.core.identifier="Input_ID"/>
-        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Input_ID ≠ {Update_Server_ID}"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Input_ID ≠ {Update_Server_ID, Engineer_ID}"/>
         <org.eventb.core.parameter name=")" org.eventb.core.identifier="Input_Agent"/>
         <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="OEM_Update_Server_LogIn_Try ≤ 5"/>
-        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="Input_Agent ∉ {Update_Server}"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="Input_Agent ∉ {Update_Server, Engineer_PC}"/>
         <org.eventb.core.action name="," org.eventb.core.assignment="OEM_Update_Server_LogIn_Try ≔ OEM_Update_Server_LogIn_Try + 1" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
     <org.eventb.core.event name="L" org.eventb.core.comment="수신한 데이터에 대해 서명 검증을 수행함" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Signature_Verify">

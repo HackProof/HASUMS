@@ -4,7 +4,7 @@
     <org.eventb.core.constant name="axm2" org.eventb.core.identifier="Engineer"/>
     <org.eventb.core.constant name="axm3" org.eventb.core.identifier="Automotive"/>
     <org.eventb.core.constant name="axm4" org.eventb.core.identifier="OEM_TeamLeader"/>
-    <org.eventb.core.axiom name="axm5" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(Operation, {Upload}, {Fix}, {Transfer}, {Download}, {Approve}, {Install}, {Backup}, {Recovery})"/>
+    <org.eventb.core.axiom name="axm5" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(Operation, {Upload}, {Fix}, {Transfer}, {Download}, {Approve}, {Install}, {Backup}, {Recovery}, {Test}, {Manage}, {Encrypt}, {Configuration_Manage})"/>
     <org.eventb.core.carrierSet name="axm7" org.eventb.core.identifier="Role"/>
     <org.eventb.core.constant name="axm?" org.eventb.core.identifier="OEM_TeamMember"/>
     <org.eventb.core.constant name="axm9" org.eventb.core.identifier="Upload"/>
@@ -35,4 +35,8 @@
     <org.eventb.core.constant name="axm`" org.eventb.core.identifier="Access_Fail"/>
     <org.eventb.core.carrierSet name="axma" org.eventb.core.identifier="Access_Result"/>
     <org.eventb.core.axiom name="axmb" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(Access_Result, {Access_Success}, {Access_Fail})"/>
+    <org.eventb.core.constant name="axmc" org.eventb.core.identifier="Test"/>
+    <org.eventb.core.constant name="axmd" org.eventb.core.identifier="Manage"/>
+    <org.eventb.core.constant name="axme" org.eventb.core.identifier="Encrypt"/>
+    <org.eventb.core.constant name="axmf" org.eventb.core.identifier="Configuration_Manage"/>
 </org.eventb.core.contextFile>

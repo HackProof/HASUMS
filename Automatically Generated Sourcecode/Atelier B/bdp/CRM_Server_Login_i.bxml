@@ -193,7 +193,7 @@
 <Operations>
 <Operation name='access_grant'>
 <Attr>
-<Pos l='23' c='5' s='12' endLine='42'/>
+<Pos l='23' c='5' s='12' endLine='48'/>
 </Attr>
 <Input_Parameters>
 <Id value='Input_String_Length' typref='1'>
@@ -380,69 +380,133 @@
 </Nary_Sub>
 </Then>
 <Else>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='35' c='14' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='36' c='25' s='1'/>
+</Attr>
+<Id value='Input_ID' typref='4'>
+<Attr>
+<Pos l='36' c='16' s='8'/>
+</Attr>
+</Id>
+<Id value='OEM_TeamLeader_ID' typref='4'>
+<Attr>
+<Pos l='36' c='27' s='17'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='36' c='18' s='2'/>
+<Pos l='38' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='Agent' typref='8'>
 <Attr>
-<Pos l='36' c='12' s='5'/>
+<Pos l='38' c='16' s='5'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Access_Success' typref='8'>
+<Attr>
+<Pos l='38' c='25' s='14'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='39' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='Permission' typref='7'>
+<Attr>
+<Pos l='39' c='16' s='10'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='ECU_Data_Manage' typref='7'>
+<Attr>
+<Pos l='39' c='30' s='15'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+<Else>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='41' c='18' s='2'/>
+</Attr>
+<Variables>
+<Id value='Agent' typref='8'>
+<Attr>
+<Pos l='41' c='12' s='5'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='Access_Fail' typref='8'>
 <Attr>
-<Pos l='36' c='21' s='11'/>
+<Pos l='41' c='21' s='11'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='37' c='23' s='2'/>
+<Pos l='42' c='23' s='2'/>
 </Attr>
 <Variables>
 <Id value='Permission' typref='7'>
 <Attr>
-<Pos l='37' c='12' s='10'/>
+<Pos l='42' c='12' s='10'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='None' typref='7'>
 <Attr>
-<Pos l='37' c='26' s='4'/>
+<Pos l='42' c='26' s='4'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='38' c='22' s='2'/>
+<Pos l='43' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='Login_Try' typref='1'>
 <Attr>
-<Pos l='38' c='12' s='9'/>
+<Pos l='43' c='12' s='9'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='38' c='35' s='1'/>
+<Pos l='43' c='35' s='1'/>
 </Attr>
 <Id value='Login_Try' typref='1'>
 <Attr>
-<Pos l='38' c='25' s='9'/>
+<Pos l='43' c='25' s='9'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='38' c='37' s='1'/>
+<Pos l='43' c='37' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -450,38 +514,38 @@
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='39' c='18' s='0'/>
+<Pos l='44' c='18' s='0'/>
 </Attr>
 <Name>
 <Id value='printf'>
 <Attr>
-<Pos l='39' c='12' s='6'/>
+<Pos l='44' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='Login Fail!\n' typref='10'>
 <Attr>
-<Pos l='39' c='19' s='13'/>
+<Pos l='44' c='19' s='13'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='40' c='18' s='0'/>
+<Pos l='45' c='18' s='0'/>
 </Attr>
 <Name>
 <Id value='printf'>
 <Attr>
-<Pos l='40' c='12' s='6'/>
+<Pos l='45' c='12' s='6'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <STRING_Literal value='============================\n' typref='10'>
 <Attr>
-<Pos l='40' c='19' s='30'/>
+<Pos l='45' c='19' s='30'/>
 </Attr>
 </STRING_Literal>
 </Input_Parameters>
@@ -489,30 +553,32 @@
 </Nary_Sub>
 </Else>
 </If_Sub>
+</Else>
+</If_Sub>
 </Body>
 </Operation>
 <Operation name='connection_refuse'>
 <Attr>
-<Pos l='44' c='5' s='17' endLine='52'/>
+<Pos l='50' c='5' s='17' endLine='58'/>
 </Attr>
 <Body>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='46' c='9' s='2'/>
+<Pos l='52' c='9' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='46' c='36' s='1'/>
+<Pos l='52' c='36' s='1'/>
 </Attr>
 <Id value='Same_Account_Connection' typref='1'>
 <Attr>
-<Pos l='46' c='12' s='23'/>
+<Pos l='52' c='12' s='23'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='46' c='38' s='1'/>
+<Pos l='52' c='38' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -520,19 +586,19 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='48' c='38' s='2'/>
+<Pos l='54' c='38' s='2'/>
 </Attr>
 <Variables>
 <Id value='Account_Connection_Result' typref='9'>
 <Attr>
-<Pos l='48' c='12' s='25'/>
+<Pos l='54' c='12' s='25'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='Success' typref='9'>
 <Attr>
-<Pos l='48' c='41' s='7'/>
+<Pos l='54' c='41' s='7'/>
 </Attr>
 </Id>
 </Values>
@@ -541,19 +607,19 @@
 <Else>
 <Assignement_Sub>
 <Attr>
-<Pos l='50' c='38' s='2'/>
+<Pos l='56' c='38' s='2'/>
 </Attr>
 <Variables>
 <Id value='Account_Connection_Result' typref='9'>
 <Attr>
-<Pos l='50' c='12' s='25'/>
+<Pos l='56' c='12' s='25'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='Failure' typref='9'>
 <Attr>
-<Pos l='50' c='41' s='7'/>
+<Pos l='56' c='41' s='7'/>
 </Attr>
 </Id>
 </Values>

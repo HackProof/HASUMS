@@ -32,12 +32,18 @@ OPERATIONS
            printf ( "Login Success!\n" ) ;
            printf ( "Login Entity: Vehicle\n" ) ;
            printf ( "============================\n" )
+        ELSE IF
+               Input_ID = OEM_TeamLeader_ID
+        THEN
+               Agent := Access_Success ;
+               Permission := ECU_Data_Manage
         ELSE
            Agent := Access_Fail ;
            Permission := None ;
            Login_Try := Login_Try + 1 ;
            printf ( "Login Fail!\n" ) ;
            printf ( "============================\n" )
+        END
         END
     END ;
 

